@@ -1,10 +1,10 @@
 import cPickle
 import ROOT
-from multi_test import *
+from train_mlp import *
 import random
 
-classifier=cPickle.load(open("MLPs/real_4_4.pkl","rb"))
-rf=ROOT.TFile("data/Output_sm.root")
+classifier=cPickle.load(open("MLPs/mlp_model.pkl","rb"))
+rf=ROOT.TFile("../data/Output_sm.root")
 
 def Get_input(t):
     input_vars=[
