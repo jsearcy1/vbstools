@@ -20,14 +20,15 @@ class weight:
     def get_weight(self,ct1,ct2,Mww):
 
         ###This part is turned off right now which I think means you can't trust the normalization
-        Nbins=self.fl_w.GetNbinsX()
-        bin_n=self.fl_w.FindBin(Mww)
-        if bin_n > Nbins:bin_n=Nbins #oveflow protection
+#        Nbins=self.fl_w.GetNbinsX()
+#        bin_n=self.fl_w.FindBin(Mww)
+#        if bin_n > Nbins:bin_n=Nbins #oveflow protection
         #all histograms need the same binning
-        f0=self.f0_w.GetBinContent(bin_n)
-        fl=self.fl_w.GetBinContent(bin_n)
-        fr=self.fr_w.GetBinContent(bin_n)
-        ###        
+#        f0=self.f0_w.GetBinContent(bin_n)
+#        fl=self.fl_w.GetBinContent(bin_n)
+#        fr=self.fr_w.GetBinContent(bin_n)
+#        ###        
+        fr=fl=f0=1.
         norm= (  ( fr*(3./8.*(1-ct1)**2) +fl*(3./8.*(1+ct1)**2)+f0*(3./4.*(1-ct1**2))  )
                  * (  fr*(3./8.*(1-ct2)**2) +fl*(3./8.*(1+ct2)**2)+ f0*(3./4.*(1-ct2**2))  ) )
         if norm==0: 
@@ -44,73 +45,6 @@ class weight:
         return OO/norm,TT/norm,TO/norm,LL/norm,RR/norm,LR/norm,OL/norm,OR/norm
 
 def BuildTree(tree_name,rf):
-        rf.cd()       
-        tree=ROOT.TTree(tree_name,tree_name)
-
-        tree.Branch("Lep_pt1",Lep_pt1,"Lep_pt1/F")
-        tree.Branch("Lep_eta1",Lep_eta1,"Lep_eta1/F")
-        tree.Branch("Lep_phi1",Lep_phi1,"Lep_phi1/F")    
-        tree.Branch("Lep_charge1",Lep_charge1,"Lep_charge1/F")    
-
-        tree.Branch("Lep_pt2",Lep_pt2,"Lep_pt2/F")
-        tree.Branch("Lep_eta2",Lep_eta2,"Lep_eta2/F")
-        tree.Branch("Lep_phi2",Lep_phi2,"Lep_phi2/F")
-        tree.Branch("Lep_charge2",Lep_charge2,"Lep_charge2/F")    
-
-        tree.Branch("Nu_pt1",Nu_pt1,"Nu_pt1/F")
-        tree.Branch("Nu_eta1",Nu_eta1,"Nu_eta1/F")
-        tree.Branch("Nu_phi1",Nu_phi1,"Nu_phi1/F")    
-
-        tree.Branch("Nu_pt2",Nu_pt2,"Nu_pt2/F")
-        tree.Branch("Nu_eta2",Nu_eta2,"Nu_eta2/F")
-        tree.Branch("Nu_phi2",Nu_phi2,"Nu_phi2/F")
-
-
-        tree.Branch("Jet_pt1",Jet_pt1,"Jet_pt1/F")
-        tree.Branch("Jet_eta1",Jet_eta1,"Jet_eta1/F")
-        tree.Branch("Jet_phi1",Jet_phi1,"Jet_phi1/F")    
-        tree.Branch("Jet_m1",Jet_m1,"Jet_m1/F")    
-
-        tree.Branch("Jet_pt2",Jet_pt2,"Jet_pt2/F")
-        tree.Branch("Jet_eta2",Jet_eta2,"Jet_eta2/F")
-        tree.Branch("Jet_phi2",Jet_phi2,"Jet_phi2/F")
-        tree.Branch("Jet_m2",Jet_m1,"Jet_m2/F")    
-
-        tree.Branch("MEt_Et",MEt_Et,"MEt_Et/F")
-        tree.Branch("MEt_Phi",MEt_Phi,"MEt_Phi/F")
-
-        tree.Branch("OOw",OOw,"OOw/F")
-        tree.Branch("TTw",TTw,"TTw/F") 
-        tree.Branch("TOw",TOw,"TOw/F") 
-
-        tree.Branch("LLw",LLw,"LLw/F")
-        tree.Branch("RRw",RRw,"RRw/F") 
-        tree.Branch("LRw",LRw,"LRw/F") 
-
-        tree.Branch("OLw",OLw,"OLw/F")
-        tree.Branch("ORw",ORw,"ORw/F") 
-
-        tree.Branch("ct1",ct1,"ct1/F")
-        tree.Branch("ct2",ct2,"ct2/F")
-        tree.Branch("Mww",Mww,"Mww/F")
-
-
-        return tree
-
-        
-
-
-if __name__ == "__main__":
-    if len(sys.argv) != 3: 
-        print help_str
-        sys.exit()
-    rf=ROOT.TFile(sys.argv[1])
-    print "Output:", sys.argv[2]
-    
-    w_tool=weight()
-
-    tree=rf.Get("truth")
-
     Lep_pt1=array("f",[0.])
     Lep_eta1=array("f",[0.])
     Lep_phi1=array("f",[0.])
@@ -156,11 +90,84 @@ if __name__ == "__main__":
     ct1=array("f",[0.])
     ct2=array("f",[0.])
     Mww=array("f",[0.])
+    
 
+
+    rf.cd()       
+    tree=ROOT.TTree(tree_name,tree_name)
+    
+    tree.Branch("Lep_pt1",Lep_pt1,"Lep_pt1/F")
+    tree.Branch("Lep_eta1",Lep_eta1,"Lep_eta1/F")
+    tree.Branch("Lep_phi1",Lep_phi1,"Lep_phi1/F")    
+    tree.Branch("Lep_charge1",Lep_charge1,"Lep_charge1/F")    
+    
+    tree.Branch("Lep_pt2",Lep_pt2,"Lep_pt2/F")
+    tree.Branch("Lep_eta2",Lep_eta2,"Lep_eta2/F")
+    tree.Branch("Lep_phi2",Lep_phi2,"Lep_phi2/F")
+    tree.Branch("Lep_charge2",Lep_charge2,"Lep_charge2/F")    
+    
+    tree.Branch("Nu_pt1",Nu_pt1,"Nu_pt1/F")
+    tree.Branch("Nu_eta1",Nu_eta1,"Nu_eta1/F")
+    tree.Branch("Nu_phi1",Nu_phi1,"Nu_phi1/F")    
+    
+    tree.Branch("Nu_pt2",Nu_pt2,"Nu_pt2/F")
+    tree.Branch("Nu_eta2",Nu_eta2,"Nu_eta2/F")
+    tree.Branch("Nu_phi2",Nu_phi2,"Nu_phi2/F")
+    
+    
+    tree.Branch("Jet_pt1",Jet_pt1,"Jet_pt1/F")
+    tree.Branch("Jet_eta1",Jet_eta1,"Jet_eta1/F")
+    tree.Branch("Jet_phi1",Jet_phi1,"Jet_phi1/F")    
+    tree.Branch("Jet_m1",Jet_m1,"Jet_m1/F")    
+    
+    tree.Branch("Jet_pt2",Jet_pt2,"Jet_pt2/F")
+    tree.Branch("Jet_eta2",Jet_eta2,"Jet_eta2/F")
+    tree.Branch("Jet_phi2",Jet_phi2,"Jet_phi2/F")
+    tree.Branch("Jet_m2",Jet_m1,"Jet_m2/F")    
+    
+    tree.Branch("MEt_Et",MEt_Et,"MEt_Et/F")
+    tree.Branch("MEt_Phi",MEt_Phi,"MEt_Phi/F")
+    
+    tree.Branch("OOw",OOw,"OOw/F")
+    tree.Branch("TTw",TTw,"TTw/F") 
+    tree.Branch("TOw",TOw,"TOw/F") 
+
+    tree.Branch("LLw",LLw,"LLw/F")
+    tree.Branch("RRw",RRw,"RRw/F") 
+    tree.Branch("LRw",LRw,"LRw/F") 
+    
+    tree.Branch("OLw",OLw,"OLw/F")
+    tree.Branch("ORw",ORw,"ORw/F") 
+    
+    tree.Branch("ct1",ct1,"ct1/F")
+    tree.Branch("ct2",ct2,"ct2/F")
+    tree.Branch("Mww",Mww,"Mww/F")
+
+    var_dict={}
+    for i in list(locals()):
+        if type(locals()[i])==array:
+            var_dict[i]=locals()[i]
+    return tree,var_dict
+
+        
+
+
+if __name__ == "__main__":
+    if len(sys.argv) != 3: 
+        print help_str
+        sys.exit()
+    rf=ROOT.TFile(sys.argv[1])
+    print "Output:", sys.argv[2]
+    
+    w_tool=weight()
+
+    tree=rf.Get("truth")
 
     rf_o=ROOT.TFile(sys.argv[2],"Recreate")
 
-    tt=BuildTree("Test",rf_o)
+    tt,var_dict=BuildTree("Test",rf_o)
+    for i in var_dict:
+        exec i+"="+"var_dict["+i+"]"
 
 
     for evt in range(tree.GetEntries()):

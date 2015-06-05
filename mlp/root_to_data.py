@@ -30,9 +30,11 @@ if __name__=="__main__":
       tar_sets=[[],[],[]]
 
       for evt in xrange(t.GetEntries()     ):
+          if evt%2==0:continue #Train only with odd entries
           t.GetEntry(evt)
-          input_v=[getattr(t,i) for i in input_vars]
+          input_v=[getattr(t,i) for i in input_vars]       
           target_v=[getattr(t,i) for i in target_vars]
+          if 0 in [input_v[0],input_v[6]]: continue #skip over events with missing info comes from delphes
           set_int=random.randint(0,2)
           in_sets[set_int].append( input_v )
           tar_sets[set_int].append(target_v )
@@ -41,7 +43,7 @@ if __name__=="__main__":
       valid_set=(array(in_sets[1]),array(tar_sets[1]))
       test_set=(array(in_sets[2]),array(tar_sets[2]))
 
-      out=gzip.open("./data/WWdata_ct2.pkl.gz","wb")
+      out=gzip.open("../data/WWdata_delphes_ct2.pkl.gz","wb")
 
       cPickle.dump([train_set,valid_set,test_set],out)
       out.close()

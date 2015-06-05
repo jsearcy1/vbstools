@@ -20,6 +20,7 @@ import theano
 import theano.tensor as T
 import matplotlib.pyplot as plt
 from load_data import  load_data
+from optparse import OptionParser
 
 import cPickle
 import random
@@ -54,14 +55,14 @@ def plot_stat(pred,actual):
 
     min_v=-1
     max_v=1
-    plt.figure(3)
-    plt.hist2d([i[0] for i in pred],[i[1] for i in pred],bins=20,range=((min_v,max_v),(min_v,max_v)))
+#    plt.figure(3)
+#    plt.hist2d([i[0] for i in pred],[i[1] for i in pred],bins=20,range=((min_v,max_v),(min_v,max_v)))
 
-    plt.figure(4)
-    plt.hist2d([i[0] for i in actual],[i[1] for i in actual],bins=20,range=((min_v,max_v),(min_v,max_v)))
+#    plt.figure(4)
+#    plt.hist2d([i[0] for i in actual],[i[1] for i in actual],bins=20,range=((min_v,max_v),(min_v,max_v)))
 
     plt.draw()    
-    plt.show(block=False)
+#    plt.draw()
         
 
 
@@ -303,8 +304,8 @@ def test_mlp(learning_rate=1*10**-4, L1_reg=0.00, L2_reg=0.0001, n_epochs=10000,
     done_looping = False
 #    pdb.set_trace()
     while (epoch < n_epochs) and (not done_looping):
-        for i in classifier.params:
-            print i.get_value()
+#        for i in classifier.params:
+#            print i.get_value()
 
         cPickle.dump(classifier,open(out_name+"_"+str(epoch)+".pkl","wb"))
 
@@ -381,6 +382,23 @@ def test_mlp(learning_rate=1*10**-4, L1_reg=0.00, L2_reg=0.0001, n_epochs=10000,
     #out_f.close()
 
 if __name__ == '__main__':
+    parser = OptionParser()
+    parser.add_option("-f", "--infile", dest="in_file",
+                      help="input template file", default=None)
+    parser.add_option("-o", "--out_tag", dest="out_tag",
+                      help="Out_tag_for training", default="MLPs/real_5")
+
+    parser.add_option("--lr", dest="learning_rate",type="float",
+                      help="learning_rate", default=.001)
+
+    parser.add_option("--hu", dest="hidden_units",type="float",
+                      help="hidden units", default=200)
+    parser.add_option("--hl", dest="hidden_layers",type="float",
+                      help="hidden layers", default=20)
+
+    (options, args) = parser.parse_args()
+
+    
     try:in_class=sys.argv[1]
     except: in_class=None
-    test_mlp(out_name="MLPs/real_4",in_class=in_class)
+    test_mlp(out_name=options.out_tag,in_class=options.in_file,learning_rate=options.learning_rate,n_hidden=options.hidden_units,n_layer=options.hidden_layers)
