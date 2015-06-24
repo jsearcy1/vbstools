@@ -7,7 +7,7 @@ input_vars=["Lep_pt1","Lep_eta1",
         "Jet_pt1","Jet_eta1",
         "Jet_phi1", "Jet_pt2",
         "Jet_eta2","Jet_phi2",
-        "MEt_Et","MEt_Phi","Mww"]
+        "MEt_Et","MEt_Phi","ct1","ct2","Mww"]
 
 
 rf=ROOT.TFile(sys.argv[1])

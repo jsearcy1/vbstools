@@ -11,10 +11,11 @@ help_str="""
 
 class weight:
     def __init__(self):
-        self.w_rf=ROOT.TFile("./data/hists_sm.root")
-        self.f0_w=self.w_rf.Get("fo")
-        self.fl_w=self.w_rf.Get("fl")
-        self.fr_w=self.w_rf.Get("fr")
+        pass
+#        self.w_rf=ROOT.TFile("./data/hists_sm.root")
+#        self.f0_w=self.w_rf.Get("fo")
+#        self.fl_w=self.w_rf.Get("fl")
+#        self.fr_w=self.w_rf.Get("fr")
 
 
     def get_weight(self,ct1,ct2,Mww):
@@ -167,36 +168,61 @@ if __name__ == "__main__":
 
     tt,var_dict=BuildTree("Test",rf_o)
     for i in var_dict:
-        exec i+"="+"var_dict["+i+"]"
+        exec i+"="+"var_dict['"+i+"']"
 
 
     for evt in range(tree.GetEntries()):
         tree.GetEntry(evt)
         if evt%1000==0:print "Processed ",evt," events"
-        W1,W2,j1,j2=Get4Vects(tree)
-
-        if -1 in [W1,W2,j1,j2]: continue
-        l1,n1=W1
-        l2,n2=W2
-        MET=(n1+n2)
-        MET.SetPz(0)
-
+        four_vs=Get4Vects(tree)
+        if len(four_vs)==6:
+            W1,W2,j1,j2,p1,p2=Get4Vects(tree)
+            
+            if p1 > 0 and p2 >0:
+                charge=-1
+            elif p1 < 0 and p2 <0:
+                charge=1
+            else:
+                charge=0
+            skip_truth=False
+            if -1 in [W1,W2,j1,j2]: continue
+            l1,n1=W1
+            l2,n2=W2
+            MET=(n1+n2)
+            MET.SetPz(0)
+        if len(four_vs)==5:
+            skip_truth=True
+            l1,l2,nus,j1,j2=four_vs
+            MET=nus[0]
+            for nu in nus[1:]:
+                MET=MET+nu
+            n1=ROOT.TLorentzVector()
+            n2=ROOT.TLorentzVector()
+            charge=0
         Lep_pt1[0]=l1.Pt()
         Lep_eta1[0]=l1.Eta()
         Lep_phi1[0]=l1.Phi()
+        Lep_charge1[0]=charge
 
         Lep_pt2[0]=l2.Pt()
         Lep_eta2[0]=l2.Eta()
         Lep_phi2[0]=l2.Phi()
+        Lep_charge2[0]=charge
 
-
-        Nu_pt1[0]=n1.Pt()
-        Nu_eta1[0]=n1.Eta()
-        Nu_phi1[0]=n1.Phi()
-
-        Nu_pt2[0]=n2.Pt()
-        Nu_eta2[0]=n2.Eta()
-        Nu_phi2[0]=n2.Phi()
+        if skip_truth:
+            Nu_pt1[0]=0.0
+            Nu_eta1[0]=0.0
+            Nu_phi1[0]=0.0           
+            Nu_pt2[0]=0.0
+            Nu_eta2[0]=0.0
+            Nu_phi2[0]=0.0
+        else:
+            Nu_pt1[0]=n1.Pt()
+            Nu_eta1[0]=n1.Eta()
+            Nu_phi1[0]=n1.Phi()
+            Nu_pt2[0]=n2.Pt()
+            Nu_eta2[0]=n2.Eta()
+            Nu_phi2[0]=n2.Phi()
 
 
         Jet_pt1[0]=j1.Pt()
@@ -211,10 +237,16 @@ if __name__ == "__main__":
 
         MEt_Et[0]=MET.Pt()
         MEt_Phi[0]=MET.Phi()
+        
         Mww[0]=(l1+l2+n1+n2).M()
         ###Don't fill any kinematics after this, as it boosts to the rest frame!!!!
-        c1=GetCosThetaS(W2)
-        c2=GetCosThetaS(W1)
+        if skip_truth:
+            c1=0
+            c2=0
+        else:
+            c1=GetCosThetaS(W2)
+            c2=GetCosThetaS(W1)
+            
         ct1[0]=c1
         ct2[0]=c2
 

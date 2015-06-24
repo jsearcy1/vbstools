@@ -29,6 +29,7 @@ h_fr=rf_ff.Get("fl")
 h_fo=rf_ff.Get("fo")
 
 def recal_w(t):
+    charge=t.Lep_charge1 #1 and 2 are equal for ssWW
 
     bin=h_fl.FindBin(t.Mww)
     if bin >= h_fl.GetNbinsX():
@@ -51,20 +52,27 @@ def recal_w(t):
 #    fo=0.2925406254842256
 
 
-    norm= (  ( fl*(3./8.*(1-ct1)**2) +fr*(3./8.*(1+ct1)**2)+f0*(3./4.*(1-ct1**2))  )
+    norm= (  ( fl*(3./8.*(1-ct1*charge)**2) +fr*(3./8.*(1+ct1*charge)**2)+f0*(3./4.*(1-ct1**2))  )
              * (  fl*(3./8.*(1-ct2)**2) +fr*(3./8.*(1+ct2)**2)+ f0*(3./4.*(1-ct2**2))  ) )
     if norm==0: 
-        print "normalization is 0 this should never happen, dumping to debug shell"
-        pdb.set_trace() 
+#        print "normalization is 0 this should never happen, dumping to debug shell"
+        t.OOw=1
+        t.LLw=1
+        t.RRw=1
+        t.LRw=1
+        t.OLw=1
+        t.ORw=1       
+        return
+#        pdb.set_trace() 
     t.OOw=((3./4.*(1-ct1**2)*f0)*(3./4.*(1-ct2**2)*f0 ))/norm
-    t.LLw=((3./8.*(1-ct1)**2*fl)*(3./8.*(1-ct2)**2*fl))/norm
-    t.RRw=((3./8.*(1+ct1)**2)*fr*(3./8.*(1+ct2)**2*fr))/norm
-    t.LRw=(((3./8.*(1-ct1)**2*fl+3./8.*(1+ct1)**2*fr) * (3./8.*(1-ct2)**2*fl +3./8.*(1+ct2)**2*fr))/norm-t.LLw-t.RRw)
+    t.LLw=((3./8.*(1-ct1*charge)**2*fl)*(3./8.*(1-ct2)**2*fl))/norm
+    t.RRw=((3./8.*(1+ct1*charge)**2)*fr*(3./8.*(1+ct2)**2*fr))/norm
+    t.LRw=(((3./8.*(1-ct1*charge)**2*fl+3./8.*(1+ct1*charge)**2*fr) * (3./8.*(1-ct2)**2*fl +3./8.*(1+ct2)**2*fr))/norm-t.LLw-t.RRw)
    
-    t.OLw=((3./8.*(1-ct1)**2*fl)*(3./4.*(1-ct2**2)*f0)+(3./4.*(1-ct1**2)*f0)*(3./8.*(1-ct2)**2*fl))/norm
-    t.ORw=((3./8.*(1+ct1)**2*fr)*(3./4.*(1-ct2**2)*f0)+(3./4.*(1-ct1**2)*f0)*(3./8.*(1+ct2)**2*fr))/norm
-    #t.TTw=(3./8.*(1-ct1)**2*fl+3./8.*(1+ct1)**2*fr)*(3./8.*(1-ct2)**2*fl +3./8.*(1+ct2)**2*fr)/norm
-    #t.TOw=(3./8.*(1-ct1)**2*fl+3./8.*(1+ct1)**2*fr)*(3./4.*(1-ct2**2)*f0)+(3./8.*(1-ct2)**2*fl +3./8.*(1+ct2)**2*fr)*(3./4.*(1-ct1**2)*f0)/norm
+    t.OLw=((3./8.*(1-ct1*charge)**2*fl)*(3./4.*(1-ct2**2)*f0)+(3./4.*(1-ct1**2)*f0)*(3./8.*(1-ct2)**2*fl))/norm
+    t.ORw=((3./8.*(1+ct1*charge)**2*fr)*(3./4.*(1-ct2**2)*f0)+(3./4.*(1-ct1**2)*f0)*(3./8.*(1+ct2)**2*fr))/norm
+    #t.TTw=(3./8.*(1-ct1*charge)**2*fl+3./8.*(1+ct1*charge)**2*fr)*(3./8.*(1-ct2)**2*fl +3./8.*(1+ct2)**2*fr)/norm
+    #t.TOw=(3./8.*(1-ct1*charge)**2*fl+3./8.*(1+ct1*charge)**2*fr)*(3./4.*(1-ct2**2)*f0)+(3./8.*(1-ct2)**2*fl +3./8.*(1+ct2)**2*fr)*(3./4.*(1-ct1**2)*f0)/norm
     
 #    if t.OOw+t.LLw+t.RRw+t.LRw+t.OLw+t.ORw != 1: 
 #        print  t.OOw+t.LLw+t.RRw+t.LRw+t.OLw+t.ORw 
@@ -87,11 +95,13 @@ if __name__=="__main__":
       parser.add_option("-t", "--truth", dest="truth",type="int",
                       help="use actual cos theta instead of MLP output", default=False)
       parser.add_option("-x", "--xsec", dest="xsec",type="float",
-                      help="xsec to normalize data histograms fb.", default=10)
+                      help="xsec to normalize data histograms fb.", default=8.4)
       parser.add_option( "--MLP", dest="MLP",
                           help="pickle file with the MLP weights", default="MLPs/mlp_model.pkl")
       parser.add_option( "--var", dest="var",
                           help="pickle file with the MLP weights", default="")
+      parser.add_option( "--cuts", dest="cuts",type="int",
+                         help="use atlas cuts", default=0)
 
 
       (options, args) = parser.parse_args()
@@ -178,20 +188,65 @@ if __name__=="__main__":
                    t.Jet_pt2,t.Jet_eta2,t.Jet_phi2,
                    t.Lep_pt1,t.Lep_eta1,t.Lep_phi1,
                    t.Lep_pt1,t.Lep_eta1,t.Lep_phi1]:continue #event lost to delphes reco
-          #Pt Cuts
-#          if t.Jet_pt1 < 30: continue
-#          if t.Jet_pt2 < 30: continue
 
-#          if t.Lep_pt1 < 25: continue
-#          if t.Lep_pt2 < 25: continue
-#          if t.MEt_Et < 40: continue
-          #
-
-
+#          Pt Cuts
           j1.SetPtEtaPhiM(t.Jet_pt1,t.Jet_eta1,t.Jet_phi1,0.)
           j2.SetPtEtaPhiM(t.Jet_pt2,t.Jet_eta2,t.Jet_phi2,0.)
           l1.SetPtEtaPhiM(t.Lep_pt1,t.Lep_eta1,t.Lep_phi1,0.)
           l2.SetPtEtaPhiM(t.Lep_pt2,t.Lep_eta2,t.Lep_phi2,0.)
+
+          if options.cuts==1 or options.cuts==7:
+              if t.Jet_pt1 < 30: continue
+              if t.Jet_pt2 < 30: continue
+
+              if t.Lep_pt1 < 25: continue
+              if t.Lep_pt2 < 25: continue
+              if t.MEt_Et < 40: continue
+              if (j1+j1).M() > 500: continue
+              if abs(j1.Rapidity()-j2.Rapidity()) < 2.4:continue
+          if options.cuts ==7:#tight Jet cuts
+              if t.Jet_pt1 < 60: continue
+              if t.Jet_pt2 < 60: continue
+
+
+          if options.cuts==2: # no MET
+              if t.Jet_pt1 < 30: continue
+              if t.Jet_pt2 < 30: continue
+              if t.Lep_pt1 < 25: continue
+              if t.Lep_pt2 < 25: continue
+              if (j1+j1).M() > 500: continue
+              if abs(j1.Rapidity()-j2.Rapidity()) < 2.4:continue
+
+          if options.cuts==3: # no rapididty
+              if t.Jet_pt1 < 30: continue
+              if t.Jet_pt2 < 30: continue
+              if t.Lep_pt1 < 25: continue
+              if t.Lep_pt2 < 25: continue
+              if (j1+j1).M() > 500: continue
+
+          if options.cuts==4: # no Mjj
+              if t.Jet_pt1 < 30: continue
+              if t.Jet_pt2 < 30: continue
+              if t.Lep_pt1 < 25: continue
+              if t.Lep_pt2 < 25: continue
+
+          if options.cuts==5: # low pt
+              if t.Jet_pt1 < 20: continue
+              if t.Jet_pt2 < 20: continue
+              if t.Lep_pt1 < 20: continue
+              if t.Lep_pt2 < 20: continue
+
+          if options.cuts==6: # lower pt
+              if t.Jet_pt1 < 20: continue
+              if t.Jet_pt2 < 20: continue
+              if t.Lep_pt1 < 10: continue
+              if t.Lep_pt2 < 10: continue
+
+
+
+          
+
+
           met.SetPtEtaPhiM(t.MEt_Et,0.,t.MEt_Phi,0)
           mass=(l1+l2+met)
           tmp.Fill(mass.M())
@@ -200,7 +255,6 @@ if __name__=="__main__":
           if mt_high < mass.M():continue
 
 
-          if (j1+j1).M() > 500: continue
 
           h_ctsa.Fill(t.ct1)
           h_ctsa.Fill(t.ct2)
@@ -215,7 +269,7 @@ if __name__=="__main__":
           if template_func:              
               norm.Fill(var,xsec_w) 
               for weight,hist in zip(weights,hists):
-                  hist.Fill(var,getattr(t,weight))
+                  hist.Fill(var,getattr(t,weight)*xsec_w)
               h_norm1d.Fill(var,xsec_w)
               h_L.Fill(var,(t.LLw+t.OLw/2.+t.LRw/2.)*xsec_w)   
               h_R.Fill(var,(t.RRw+t.ORw/2.+t.LRw/2.)*xsec_w)   
