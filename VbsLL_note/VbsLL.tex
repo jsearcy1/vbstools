@@ -19,13 +19,30 @@
 
 
 \begin{document}
-\begin{abstract}The unitarization of the longitudinal Vector Boson Scattering (VBS) cross section by the Higgs boson is a fundamental prediction of the Standard Model which has not been experimentally verified. In the first LHC run, ATLAS and CMS presented the first studies of VBS in events with two leptonically decaying same sign W bosons produced in association with two jets. This VBS channel has the advantage of having very small backgrounds compared to other VBS channels. However, the two neutrinos in the final state make full kinematic event reconstruction and hence evaluation the longitudinal scattering fraction difficult. The angular distributions of the leptons in the W boson rest frame, which are commonly used to fit polarization fractions, are not readily available due to the missing information resulting from the unmeasured neutrinos. In this paper we present a method to circumvent this problem by using deep machine learning to recover the angular distributions from measurable event kinematics, and compare sensitivities to longitudinal vector boson scattering with more traditional methods.
+\begin{abstract}The unitarization of the longitudinal Vector Boson Scattering (VBS) cross section by the Higgs boson is a fundamental prediction of the Standard Model which has not been experimentally verified. In the first LHC run, ATLAS and CMS presented the first studies of VBS in events with two leptonically decaying same sign W bosons produced in association with two jets~\cite{a,b}. This VBS channel has the advantage of having small background contributions and yet a detectable rate compared to other VBS channels. However, the two neutrinos in the final state make full kinematic event reconstruction and hence evaluation the longitudinal scattering fraction difficult. The angular distributions of the leptons in the W boson rest frame, which are commonly used to fit polarization fractions, are not readily available due to the missing information resulting from the unmeasured neutrinos. In this paper we present a method to circumvent this problem by using deep machine learning to recover the angular distributions from measurable event kinematics, and compare sensitivities to longitudinal vector boson scattering with more traditional methods.
 \end{abstract}
 
 \section{Introduction}
 
 
-The discovery of the Higgs-like boson at the LHC~\cite{ATLAS_higgs,CMS_higgs}, was the first step toward determining the properties of electroweak symmetry breaking (EWSB). One important, and unverified, prediction of the Standard Model is that the scattering amplitude of longitudinal vector bosons ($V_{L}V_{L} \rightarrow V_{L}V_{L}$) is unitarized by the Higgs boson. Measuring VBS processes at a hadron collider, however, is experimentally challenging. Currently, the ATLAS and CMS collaborations have only been able study the  W+,W+,jj final state~\cite{ATLAS_ssWW,CMS_ssWW}. This final state with two same sign leptons has the advantage of relatively small background from other standard model processes including  ``strong'' production which dominates other VBS/VBF process. While an ideal candidate for observing VBS, measuring the longitudinal fraction of these events is not straight froward. In general the polarization of a gauge boson can be determined from the angular distribution of its decay products~\cite{?}. For a leptonic W the differential cross section can be written in terms of polarization fractions as
+The discovery of the Higgs-like boson at the
+LHC~\cite{ATLAS_higgs,CMS_higgs}, was the first step toward
+determining the properties of electroweak symmetry breaking
+(EWSB). One important, and unverified, prediction of the Standard
+Model is that the scattering amplitude of longitudinal vector bosons
+($V_{L}V_{L} \rightarrow V_{L}V_{L}$) is unitarized by the Higgs
+boson. Measuring VBS processes at a hadron collider, however, is
+experimentally challenging. Currently, the ATLAS and CMS
+collaborations have only been able study the W+,W+,jj final
+state~\cite{ATLAS_ssWW,CMS_ssWW}. This final state with two same sign
+leptons has the advantage of relatively small background from other
+standard model processes including ``strong'' production which
+dominates other VBS/VBF process. While an ideal candidate for
+observing VBS, measuring the longitudinal fraction of these events is
+not straight froward. In general the polarization of a gauge boson can
+be determined from the angular distribution of its decay
+products~\cite{?}. For a leptonic W the differential cross section can
+be written in terms of polarization fractions as
 
 %\begin{equation}
 \begin{multline}
