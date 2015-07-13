@@ -62,8 +62,7 @@ longitudinal scattering is encompassed in a single variable, and that
 better discrimination could be obtained by combining the available
 event information with a machine learning technique. In this paper we
 develop a method to use a neural network to map measurable quantities
-to the truth \cts values that contain the polarization information of
-these two $W$ bosons.
+to the true \cts values that contain the events polarization information.
 
 %\section{Machine learning model}
 While it has become common practice in high energy physics to use
@@ -85,35 +84,31 @@ choose a multi-layer neural network with a final output layer with
 linear activation. The neural network is implemented with the Theano
 software packages~\cite{theano}. Hyper-parameters are tuned by hand,
 but undoubtedly could be improved.  The cost function is defined as 
-${\cal{C}}= \sum_{i=1}^{N} [(\ctsnb_{1,i} -\cos \theta^{NN}_{1,i})^2+(\ctsnb_{2,i}-\cos \theta^{NN}_{2,i})^2]/2N$, 
-where $N$ is the overall number of events used,
+${\cal{C}}= \sum_{i=1}^{N} [(\ctsnb_{1,i} -\cos \theta^{NN}_{1,i})^2+(\ctsnb_{2,i}-\cos \theta^{NN}_{2,i})^2]/N$, 
+where $N$ is the number of events per mini-batch,
 $\ctsnb_{1/2,i}$ is the truth value of \cts for each $W$ boson with
 random ordering for the $i$-th event, and $\cos \theta^{NN}_{1/2, i}$ is the value of
-the two neural network outputs.  The stochastic gradient descent
-algorithm~\cite{sgd} is used to find all weights and biases in the
-neural network that minimizes the overall cost function using a
-training sample.
+the two neural network outputs. Stochastic gradient descent
+algorithm~\cite{sgd} is used to train the neural network.
 
 Signal \ssWW events are generated using the {\sc madgraph} event generator~\cite{madgraph} at a proton-proton center-of-mass energy of 13 TeV.  
 The NN23l01 {\bf find more correct name for this PDF set} parton distribution function~\cite{pdf} is used as the default. 
 The following selection criteria are applied during the event generation: outgoing parton $p_T > 20$ GeV and $|\eta| < 5$, 
-lepton $p_T > 10$ GeV and $|\eta| < 2.5$, and the invariant mass of the two outgoing partons must be greater than 150 GeV.
-%The resulting cross section at 13~TeV is 8.4~fb, which is used to normalize the expected number of signal events.
+lepton $p_T > 10$ GeV and $|\eta| < 2.5$, and the invariant mass of the two outgoing partons must be greater than 150 GeV. The resulting cross section at 13~TeV is 8.4~fb, which is used to normalize the expected number of signal events{\bf why did we remove this?}.
 To emulate the response of a typical general-purpose LHC detector, these events are parton-showered using {\sc pythia}\cite{pythia} and passed through the 
-response simulation of the ATLAS detector implemented in {\sc delphes}~\cite{delphes}. {\bf mention jet alg/size etc. here} Events
+response simulation of the CMS {\bf it really is the CMS detector not ATLAS} detector implemented in {\sc delphes}~\cite{delphes}. {\bf mention jet alg/size etc. here} Events
 are split into three categories: 1/4 are used in a training sample,
 1/4 are used for a validation test against over-training, and the
 remaining 1/2 are used to build templates and perform sensitivity
 studies. A ** layer neural network with ** hidden neurons and a
-learning rate of ** is used.
+learning rate of ** is used {\bf I can move thie earlier, but I also didn't use a fixed learning rate }.
 
-The dominant background to the \ssWW process comes from the $WZjj$ process where one of 
+The dominant background {\bf only true for ATLAS} to the \ssWW process comes from the $WZjj$ process where one of 
 the leptons from the $Z$ boson decay is not detected or reconstructed. We also use the 
 {\sc madgraph} event generator to produce $WZjj$ events.
 
 %\section{\label{sec:signal} Signal Model}
-Polarization fractions can be obtained by fitting the two-dimensional distribution 
-of the truth \cts or the NN output \ctsNN for each $W$ boson.  
+Polarization fractions can then be obtained by experimentally fitting the two-dimensional distribution of the NN output \ctsNN.  
 In order to fit for these polarization fractions templates must be built for ``pure'' polarization states. These
 templates are created by reweighting each event based on the truth
 \cts distribution. The event weight $W_i$ for polarization state $i$ is given by
@@ -126,7 +121,7 @@ n=[ \frac{3}{8} f_- (1 \mp \ctsnb_1)^2 + \frac{3}{8} f_+ (1 \pm \ctsnb_1)^ 2 +\f
 The index $i$ represents one of six possible polarization states for the two
 $W$ bosons: Left-Left ($--$), Left-Right ($-+$), Right-Right($++$),
 Left-Longitudinal ($-L$), Right-Longitudinal ($+L$), or
-Longitudinal-Longitudinal ($LL$). $F_i$ is defined as \small
+Longitudinal-Longitudinal ($LL$) {\bf no reason to name them Left/Right if we are using +/-}. $F_i$ is defined as \small
 \begin{equation}
 F_i \in  \left( \begin{array}{c} 
   --=f_-^2 (1 \mp \ctsnb_1)^2(1 \mp \ctsnb_2)^2,\\
@@ -144,22 +139,21 @@ $f_+$, $f_L$ are take as a function of the invariant mass of the
 diboson system ($M_{WW}$).  Weights are calculated before any
 additional event level cuts are made, and the resulting templates are
 remade for each set of cuts explored.  
-To validate the reweighting procedure, we also generate pure polarization state samples using {\sc
-  madspin} and compare the obtained events kinematics with those
-obtained from the reweighted sample. {\bf Does this mean you got the
-  MG5 scripts to work and add the helicity to the lhe?}
+%To validate the reweighting procedure, we also generate pure polarization state samples using {\sc
+%  madspin} and compare the obtained events kinematics with those
+%obtained from the reweighted sample. 
+{\bf Does this mean you got the
+  MG5 scripts to work and add the helicity to the lhe? A. No this was never done removed this.}
  
 Figure~\ref{fig:polarization_comparison}(a) shows the comparison between the truth \cts and 
-the NN output \ctsNN for $--$, $++$ and $LL$ events. As expected, \ctsNN has less seperation 
+the NN output \ctsNN for $--$, $++$ and $LL$ events ( $-+/L+/L-$ are omiited for clearity but closely resemble combinations of the templates shown). As expected, \ctsNN has less seperation 
 power to different polarization states compared to \cts due to missing information for the two final state neutrinos. 
 However, reasonable discrimination between each polarization state can clearly be seen from these distributions. 
 Figure~\ref{fig:polarization_comparison}(b) shows the $R_{p_T}$ distribution for $--$, $++$, and $LL$ events. 
-The discrimination power is seen only for large values of $R_{p_T}$. Due to the logarithmic distribution shown here, 
-$R_{p_T}$ has less sensitivity to different polarization states compared to \ctsNN.
+The discrimination power is seen only for large values of $R_{p_T}$, and only apparent with a logorithm scale.
 
-Figure~\ref{fig:polarization_comparison}(c) shows the \ctsNN distribution between the signal \ssWW process and the dominant background $WZjj$ process. 
-Reasonable separation power can be found. In actual data analysis, this would involve first selecting
-events to remove SM backgrounds and then subtracting predicted background from data. 
+Figure~\ref{fig:polarization_comparison}(c) shows the \ctsNN distribution between the signal \ssWW process and the background $WZjj$ process. 
+Reasonable separation power can be found. In actual data analysis, component would be subtracted as background from observed data before fitting for the polarization fractions. 
 
 \begin{figure*}
 \includegraphics[width=.32\textwidth]{./fig/1d_templates_graph_X.pdf}
@@ -179,7 +173,7 @@ distribution in data to derive each polarization fraction. Five equal-size bins
 are used for each \ctsNN variable ranging from -1 to 1. A maximum likelihood fit is performed 
 within the RooFit framework~\cite{aa}. Fit uncertainties are determined by randomly
 fluctuating data expectations within their Poisson errors and
-repeating the fit, and confidence intervals are derived from the toy experiments.  
+repeating the fit, and confidence intervals are derived from these toy experiments.  
 {\bf (need to put more description here about 68\% and 95\% level limits)}
 %To validate the fitting method, we also make sure the
 %fitted values for each fraction agree with with the values obtained at
@@ -193,7 +187,7 @@ one $W$ boson transversely-polarized and one $W$ boson
 longitudinally-polarized as ``$TL$'' (the sum of $-L$ and $+L$
 combinations), and events with both $W$ bosons
 longitudinally-polarized as ``$LL$''. This reduces the free fitting parameters from 5 to 2 and 
-allows to better constrain the $LL$ scattering fraction of interest, under the assumption that
+allows for a better constraint on the $LL$ scattering fraction of interest, under the assumption that
 the relative admixture of contributions within $TT$ and $TL$ does not change. 
 
 Figure~\ref{fig:fit_example} shows one example fit where the pseudo data are compared to the sum of 
