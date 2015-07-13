@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Cygwin) (preloaded format=pdflatex 2015.7.2)  7 JUL 2015 21:19
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.10.17)  13 JUL 2015 14:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**VbsLL
+**VbsLL.tex
 (./VbsLL.tex
-LaTeX2e <2014/05/01>
-Babel <3.9k> and hyphenation patterns for 78 languages loaded.
+LaTeX2e <2011/06/27>
+Babel <3.9h> and hyphenation patterns for 78 languages loaded.
 (./revtex4.cls
 
 LaTeX Warning: You have requested document class `revtex4',
@@ -70,7 +70,7 @@ Class revtex4-1 Info: Overriding \@vspace, \@vspacer, \@no@pgbk, \@newline, and
 \widetext@top=\box39
 \widetext@bot=\box40
 Class revtex4-1 Info: Selecting society aps on input line 7542.
-(/usr/share/texmf-dist/tex/latex/revtex/aps4-1.rtx
+(/usr/share/texlive/texmf-dist/tex/latex/revtex/aps4-1.rtx
 File: aps4-1 2010/07/25/20:33:00 4.1r (http://publish.aps.org/revtex4/ for docu
 mentation)
 Class revtex4-1 Info: RevTeX society APS selected on input line 31.
@@ -81,14 +81,13 @@ Class revtex4-1 Info: APS journal PRD selected on input line 7545.
 
 Class revtex4-1 Warning: No type size specified, using default 10.
 
-(/usr/share/texmf-dist/tex/latex/revtex/aps10pt4-1.rtx
+(/usr/share/texlive/texmf-dist/tex/latex/revtex/aps10pt4-1.rtx
 File: aps10pt4-1 2010/07/25/20:33:00 4.1r (http://publish.aps.org/revtex4/ for 
 documentation)
 Class revtex4-1 Info: RevTeX pointsize 10pt selected on input line 30.
 ) (./textcase.sty
 Package: textcase 1998/11/12 v0.06 Text only upper/lower case changing (DPC)
-)
-(/usr/share/texmf-dist/tex/latex/url/url.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 ) (./natbib.sty
@@ -105,36 +104,36 @@ LaTeX Warning: You have requested, on input line 7549, version
                `1998/07/14 6.8c (PWD)'
                is available.
 
-(/usr/share/texmf-dist/tex/latex/revtex/revsymb4-1.sty
+(/usr/share/texlive/texmf-dist/tex/latex/revtex/revsymb4-1.sty
 Package: revsymb4-1 2010/07/25/20:33:00 4.1r (http://publish.aps.org/revtex4/ f
 or documentation)
 LaTeX Info: Redefining \REV@mathfrak on input line 119.
 ))
-(/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2014/04/25 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 2014/05/08 v1.15 key=value parser (DPC)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks16
 )
-(/usr/share/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texmf-dist/tex/latex/graphics/trig.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(/usr/share/texmf-dist/tex/latex/latexconfig/graphics.cfg
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
 File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
-(/usr/share/texmf-dist/tex/latex/pdftex-def/pdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-(/usr/share/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-(/usr/share/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count95
@@ -142,10 +141,10 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen102
 \Gin@req@width=\dimen103
 )
-(/usr/share/texmf-dist/tex/latex/tools/dcolumn.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tools/dcolumn.sty
 Package: dcolumn 2001/05/28 v1.06 decimal alignment package (DPC)
 
-(/usr/share/texmf-dist/tex/latex/tools/array.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \col@sep=\dimen104
 \extrarowheight=\dimen105
@@ -153,18 +152,18 @@ Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \extratabsurround=\skip46
 \backup@length=\skip47
 ))
-(/usr/share/texmf-dist/tex/latex/tools/bm.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tools/bm.sty
 Package: bm 2004/02/26 v1.1c Bold Symbol Support (DPC/FMi)
 \symboldoperators=\mathgroup4
 \symboldletters=\mathgroup5
 \symboldsymbols=\mathgroup6
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 137.
-LaTeX Info: Redefining \bm on input line 203.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 138.
+LaTeX Info: Redefining \bm on input line 204.
 )
-(/usr/share/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-(/usr/share/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \@emptytoks=\toks18
 \symAMSa=\mathgroup7
@@ -174,36 +173,36 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 LaTeX Info: Redefining \frak on input line 111.
 LaTeX Info: Redefining \Bbb on input line 113.
 ))
-(/usr/share/texmf-dist/tex/latex/multirow/multirow.sty
+(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
 \bigstrutjot=\dimen106
 )
-(/usr/share/texmf-dist/tex/latex/graphics/epsfig.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/epsfig.sty
 Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
 \epsfxsize=\dimen107
 \epsfysize=\dimen108
 )
-(/usr/share/texmf-dist/tex/latex/oberdiek/epstopdf.sty
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf.sty
 Package: epstopdf 2010/02/09 v2.5 Conversion with epstopdf on the fly (HO)
 
-(/usr/share/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
-(/usr/share/texmf-dist/tex/latex/oberdiek/grfext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
 Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
 
-(/usr/share/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
 Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
 ))
-(/usr/share/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 
-(/usr/share/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
 Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
 
-(/usr/share/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
 Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
 
-(/usr/share/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
 Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
 )
@@ -212,11 +211,11 @@ Package etexcmds Info: Could not find \expanded.
 (etexcmds)             that some package has redefined \expanded.
 (etexcmds)             In the latter case, load this package earlier.
 )))
-(/usr/share/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-(/usr/share/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
 Package ifpdf Info: pdfTeX in PDF mode is detected.
 )
@@ -230,31 +229,31 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 452.
 
-(/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 )))
-(/usr/share/texmf-dist/tex/latex/amsmath/amsmath.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2013/01/14 v2.14 AMS math features
 \@mathmargin=\skip48
 
 For additional information on amsmath, use the `?' option.
-(/usr/share/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01
 
-(/usr/share/texmf-dist/tex/latex/amsmath/amsgen.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks19
 \ex@=\dimen109
 )
 LaTeX Info: Redefining \text on input line 39.
 )
-(/usr/share/texmf-dist/tex/latex/amsmath/amsbsy.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
 LaTeX Info: Redefining \boldsymbol on input line 39.
 \pmbraise@=\dimen110
 )
-(/usr/share/texmf-dist/tex/latex/amsmath/amsopn.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count96
@@ -295,7 +294,7 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
 )
-(/usr/share/texmf-dist/tex/latex/booktabs/booktabs.sty
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \heavyrulewidth=\dimen118
 \lightrulewidth=\dimen119
@@ -314,11 +313,19 @@ Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \@thisruleclass=\count110
 \@lastruleclass=\count111
 \@thisrulewidth=\dimen130
+)
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count112
+\float@exts=\toks24
+\float@box=\box43
+\@float@everytoks=\toks25
+\@floatcapt=\box44
 ) (./atlasphysics.sty
-\hrs=\count112
-\minu=\count113
-\temptime=\count114
-\boxsqbox=\box43
+\hrs=\count113
+\minu=\count114
+\temptime=\count115
+\boxsqbox=\box45
 \boxsize=\dimen131
 \dkwidth=\dimen132
 )
@@ -326,7 +333,8 @@ Package: booktabs 2005/04/14 v1.61803 publication quality tables
 Package: eqparbox 2010/01/01 v3.1 Create equal-widthed boxes
 \eqp@tempdima=\skip51
 \eqp@tempdimb=\skip52
-) (/usr/share/texmf-dist/tex/latex/subfigure/subfigure.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/subfigure/subfigure.sty
 Package: subfigure 2002/03/15 v2.1.5 subfigure package
 \subfigtopskip=\skip53
 \subfigcapskip=\skip54
@@ -334,122 +342,125 @@ Package: subfigure 2002/03/15 v2.1.5 subfigure package
 \subfigbottomskip=\skip55
 \subfigcapmargin=\dimen134
 \subfiglabelskip=\skip56
-\c@subfigure=\count115
-\c@lofdepth=\count116
-\c@subtable=\count117
-\c@lotdepth=\count118
+\c@subfigure=\count116
+\c@lofdepth=\count117
+\c@subtable=\count118
+\c@lotdepth=\count119
 
 ****************************************
 * Local config file subfigure.cfg used *
 ****************************************
-(/usr/share/texmf-dist/tex/latex/subfigure/subfigure.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/subfigure/subfigure.cfg)
 \subfig@top=\skip57
 \subfig@bottom=\skip58
 )
-(/usr/share/texmf-dist/tex/latex/tools/xspace.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2009/10/20 v1.13 Space after command names (DPC,MH)
 )
-(/usr/share/texmf-dist/tex/latex/carlisle/slashed.sty
+(/usr/share/texlive/texmf-dist/tex/latex/carlisle/slashed.sty
 Package: slashed 1997/01/16 v0.01 Feynman Slashed Character Notation (DPC)
 )
-Class revtex4-1 Info: Patching array package. on input line 28.
-Class revtex4-1 Info: Robustifying \LaTeX's \boldmath command on input line 28.
+Class revtex4-1 Info: Patching array package. on input line 31.
 
-Class revtex4-1 Info: cite was not loaded (OK!) on input line 28.
-Class revtex4-1 Info: mcite was not loaded (OK!) on input line 28.
-Class revtex4-1 Info: multicol was not loaded (OK!) on input line 28.
- (./VbsLL.aux)
+
+Class revtex4-1 Warning: Repair the float package.
+
+Class revtex4-1 Info: Robustifying \LaTeX's \boldmath command on input line 31.
+
+Class revtex4-1 Info: cite was not loaded (OK!) on input line 31.
+Class revtex4-1 Info: mcite was not loaded (OK!) on input line 31.
+Class revtex4-1 Info: multicol was not loaded (OK!) on input line 31.
+(./VbsLL.aux)
 \openout1 = `VbsLL.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-
-(/usr/share/texmf-dist/tex/context/base/supp-pdf.mkii
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+ (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count119
+\scratchcounter=\count120
 \scratchdimen=\dimen135
-\scratchbox=\box44
-\nofMPsegments=\count120
-\nofMParguments=\count121
-\everyMPshowfont=\toks24
-\MPscratchCnt=\count122
+\scratchbox=\box46
+\nofMPsegments=\count121
+\nofMParguments=\count122
+\everyMPshowfont=\toks26
+\MPscratchCnt=\count123
 \MPscratchDim=\dimen136
-\MPnumerator=\count123
-\makeMPintoPDFobject=\count124
-\everyMPtoPDFconversion=\toks25
+\MPnumerator=\count124
+\makeMPintoPDFobject=\count125
+\everyMPtoPDFconversion=\toks27
 )
 \openout3 = `VbsLLNotes.bib'.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 39.
- (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
+LaTeX Font Info:    Try loading font information for U+msa on input line 48.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 39.
+LaTeX Font Info:    Try loading font information for U+msb on input line 48.
 
-(/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
+) (./main.tex
 
-Class revtex4-1 Warning: Assuming \noaffiliation for authors.
-
-(./main.tex
-
-Package natbib Warning: Citation `bla' on page 1 undefined on input line 28.
+Package natbib Warning: Citation `bla' on page 1 undefined on input line 26.
 
 
-Package natbib Warning: Citation `aa' on page 1 undefined on input line 54.
+Package natbib Warning: Citation `aa' on page 1 undefined on input line 50.
 
 
 Package natbib Warning: Citation `le houche report' on page 1 undefined on inpu
-t line 54.
+t line 50.
+
+
+Package natbib Warning: Citation `aaa' on page 1 undefined on input line 56.
 
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 
-Package natbib Warning: Citation `theano' on page 2 undefined on input line 92.
+Package natbib Warning: Citation `coordinate' on page 2 undefined on input line
+ 76.
+
+
+Package natbib Warning: Citation `theano' on page 2 undefined on input line 85.
 
 
 
-Package natbib Warning: Citation `sgd' on page 2 undefined on input line 102.
+Package natbib Warning: Citation `sgd' on page 2 undefined on input line 92.
 
 
-Package natbib Warning: Citation `madgraph' on page 2 undefined on input line 1
-07.
+Package natbib Warning: Citation `madgraph' on page 2 undefined on input line 9
+4.
 
 
-Package natbib Warning: Citation `pdf' on page 2 undefined on input line 109.
+Package natbib Warning: Citation `pdf' on page 2 undefined on input line 95.
 
 
-Package natbib Warning: Citation `delphes' on page 2 undefined on input line 11
-3.
+Package natbib Warning: Citation `pythia' on page 2 undefined on input line 98.
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 129.
 
-(/usr/share/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 129.
 
-Overfull \hbox (13.03891pt too wide) detected at line 154
- []$[]  \OML/cmm/m/it/10 n[] \OT1/cmr/m/n/10 = [[]\OML/cmm/m/it/10 f[]\OT1/cmr/
-m/n/10 (1 \OMS/cmsy/m/n/10 ^^G [] \OML/cmm/m/it/10 ^^R[]\OT1/cmr/m/n/10 )[] + [
-]\OML/cmm/m/it/10 f[]\OT1/cmr/m/n/10 (1 \OMS/cmsy/m/n/10 ^^F [] \OML/cmm/m/it/1
-0 ^^R[]\OT1/cmr/m/n/10 )[] + []\OML/cmm/m/it/10 f[]\OT1/cmr/m/n/10 (1 \OMS/cmsy
-/m/n/10 ^^@ [][] \OML/cmm/m/it/10 ^^R[]\OT1/cmr/m/n/10 )]$ 
+Package natbib Warning: Citation `delphes' on page 2 undefined on input line 99
+.
+
+
+Overfull \hbox (9.70963pt too wide) detected at line 120
+ []$[]  \OML/cmm/m/it/10 n \OT1/cmr/m/n/10 = [[]\OML/cmm/m/it/10 f[]\OT1/cmr/m/
+n/10 (1 \OMS/cmsy/m/n/10 ^^G [] \OML/cmm/m/it/10 ^^R[]\OT1/cmr/m/n/10 )[] + []\
+OML/cmm/m/it/10 f[]\OT1/cmr/m/n/10 (1 \OMS/cmsy/m/n/10 ^^F [] \OML/cmm/m/it/10 
+^^R[]\OT1/cmr/m/n/10 )[] + []\OML/cmm/m/it/10 f[]\OT1/cmr/m/n/10 (1 \OMS/cmsy/m
+/n/10 ^^@ [][] \OML/cmm/m/it/10 ^^R[]\OT1/cmr/m/n/10 )]$ 
  []
 
 
-Overfull \hbox (0.92964pt too wide) detected at line 154
+Overfull \hbox (0.92964pt too wide) detected at line 120
  []$[] \OMS/cmsy/m/n/10 ^^B \OT1/cmr/m/n/10 [[]\OML/cmm/m/it/10 f[]\OT1/cmr/m/n
 /10 (1 \OMS/cmsy/m/n/10 ^^G [] \OML/cmm/m/it/10 ^^R[]\OT1/cmr/m/n/10 )[] + []\O
 ML/cmm/m/it/10 f[]\OT1/cmr/m/n/10 (1 \OMS/cmsy/m/n/10 ^^F [] \OML/cmm/m/it/10 ^
@@ -457,110 +468,94 @@ ML/cmm/m/it/10 f[]\OT1/cmr/m/n/10 (1 \OMS/cmsy/m/n/10 ^^F [] \OML/cmm/m/it/10 ^
 n/10 ^^@ [][] \OML/cmm/m/it/10 ^^R[]\OT1/cmr/m/n/10 )]\OML/cmm/m/it/10 :$ []  
  []
 
-<./fig/2D_temps.pdf, id=22, 569.12625pt x 385.44pt>
-File: ./fig/2D_temps.pdf Graphic file (type pdf)
- <use ./fig/2D_temps.pdf>
-Package pdftex.def Info: ./fig/2D_temps.pdf used on input line 184.
-(pdftex.def)             Requested size: 249.9028pt x 169.24712pt.
+<./fig/1d_templates_graph_X.pdf, id=23, 569.12625pt x 387.4475pt>
+File: ./fig/1d_templates_graph_X.pdf Graphic file (type pdf)
 
-Overfull \hbox (3.9028pt too wide) in paragraph at lines 184--185
+<use ./fig/1d_templates_graph_X.pdf>
+Package pdftex.def Info: ./fig/1d_templates_graph_X.pdf used on input line 159.
+
+(pdftex.def)             Requested size: 163.20374pt x 111.10355pt.
+
+<./fig/ratios_LLRROO_graph.pdf, id=24, 569.12625pt x 387.4475pt>
+File: ./fig/ratios_LLRROO_graph.pdf Graphic file (type pdf)
+
+<use ./fig/ratios_LLRROO_graph.pdf>
+Package pdftex.def Info: ./fig/ratios_LLRROO_graph.pdf used on input line 160.
+(pdftex.def)             Requested size: 163.20374pt x 111.10355pt.
+
+<./fig/1d_wz_bg_graph_X.pdf, id=25, 569.12625pt x 385.44pt>
+File: ./fig/1d_wz_bg_graph_X.pdf Graphic file (type pdf)
+
+<use ./fig/1d_wz_bg_graph_X.pdf>
+Package pdftex.def Info: ./fig/1d_wz_bg_graph_X.pdf used on input line 161.
+(pdftex.def)             Requested size: 163.20374pt x 110.5279pt.
+
+
+Package natbib Warning: Citation `aa' on page 2 undefined on input line 174.
+
+[2] <./fig/NN_fit_3.pdf, id=35, 569.12625pt x 388.45125pt>
+File: ./fig/NN_fit_3.pdf Graphic file (type pdf)
+
+<use ./fig/NN_fit_3.pdf>
+Package pdftex.def Info: ./fig/NN_fit_3.pdf used on input line 197.
+(pdftex.def)             Requested size: 249.9028pt x 170.56935pt.
+
+Overfull \hbox (3.9028pt too wide) in paragraph at lines 197--198
  [][] 
  []
 
-[2]
 
-LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
- on input line 206.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./fig/templates.pdf, id=32, 569.12625pt x 181.67876pt>
-File: ./fig/templates.pdf Graphic file (type pdf)
+[3 <./fig/1d_templates_graph_X.pdf, page is rotated 90 degrees> <./fig/ratios_L
+LRROO_graph.pdf, page is rotated 90 degrees> <./fig/1d_wz_bg_graph_X.pdf, page 
+is rotated 90 degrees> <./fig/NN_fit_3.pdf, page is rotated 90 degrees>]
+<./fig/12_LL_LT_TT.pdf, id=211, 569.12625pt x 336.25626pt>
+File: ./fig/12_LL_LT_TT.pdf Graphic file (type pdf)
 
-<use ./fig/templates.pdf>
-Package pdftex.def Info: ./fig/templates.pdf used on input line 208.
-(pdftex.def)             Requested size: 249.9028pt x 79.77533pt.
-
-Overfull \hbox (3.9028pt too wide) in paragraph at lines 208--209
- [][] 
- []
-
-<./fig/templates_2D.pdf, id=33, 569.12625pt x 385.44pt>
-File: ./fig/templates_2D.pdf Graphic file (type pdf)
-
-<use ./fig/templates_2D.pdf>
-Package pdftex.def Info: ./fig/templates_2D.pdf used on input line 219.
-(pdftex.def)             Requested size: 229.49844pt x 155.42598pt.
-
-
-Package natbib Warning: Citation `aa' on page 3 undefined on input line 237.
-
-[3 <./fig/2D_temps.pdf, page is rotated 90 degrees> <./fig/templates.pdf, page 
-is rotated 90 degrees> <./fig/templates_2D.pdf, page is rotated 90 degrees>]
-<./fig/sens_0.pdf, id=166, 569.12625pt x 694.595pt>
-File: ./fig/sens_0.pdf Graphic file (type pdf)
- <use ./fig/sens_0.pdf>
-Package pdftex.def Info: ./fig/sens_0.pdf used on input line 269.
-(pdftex.def)             Requested size: 229.49844pt x 280.09059pt.
-
-<./fig/sens_1.pdf, id=167, 569.12625pt x 623.32875pt>
-File: ./fig/sens_1.pdf Graphic file (type pdf)
- <use ./fig/sens_1.pdf>
-Package pdftex.def Info: ./fig/sens_1.pdf used on input line 277.
-(pdftex.def)             Requested size: 229.49844pt x 251.35297pt.
-
-<./fig/sens_2.pdf, id=168, 569.12625pt x 408.52625pt>
-File: ./fig/sens_2.pdf Graphic file (type pdf)
- <use ./fig/sens_2.pdf>
-Package pdftex.def Info: ./fig/sens_2.pdf used on input line 285.
-(pdftex.def)             Requested size: 229.49844pt x 164.73535pt.
-
-
-Package natbib Warning: Citation `delphes' on page 4 undefined on input line 31
-4.
-
-[4 <./fig/sens_0.pdf> <./fig/sens_1.pdf> <./fig/sens_2.pdf, page is rotated 90 
-degrees>] <./fig/sig_bkg.pdf, id=302, 569.12625pt x 387.4475pt>
-File: ./fig/sig_bkg.pdf Graphic file (type pdf)
-
-<use ./fig/sig_bkg.pdf>
-Package pdftex.def Info: ./fig/sig_bkg.pdf used on input line 378.
-(pdftex.def)             Requested size: 229.49844pt x 156.23549pt.
+<use ./fig/12_LL_LT_TT.pdf>
+Package pdftex.def Info: ./fig/12_LL_LT_TT.pdf used on input line 225.
+(pdftex.def)             Requested size: 458.99689pt x 271.20137pt.
  (./ref.tex) (./VbsLL.bbl))
 
 Package natbib Warning: There were undefined citations.
 
-[5 <./fig/sig_bkg.pdf, page is rotated 90 degrees>] (./VbsLL.aux) ) 
+[4] [5 <./fig/12_LL_LT_TT.pdf, page is rotated 90 degrees>] (./VbsLL.aux) ) 
 Here is how much of TeX's memory you used:
- 5187 strings out of 493117
- 64481 string characters out of 6141205
- 160616 words of memory out of 5000000
- 8522 multiletter control sequences out of 15000+600000
- 18923 words of font info for 70 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 42i,10n,26p,528b,308s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmbx9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb
-></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/font
-s/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmm
-i7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/sh
-are/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/sh
-are/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></us
-r/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
-Output written on VbsLL.pdf (5 pages, 375128 bytes).
+ 5202 strings out of 493304
+ 65554 string characters out of 6139870
+ 161172 words of memory out of 5000000
+ 8534 multiletter control sequences out of 15000+600000
+ 18622 words of font info for 69 fonts, out of 8000000 for 9000
+ 957 hyphenation exceptions out of 8191
+ 42i,10n,26p,619b,302s stack positions out of 5000i,500n,10000p,200000b,80000s
+</us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+sy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
+Output written on VbsLL.pdf (5 pages, 343410 bytes).
 PDF statistics:
- 422 PDF objects out of 1000 (max. 8388607)
- 207 compressed objects within 3 object streams
+ 337 PDF objects out of 1000 (max. 8388607)
+ 174 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
