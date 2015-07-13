@@ -82,14 +82,14 @@ the best mapping from these measurable quantities to the two truth
 values of \cts (one for each $W$ boson) present in each event.  We
 choose a multi-layer neural network with a final output layer with
 linear activation. The neural network is implemented with the Theano
-software packages~\cite{theano}. Hyper-parameters are tuned by hand,
-but undoubtedly could be improved.  The cost function is defined as 
+software packages~\cite{theano}. The cost function is defined as 
 ${\cal{C}}= \sum_{i=1}^{N} [(\ctsnb_{1,i} -\cos \theta^{NN}_{1,i})^2+(\ctsnb_{2,i}-\cos \theta^{NN}_{2,i})^2]/N$, 
 where $N$ is the number of events per mini-batch,
 $\ctsnb_{1/2,i}$ is the truth value of \cts for each $W$ boson with
 random ordering for the $i$-th event, and $\cos \theta^{NN}_{1/2, i}$ is the value of
 the two neural network outputs. Stochastic gradient descent
-algorithm~\cite{sgd} is used to train the neural network.
+algorithm~\cite{sgd} is used to train the neural network. Hyper-parameters are tuned by hand,
+with the best performance given by a deep network with 20 layers each with 200 hidden nodes.  
 
 Signal \ssWW events are generated using the {\sc madgraph} event generator~\cite{madgraph} at a proton-proton center-of-mass energy of 13 TeV.  
 The NN23l01 {\bf find more correct name for this PDF set} parton distribution function~\cite{pdf} is used as the default. 
@@ -100,8 +100,8 @@ response simulation of the CMS {\bf it really is the CMS detector not ATLAS} det
 are split into three categories: 1/4 are used in a training sample,
 1/4 are used for a validation test against over-training, and the
 remaining 1/2 are used to build templates and perform sensitivity
-studies. A ** layer neural network with ** hidden neurons and a
-learning rate of ** is used {\bf I can move thie earlier, but I also didn't use a fixed learning rate }.
+studies.% A ** layer neural network with ** hidden neurons and a
+%learning rate of ** is used {\bf I can move thie earlier, but I also didn't use a fixed learning rate }.
 
 The dominant background {\bf only true for ATLAS} to the \ssWW process comes from the $WZjj$ process where one of 
 the leptons from the $Z$ boson decay is not detected or reconstructed. We also use the 
