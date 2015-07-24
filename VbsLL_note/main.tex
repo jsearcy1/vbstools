@@ -23,7 +23,7 @@ charged lepton is expected to preferentially pointing along the boson
 direction of motion for a left-handed $W^+$ and along the opposite boson direction of motion 
 for a left-handed $W^-$. The normalized differential cross section of a
 leptonically-decaying $W$ boson can be written in terms of
-polarization fractions as~\cite{bla}:
+polarization fractions as~\cite{Wpol}:
 \begin{multline}
  \frac{1}{\sigma} \frac{d\sigma}{d\cts} = \frac{3}{8} f_- (1 \mp \cts)^2 + \frac{3}{8} f_+ (1 \pm \cts)^2 \\ 
 +\frac{3}{4} f_L (1 - \ctsSq) , {\text {for~}} W^\pm 
@@ -53,7 +53,7 @@ event kinematics can be reconstructed or estimated using the $W$ boson mass cons
 However, these channels either suffer from large SM backgrounds not present in the \ssWW channel or
 have relatively low production cross sections. Attempts have been made
 to gain sensitivity through other variables than \ts in the \ssWW
-channel~\cite{aaa}. One example is the variable $R_{p_T}=(p_{T}^{\ell 1} \times
+channel. One example is the variable $R_{p_T}=(p_{T}^{\ell 1} \times
 p_{T}^{\ell 2}) / (p_T^{j_1} \times p_T^{j_2})$~\cite{Doroba:2012pd},
 where $\ell_1$ and $\ell_2$ denote the two leptons in no particular
 order and $j_1$ and $j_2$ denote the two most energetic jets in the
@@ -82,13 +82,13 @@ the best mapping from these measurable quantities to the two truth
 values of \cts (one for each $W$ boson) present in each event.  We
 choose a multi-layer neural network with a final output layer with
 linear activation. The neural network is implemented with the Theano
-software packages~\cite{theano}. The cost function is defined as 
+software packages~\cite{theano1,theano2}. The cost function is defined as 
 ${\cal{C}}= \sum_{i=1}^{N} [(\ctsnb_{1,i} -\cos \theta^{NN}_{1,i})^2+(\ctsnb_{2,i}-\cos \theta^{NN}_{2,i})^2]/N$, 
 where $N$ is the number of events per mini-batch,
 $\ctsnb_{1/2,i}$ is the truth value of \cts for each $W$ boson with
 random ordering for the $i$-th event, and $\cos \theta^{NN}_{1/2, i}$ is the value of
 the two neural network outputs. Stochastic gradient descent
-algorithm~\cite{sgd} is used to train the neural network. Hyper-parameters are tuned by hand,
+algorithm is used to train the neural network. Hyper-parameters are tuned by hand,
 with the best performance given by a deep network with 20 layers each with 200 hidden nodes.  
 
 Signal \ssWW events are generated using the {\sc madgraph} event generator~\cite{madgraph} at a proton-proton center-of-mass energy of 13 TeV.  
