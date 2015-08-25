@@ -1,8 +1,10 @@
+
 import ROOT
 import os
 import gc
 from optparse import OptionParser
 from numpy.random import poisson
+from numpy.random import seed
 from array import array
 import pdb
 import resource
@@ -16,6 +18,8 @@ ROOT.RooArgList.__init__._creates=1
 ROOT.RooArgSet.__init__._creates=1
 ROOT.RooDataHist.__init__._creates=1
 ROOT.RooHistPdf.__init__._creates=1
+
+seed(108)
 
 def FractionFitter(templates,data):
     
@@ -54,12 +58,13 @@ def FractionFitter(templates,data):
     pdf=ROOT.RooAddPdf("fitter","fiter",pdf_l,ROOT.RooArgList(*fractions))
     pdf.fitTo(data_rds,ROOT.RooFit.PrintLevel(-100000),ROOT.RooFit.SumW2Error(False))
 
-    colors=[ROOT.kGreen,ROOT.kRed+1,ROOT.kRed,ROOT.kRed-1,ROOT.kBlue,ROOT.kBlue-1]
+    #colors=[ROOT.kGreen,ROOT.kRed+1,ROOT.kRed,ROOT.kRed-1,ROOT.kBlue,ROOT.kBlue-1]
+    colors=[ROOT.kGreen-7,ROOT.kAzure-3,ROOT.kYellow,ROOT.kViolet-6,ROOT.kRed,ROOT.kRed+3]
     draw=False
-
     
     if draw:
-        stack=ROOT.THStack("stack","stack")
+        stack=ROOT.THStack("stack","")
+        leg=ROOT.TLegend(0.1,0.1,0.5,0.5)
         for i,h,frac in zip(range(len(templates)),templates,[v.getVal() for v in fractions]):
             h.Scale(frac/h.Integral())
             if type(h)==ROOT.TH2F:
@@ -68,14 +73,55 @@ def FractionFitter(templates,data):
                 h2=h
             h2.SetFillColor(colors[i])
             h2.SetLineColor(colors[i])
+            if len(templates)==6:
+                if i==0:
+                    leg.AddEntry(h2,"(--)","F")
+                elif i==1:
+                    leg.AddEntry(h2,"(-+)","F")
+                elif i==2:
+                    leg.AddEntry(h2,"(++)","F")
+                elif i==3:
+                    leg.AddEntry(h2,"L(-)","F")
+                elif i==4:
+                    leg.AddEntry(h2,"L(+)","F")
+                elif i==5:
+                    leg.AddEntry(h2,"LL","F")
+            elif len(templates)==3:
+                if i==0:
+                    leg.AddEntry(h2,"TT","F")
+                elif i==1:
+                    leg.AddEntry(h2,"TL","F")
+                elif i==2:
+                    leg.AddEntry(h2,"LL","F")
+            elif len(templates)==2:
+                if i==0:
+                    leg.AddEntry(h2,"Non-LL","F")
+                elif i==1:
+                    leg.AddEntry(h2,"LL","F")
             stack.Add(h2)
             hh.append(h2)
         if type(data)==ROOT.TH2F:
                 data2=unfold(data)
         else:
             data2=data
+        print "Events of pseudo data:", data2.Integral()
+        leg.AddEntry(data2,"Pseudo data","LE")
         stack.Draw("hist")
+        data2.SetMarkerStyle(8)
         data2.Draw("same E")
+        stack.GetYaxis().SetTitle("Event for 1000 fb^{-1}")
+        stack.GetXaxis().SetTitle("Bin number")
+        stack.SetMaximum(2500000)
+        lines=[]
+        for i in xrange(4):
+            line=ROOT.TLine((i+1)*5,0,(i+1)*5,2610)
+            line.SetLineStyle(5)
+            lines.append(line)
+        for i in xrange(len(lines)):
+            lines[i].Draw()
+
+        leg.Draw()
+
     if draw:pdb.set_trace()
         
     values=[v.getVal()/data.Integral() for v in fractions]
@@ -135,7 +181,8 @@ def fit(templates,data):
 
 def draw_test(hists,data,fit1D,lumi=1):
 #    c1=ROOT.TCanvas()
-    colors=[ROOT.kGreen,ROOT.kRed+1,ROOT.kRed,ROOT.kRed-1,ROOT.kBlue,ROOT.kBlue-1]
+    #colors=[ROOT.kGreen,ROOT.kRed+1,ROOT.kRed,ROOT.kRed-1,ROOT.kBlue,ROOT.kBlue-1]
+    colors=[ROOT.kGreen-7,ROOT.kAzure-3,ROOT.kYellow,ROOT.kViolet-6,ROOT.kRed,ROOT.kRed+3]
     stack1d=ROOT.THStack()
     x=fit1D.GetPlot()
     hh=[]
@@ -233,8 +280,8 @@ def GetNewData(data,lumi):
     new_data=data.Clone()
     new_data.Scale(lumi)
     if type(new_data)==ROOT.TH2F:
-        for x in range(new_data.GetNbinsX()):
-            for y in range(new_data.GetNbinsY()):
+        for x in range(new_data.GetNbinsX()+2):
+            for y in range(new_data.GetNbinsY()+2):
                 con=new_data.GetBinContent(x,y)
                 n_con=poisson(con)
                 new_data.SetBinContent(x,y,n_con)
@@ -259,6 +306,7 @@ def test_fits(lumi,b_templates,data,n_trials=1,oneD=True):
         values=FractionFitter(templates,new_data)
         for param in range(len(templates)):
             p_hs[param].Fill(values[param])
+    #pdb.set_trace()
     gc.collect()
     return p_hs
 
@@ -285,7 +333,7 @@ if __name__ == "__main__":
     
     all_hists=[]
     for l in lumi:
-        hists=test_fits(l,templates,data,n_trials=10000)
+        hists=test_fits(l,templates,data,n_trials=1000)
         all_hists+=hists
         for n,h in zip(Names,hists):
             low95,high95,low68,high68=Limit(h)

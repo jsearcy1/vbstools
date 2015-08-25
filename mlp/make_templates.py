@@ -3,6 +3,8 @@ import ROOT
 from train_mlp import *
 import random
 from optparse import OptionParser
+from running_network_ct import feedforward, feedforward_deep
+import numpy as np
 
 def LepPtRatio(t):
     if t.Lep_pt1>t.Lep_pt2:
@@ -22,11 +24,56 @@ def Get_input(t):
         "MEt_Et","MEt_Phi"]
     return [getattr(t,i) for i in input_vars]
 
+def Get_input_lil(t):
+    input_vars=[
+        "Lep_pt1","Lep_eta1",
+        "Lep_phi1","Lep_pt2",
+        "Lep_eta2","Lep_phi2",
+        "Jet_pt1","Jet_eta1",
+        "Jet_phi1", "Jet_pt2",
+        "Jet_eta2","Jet_phi2",
+        "MEt_Et","MEt_Phi"]
+    temp = []
+    for i in input_vars:
+        if i == "Lep_pt1" or i == "Lep_pt2" or i == "Jet_pt1" or i == "Jet_pt2" or i == "MEt_Et":
+            temp.append(getattr(t,i)*0.005)
+        else:
+            temp.append(getattr(t,i)*0.5)
+    #temp = [getattr(t,i) for i in input_vars]
+    #print [np.reshape(np.array(temp), (14,1))]
+    return [np.reshape(np.array(temp), (14,1))]
+
 global rf_ff,h_fl,h_fr,h_fo
 rf_ff=ROOT.TFile("../fitted_factions.root")
 h_fl=rf_ff.Get("fr")#I need to fix this these hists are switched in root file
 h_fr=rf_ff.Get("fl")
 h_fo=rf_ff.Get("fo")
+
+#hel_list=[ [int(n) for n in i.split(",")] for i in open("/atlas/data19/jsearcy/vbstools/data/hel_list2.txt")]
+hel_list=[ [int(n) for n in i.split(",")] for i in open("/atlas/data19/jsearcy/vbstools/data/hel_list_all.txt")]
+#hel_list=[ [int(n) for n in i.split(",")] for i in open("/atlas/data19/jsearcy/vbstools/data/hel_br4.txt")]
+
+
+
+def recal_w_hel(t,evt):
+    hel=hel_list[evt]
+    t.OOw=0.0
+    t.LLw=0.0
+    t.RRw=0.0
+    t.LRw=0.0
+    t.OLw=0.0
+    t.ORw=0.0       
+    if 9 in hel:return
+    if hel==[0,0]:t.OOw=1
+    elif hel==[0,1] or hel==[1,0] :t.ORw=1
+    elif hel==[0,-1] or hel==[-1,0] :t.OLw=1
+    elif hel==[1,-1] or hel==[-1,1] :t.LRw=1
+    elif hel==[-1,-1]:t.LLw=1
+    elif hel==[1,1]:t.RRw=1
+    else: print "wrong"
+    return
+
+
 
 def recal_w(t):
     charge=t.Lep_charge1 #1 and 2 are equal for ssWW
@@ -50,27 +97,28 @@ def recal_w(t):
 #    fl=0.36135634238668457
 #    fr=0.34566328824714387
 #    fo=0.2925406254842256
+    
 
 
     norm= (  ( fl*(3./8.*(1-ct1*charge)**2) +fr*(3./8.*(1+ct1*charge)**2)+f0*(3./4.*(1-ct1**2))  )
-             * (  fl*(3./8.*(1-ct2)**2) +fr*(3./8.*(1+ct2)**2)+ f0*(3./4.*(1-ct2**2))  ) )
+             * (  fl*(3./8.*(1-ct2*charge)**2) +fr*(3./8.*(1+ct2*charge)**2)+ f0*(3./4.*(1-ct2**2))  ) )
     if norm==0: 
 #        print "normalization is 0 this should never happen, dumping to debug shell"
-        t.OOw=1
-        t.LLw=1
-        t.RRw=1
-        t.LRw=1
-        t.OLw=1
-        t.ORw=1       
+        t.OOw=0.0
+        t.LLw=0.0
+        t.RRw=0.0
+        t.LRw=0.0
+        t.OLw=0.0
+        t.ORw=0.0       
         return
 #        pdb.set_trace() 
     t.OOw=((3./4.*(1-ct1**2)*f0)*(3./4.*(1-ct2**2)*f0 ))/norm
-    t.LLw=((3./8.*(1-ct1*charge)**2*fl)*(3./8.*(1-ct2)**2*fl))/norm
-    t.RRw=((3./8.*(1+ct1*charge)**2)*fr*(3./8.*(1+ct2)**2*fr))/norm
-    t.LRw=(((3./8.*(1-ct1*charge)**2*fl+3./8.*(1+ct1*charge)**2*fr) * (3./8.*(1-ct2)**2*fl +3./8.*(1+ct2)**2*fr))/norm-t.LLw-t.RRw)
+    t.LLw=((3./8.*(1-ct1*charge)**2*fl)*(3./8.*(1-ct2*charge)**2*fl))/norm
+    t.RRw=((3./8.*(1+ct1*charge)**2)*fr*(3./8.*(1+ct2*charge)**2*fr))/norm
+    t.LRw=(((3./8.*(1-ct1*charge)**2*fl+3./8.*(1+ct1*charge)**2*fr) * (3./8.*(1-ct2*charge)**2*fl +3./8.*(1+ct2*charge)**2*fr))/norm-t.LLw-t.RRw)
    
-    t.OLw=((3./8.*(1-ct1*charge)**2*fl)*(3./4.*(1-ct2**2)*f0)+(3./4.*(1-ct1**2)*f0)*(3./8.*(1-ct2)**2*fl))/norm
-    t.ORw=((3./8.*(1+ct1*charge)**2*fr)*(3./4.*(1-ct2**2)*f0)+(3./4.*(1-ct1**2)*f0)*(3./8.*(1+ct2)**2*fr))/norm
+    t.OLw=((3./8.*(1-ct1*charge)**2*fl)*(3./4.*(1-ct2**2)*f0)+(3./4.*(1-ct1**2)*f0)*(3./8.*(1-ct2*charge)**2*fl))/norm
+    t.ORw=((3./8.*(1+ct1*charge)**2*fr)*(3./4.*(1-ct2**2)*f0)+(3./4.*(1-ct1**2)*f0)*(3./8.*(1+ct2*charge)**2*fr))/norm
     #t.TTw=(3./8.*(1-ct1*charge)**2*fl+3./8.*(1+ct1*charge)**2*fr)*(3./8.*(1-ct2)**2*fl +3./8.*(1+ct2)**2*fr)/norm
     #t.TOw=(3./8.*(1-ct1*charge)**2*fl+3./8.*(1+ct1*charge)**2*fr)*(3./4.*(1-ct2**2)*f0)+(3./8.*(1-ct2)**2*fl +3./8.*(1+ct2)**2*fr)*(3./4.*(1-ct1**2)*f0)/norm
     
@@ -102,6 +150,16 @@ if __name__=="__main__":
                           help="pickle file with the MLP weights", default="")
       parser.add_option( "--cuts", dest="cuts",type="int",
                          help="use atlas cuts", default=0)
+      parser.add_option( "--dolil", dest="dolil",type="int",
+                         help="use atlas cuts", default=0)
+      parser.add_option( "--deepdolil", dest="deepdolil",type="int",
+                         help="use atlas cuts", default=0)
+
+      parser.add_option( "--doCharge", dest="doCharge",type="int",
+                         help="use atlas cuts", default=0)
+
+      parser.add_option( "--useHlist", dest="useHlist",type="int",
+                         help="use helicity list calculated by madgraph", default=0)
 
 
       (options, args) = parser.parse_args()
@@ -113,7 +171,9 @@ if __name__=="__main__":
       n_bins=options.bins
 
       t=rf.Get("Test")
+      #x=feedforward
       x=classifier.input_v
+          
       weights=["OOw","LRw","RRw","LLw","OLw","ORw"]
       hists=[]
       h_start,h_stop=[float(i) for i in options.range.split(",")]
@@ -173,29 +233,39 @@ if __name__=="__main__":
           template_func=None
 
       for evt in xrange(n_evt*2):#*2 is for even/odd removal
-          
+          print evt
           if evt %2 !=0: continue #even events for analysis
+
           ###Clip trick events for a test
           ###
           t.GetEntry(evt)
-          recal_w(t)
+
+          if t.Lep_pt1 ==0 and t.Lep_pt2==0:continue
+
+          if options.useHlist:
+              recal_w_hel(t,evt)
+          else:
+              recal_w(t)
+
 #          if t.ct1<-0.8 or t.ct2 < -0.8:continue
           h_ctsb.Fill(t.ct1)
           h_ctsb.Fill(t.ct2)
           if mww_low > t.Mww:continue
           if mww_high < t.Mww:continue
-          if 0 in [t.Jet_pt1,t.Jet_eta1,t.Jet_phi1,
-                   t.Jet_pt2,t.Jet_eta2,t.Jet_phi2,
-                   t.Lep_pt1,t.Lep_eta1,t.Lep_phi1,
-                   t.Lep_pt1,t.Lep_eta1,t.Lep_phi1]:continue #event lost to delphes reco
+          if 0 in [t.Jet_pt1,
+                   t.Jet_pt2,
+                   t.Lep_pt1,
+                   t.Lep_pt2]:continue #event lost to delphes reco
 
 #          Pt Cuts
           j1.SetPtEtaPhiM(t.Jet_pt1,t.Jet_eta1,t.Jet_phi1,0.)
           j2.SetPtEtaPhiM(t.Jet_pt2,t.Jet_eta2,t.Jet_phi2,0.)
           l1.SetPtEtaPhiM(t.Lep_pt1,t.Lep_eta1,t.Lep_phi1,0.)
-          l2.SetPtEtaPhiM(t.Lep_pt2,t.Lep_eta2,t.Lep_phi2,0.)
+          l2.SetPtEtaPhiM(t.Lep_pt2,t.Lep_eta2,t.Lep_phi2,0.) 
+          if options.doCharge!=0:
+              if t.Lep_charge1 != options.doCharge:continue
 
-          if options.cuts==1 or options.cuts==7:
+          if options.cuts==1 or options.cuts==7 or options.cuts==8:
               if t.Jet_pt1 < 30: continue
               if t.Jet_pt2 < 30: continue
 
@@ -207,6 +277,9 @@ if __name__=="__main__":
           if options.cuts ==7:#tight Jet cuts
               if t.Jet_pt1 < 60: continue
               if t.Jet_pt2 < 60: continue
+          if options.cuts ==8:#tight Jet cuts
+              if t.Jet_pt1 < 100: continue
+              if t.Jet_pt2 < 100: continue
 
 
           if options.cuts==2: # no MET
@@ -265,7 +338,22 @@ if __name__=="__main__":
                   ct1=t.ct1
                   ct2=t.ct2
           else:
-              ct1,ct2=classifier.output.eval({x:[Get_input(t)]})[0]
+              if options.dolil:
+                  #ct1,ct2=feedforward([Get_input(t)])[0]
+                  ct1,ct2=feedforward(Get_input_lil(t))[0]
+                  #print feedforward(Get_input_lil(t))
+                  #ct1=feedforward(Get_input_lil(t))[0][0]
+                  #ct2=feedforward(Get_input_lil(t))[0][1]
+              elif options.deepdolil:
+                  #ct1,ct2=feedforward_deep([Get_input(t)])[0]
+                  ct1,ct2=feedforward_deep(Get_input_lil(t))[0]
+                  #print feedforward_deep(Get_input_lil(t))
+                  #ct1=feedforward_deep(Get_input_lil(t))[0][0]
+                  #ct2=feedforward_deep(Get_input_lil(t))[0][1]
+              else:
+                  ct1,ct2=classifier.output.eval({x:[Get_input(t)]})[0]
+
+
           if template_func:              
               norm.Fill(var,xsec_w) 
               for weight,hist in zip(weights,hists):

@@ -75,6 +75,11 @@ def BuildTree(tree_name,rf):
     Jet_phi2=array("f",[0.])
     Jet_m2=array("f",[0.])
 
+    Jet_pt3=array("f",[0.])
+    Jet_eta3=array("f",[0.])
+    Jet_phi3=array("f",[0.])
+    Jet_m3=array("f",[0.])
+
     MEt_Et=array("f",[0.])
     MEt_Phi=array("f",[0.])
 
@@ -124,7 +129,12 @@ def BuildTree(tree_name,rf):
     tree.Branch("Jet_pt2",Jet_pt2,"Jet_pt2/F")
     tree.Branch("Jet_eta2",Jet_eta2,"Jet_eta2/F")
     tree.Branch("Jet_phi2",Jet_phi2,"Jet_phi2/F")
-    tree.Branch("Jet_m2",Jet_m1,"Jet_m2/F")    
+    tree.Branch("Jet_m2",Jet_m2,"Jet_m2/F")
+
+    tree.Branch("Jet_pt3",Jet_pt3,"Jet_pt3/F")
+    tree.Branch("Jet_eta3",Jet_eta3,"Jet_eta3/F")
+    tree.Branch("Jet_phi3",Jet_phi3,"Jet_phi3/F")
+    tree.Branch("Jet_m3",Jet_m3,"Jet_m3/F")
     
     tree.Branch("MEt_Et",MEt_Et,"MEt_Et/F")
     tree.Branch("MEt_Phi",MEt_Phi,"MEt_Phi/F")
@@ -233,7 +243,9 @@ if __name__ == "__main__":
         Jet_eta2[0]=j2.Eta()
         Jet_phi2[0]=j2.Phi()
 
-
+        #Jet_pt3[0]=j3.Pt()
+        #Jet_eta3[0]=j3.Eta()
+        #Jet_phi3[0]=j3.Phi()
 
         MEt_Et[0]=MET.Pt()
         MEt_Phi[0]=MET.Phi()

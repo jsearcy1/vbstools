@@ -3,7 +3,8 @@ from array import array
 import sys
 from pol_tools_delphes import *
 from create_output import weight, BuildTree
-
+from random import random
+import pdb
 help_str=""" 
     Usage: python create_ouput.py in_file.root out_file.root xsec_in_fb
     Script which reads the ouput of Convert.C and calculates cosTheta*
@@ -50,7 +51,7 @@ if __name__ == "__main__":
 
     ROOT.gSystem.Load("/atlas/data19/jsearcy/MG5_aMC_v2_2_3/Delphes/libDelphes.so")
     
-    if len(sys.argv) != 4: 
+    if len(sys.argv) != 5: 
         sys.exit()
     rf=ROOT.TFile(sys.argv[1])
     
@@ -78,22 +79,72 @@ if __name__ == "__main__":
         Mww[0]=(l1+l2+n1+n2).M()
 
         MET=devt.MET
+        
 
         if len(devt.leps) ==2:
-            Lep_pt1[0]=devt.leps[0].Pt()
-            Lep_eta1[0]=devt.leps[0].Eta()
-            Lep_phi1[0]=devt.leps[0].Phi()
-            Lep_pt2[0]=devt.leps[1].Pt()
-            Lep_eta2[0]=devt.leps[1].Eta()
-            Lep_phi2[0]=devt.leps[1].Phi()
-        if len(devt.jets) >=2: #jets are pt sorted
-            Jet_pt1[0]=devt.jets[0].Pt()
-            Jet_eta1[0]=devt.jets[0].Eta()
-            Jet_phi1[0]=devt.jets[0].Phi()
+            if random > 0.5:#unpt sort
+                Lep_pt1[0]=devt.leps[0].Pt()
+                Lep_eta1[0]=devt.leps[0].Eta()
+                Lep_phi1[0]=devt.leps[0].Phi()
 
-            Jet_pt2[0]=devt.jets[1].Pt()
-            Jet_eta2[0]=devt.jets[1].Eta()
-            Jet_phi2[0]=devt.jets[1].Phi()
+                Lep_pt2[0]=devt.leps[1].Pt()
+                Lep_eta2[0]=devt.leps[1].Eta()
+                Lep_phi2[0]=devt.leps[1].Phi()
+            else:
+                Lep_pt1[0]=devt.leps[1].Pt()
+                Lep_eta1[0]=devt.leps[1].Eta()
+                Lep_phi1[0]=devt.leps[1].Phi()
+
+                Lep_pt2[0]=devt.leps[0].Pt()
+                Lep_eta2[0]=devt.leps[0].Eta()
+                Lep_phi2[0]=devt.leps[0].Phi()
+        if len(devt.leps)>2:
+#            pdb.set_trace()
+            print "Extra Lepton"
+
+        if len(devt.jets) >=2: #jets are pt sorted
+            if sys.argv[4] == "shuffle":
+                if random > 0.5:#un pt sort them
+                    Jet_pt1[0]=devt.jets[0].Pt()
+                    Jet_eta1[0]=devt.jets[0].Eta()
+                    Jet_phi1[0]=devt.jets[0].Phi()
+                    
+                    Jet_pt2[0]=devt.jets[1].Pt()
+                    Jet_eta2[0]=devt.jets[1].Eta()
+                    Jet_phi2[0]=devt.jets[1].Phi()
+                    
+                    Jet_pt3[0]=devt.jets[2].Pt()
+                    Jet_eta3[0]=devt.jets[2].Eta()
+                    Jet_phi3[0]=devt.jets[2].Phi()
+                else:
+                    Jet_pt1[0]=devt.jets[1].Pt()
+                    Jet_eta1[0]=devt.jets[1].Eta()
+                    Jet_phi1[0]=devt.jets[1].Phi()
+                    
+                    Jet_pt2[0]=devt.jets[0].Pt()
+                    Jet_eta2[0]=devt.jets[0].Eta()
+                    Jet_phi2[0]=devt.jets[0].Phi()
+                    
+                    Jet_pt3[0]=devt.jets[2].Pt()
+                    Jet_eta3[0]=devt.jets[2].Eta()
+                    Jet_phi3[0]=devt.jets[2].Phi()
+            elif sys.argv[4] == "donotshuffle":
+                Jet_pt1[0]=devt.jets[0].Pt()
+                Jet_eta1[0]=devt.jets[0].Eta()
+                Jet_phi1[0]=devt.jets[0].Phi()
+                
+                Jet_pt2[0]=devt.jets[1].Pt()
+                Jet_eta2[0]=devt.jets[1].Eta()
+                Jet_phi2[0]=devt.jets[1].Phi()
+                
+                if len(devt.jets) == 3:
+                    Jet_pt3[0]=devt.jets[2].Pt()
+                    Jet_eta3[0]=devt.jets[2].Eta()
+                    Jet_phi3[0]=devt.jets[2].Phi()
+                else:
+                    Jet_pt3[0]=0.0
+                    Jet_eta3[0]=0.0
+                    Jet_phi3[0]=0.0
 
         MEt_Et[0]=MET.Pt()
         MEt_Phi[0]=MET.Phi()
