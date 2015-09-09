@@ -2,14 +2,13 @@
 Recent studies have shown that advances in machine learning can
 improve the prospects for measurements at the Large Hadron Colider~\cite{Baldi:2014kfa,Baldi:2014pta}.
 In this paper we explore a common machine learning technique, that
-has not previously been used inside the high energy physics community
-that of regression with deep neural networks. As an example we use
+has not previously been used inside the high energy physics community, regression with deep neural networks. As an example we use
 the difficult problem of measuring longitudinal Vector Boson Scattering
 , which is integral to  electroweak symmetry breaking (EWSB) in the Standard Model (SM).
 
 The discovery of a Higgs-like boson at the
 LHC~\cite{ATLAS_higgs,CMS_higgs} was the first step toward a better
-understanding of the EWSB mechanism, however, our understanding of EWSB remains incomplete. 
+understanding of the EWSB mechanism, yet the full picture of EWSB remains incomplete. 
 One important, and unverified, prediction of the SM is that the scattering amplitude of longitudinal vector
 bosons ($V_{L}V_{L} \rightarrow V_{L}V_{L}$) is unitarized by the
 Higgs boson.  Measuring VBS processes at a hadron colider, however,
@@ -28,6 +27,7 @@ the angular distribution of its decay products. The normalized differential cros
 leptonically-decaying $W$ boson can be written in terms of
 polarization fractions as~\cite{Wpol}:
 \begin{multline}
+ \label{eq:pol}
  \frac{1}{\sigma} \frac{d\sigma}{d\cts} = \frac{3}{8} f_- (1 \mp \cts)^2 + \frac{3}{8} f_+ (1 \pm \cts)^2 \\ 
 +\frac{3}{4} f_L (1 - \ctsSq) , {\text {for~}} W^\pm 
 \end{multline}
@@ -53,7 +53,7 @@ Many proposals have been made to determine the longitudinal fractions in other V
 $W^+W^-$~\cite{Han:2009em} and $W^\pm Z$~\cite{VBSCuts1}.
 fully-leptonic decay modes of $W^\pm Z$ and $ZZ$, where the full
 event kinematics can be reconstructed or estimated using the $W$ boson mass constraint. 
-However, these channels either suffer from large SM backgrounds from gluon initatited process that result in the same final state, but do not probe the electroweak couplings. At tree level these processes are not present in the \ssWW channel because of charge conservation. Attempts have been made 
+However, these channels suffer from large SM backgrounds from gluon initatited process that result in the same final state, but do not probe the electroweak couplings. At tree level these processes are not present in the \ssWW channel because of charge conservation. Attempts have been made 
 to gain sensitivity through other variables~\cite{VBSCuts1,Doroba:2012pd} than \ts in the \ssWW
 channel. One example is the variable $R_{pT}=(p_{T}^{\ell 1} \times
 p_{T}^{\ell 2}) / (p_T^{j_1} \times p_T^{j_2})$~\cite{Doroba:2012pd},
@@ -64,23 +64,23 @@ sensitivity to longitudinal scattering, and better discrimination can
 be achieved by combining the available event information with a
 machine learning technique. We, therefore, develop a method to use a
 neural network to map measurable quantities to the true \cts values
-that contain the event's polarization information. In doing so this
+that contain the event's polarization information. This
 approximation overcomes the limitation of missing kinematic information
-in this final state, and it makes it a promising channel for observing
-the behavior of longitudinal W bosons.
+in this final state, and makes \ssWW a promising channel for observing
+the behavior of longitudinal $W$ bosons.
  
 %\section{Machine learning model}
-While it has become common practice in high energy physics to use
+While it has become a common practice in high energy physics to use
 multi-variate techniques to separate signal from background, to the
 author's knowledge multi-variate regression has not been used to
 directly measure underlying physics quantities of interest.
 In addition recent success with deep learning in other areas of
 HEP~\cite{Baldi:2014kfa,Baldi:2014pta}, suggest that deep learning
-is will suited to this problem.
+is well suited to this problem.
 
 \ssWW events have the signature of two quarks, two same sign leptons, and
-two undetectable neutrinos.  We use all measurable kinematics as input variables
-to the neural network the transverse momentum ($p_T$), pseudorapidity ($\eta$) and
+two undetectable neutrinos.  We use all measurable object kinematics as input variables
+to the neural network: the transverse momentum ($p_T$), pseudorapidity ($\eta$) and
 azimuthal angle ($\phi$) of the two leptons and two jets, and $x$- and $y$-components 
 of missing transverse energy ($\slashed{E}_T^x$ and
 $\slashed{E}_T^y$).  The overall number of measurable quantities used is 14. 
@@ -101,7 +101,7 @@ This network yielded a 20\% better cost value in a validation data set than the 
 
 
 Signal \ssWW events are generated using the {\sc madgraph} event generator~\cite{madgraph} at a proton-proton center-of-mass energy of 13 TeV. %The NN23l01 {\bf find more correct name for this PDF set} parton distribution function~\cite{pdf} is used as the default. 
- The invariant mass of the two outgoing partons were required to be greater than 150 GeV. The $W$ bosons were decayed with the DECAY routine contained with Madgraph, which decays bosons with a given helicity assuming they are on-shell, and without spin correlations.% Events are split into three categories: 1/4 are used in a training sample, 1/4 are used for a validation test against over-training, and the
+ The invariant mass of the two outgoing partons were required to be greater than 150 GeV. The $W$ bosons were decayed with the DECAY routine contained with {\sc madgraph}, which decays bosons with a given helicity assuming they are on-shell, and without spin correlations.% Events are split into three categories: 1/4 are used in a training sample, 1/4 are used for a validation test against over-training, and the
  %remaining 1/2 are used to build templates and perform sensitivity
 %studies.% A ** layer neural network with ** hidden neurons and a
 %learning rate of ** is used {\bf I can move thie earlier, but I also didn't use a fixed learning rate }.
@@ -109,7 +109,7 @@ Signal \ssWW events are generated using the {\sc madgraph} event generator~\cite
 %\section{\label{sec:signal} Signal Model}
 Polarization fractions can then be obtained experimentally by fitting the two-dimensional distribution of the NN output \ctsNN.  
 In order to fit for these polarization fractions templates must be built for ``pure'' polarization states. These
-templates are created using generator level helicity information. In addition, a method was tested that used truth level reweighting and included all spin correlations and off-shell effects the results were comparable.
+templates are created using generator level helicity information. In addition, a method was tested that used truth level reweighting and included all spin correlations and off-shell effects, the results were comparable.
 %% by reweighting each event based on the truth
 %% \cts distribution. The event weight $W_i$ for polarization state $i$ is given by
 %% $W_i = F_i/n$, where $n$ is used for the normalization and is
@@ -144,8 +144,7 @@ templates are created using generator level helicity information. In addition, a
 %% %obtained from the reweighted sample. 
 %% {\bf Does this mean you got the
 %%   MG5 scripts to work and add the helicity to the lhe? A. No this was never done removed this.}
- 
-Figure~\ref{fig:polarization_comparison}(a) shows the comparison between the truth \cts and 
+Since there are two $W$ bosons in each event six polarization distinct polarization states are possible. Events where both $W$ bosons have a polarization of 0 are refered to as $LL$, of 1 as $++$, and of -1 as $--$. Events with differing polarization fractions of (-1,1) or (1,-1) are referred to as $+-$, (-1,0) or (0,-1) as $L-$ and likewise (1,0) or (0,1) as $L+$. Figure~\ref{fig:polarization_comparison}(a) shows the comparison between the truth \cts and 
 the NN output \ctsNN for $--$, $++$ and $LL$ events ( $-+/L+/L-$ are omitted for clarity, but closely resemble combinations of the templates shown). As expected, \ctsNN has less separation 
 power for the different polarization states compared to \cts due to missing information for the two final state neutrinos. 
 However, reasonable discrimination between each polarization state can clearly be seen from these distributions. 
@@ -181,9 +180,7 @@ longitudinally-polarized as ``$TL$'' (the sum of $-L$ and $+L$
 combinations), and events with both $W$ bosons
 longitudinally-polarized as ``$LL$''. This reduces the free fitting parameters from 5 to 2 and 
 allows for a better constraint on the $LL$ scattering fraction of interest, under the assumption that
-the relative admixture of contributions within $TT$ and $TL$ does not change. 
-
-Statistical, fit uncertainties are determined by randomly
+the relative admixture of contributions within $TT$ and $TL$ does not change. Statistical, fit uncertainties are determined by randomly
 fluctuating data expectations within their Poisson errors and
 repeating the fit, and confidence intervals are derived from these toy experiments.  
 %{\bf (need to put more description here about 68\% and 95\% level limits)}
@@ -195,7 +192,7 @@ repeating the fit, and confidence intervals are derived from these toy experimen
 %There are six possible polarization states for the two colliding $W$ bosons. 
 
 Figure~\ref{fig:fit_example} shows one example fit where the pseudo data are compared to the sum of 
-contributions from $TT$, $TL$ and $LL$ components. A total integrated luminosity of 1 ab$^{-1}$ is assumed.  
+contributions from $TT$, $TL$ and $LL$ components. A total integrated luminosity of 1 ab$^{-1}$ is assumed.  It is found that the $LL$ fraction can be measured with a 68\% confidence limit of 6.7$\pm 1.4\%$ with an ultimate luminosity of 3 ab$^{-1}$. When a similar fit is applied to the $R_{pT}$ variable the precision of 6.7$^{+7.1\%}_{- 6.7\%}$ is found to be consistent with 0. The regression technique greatly enhance the senstivity to this process.
 
 \begin{figure}[h]
 \includegraphics[width=.49\textwidth]{./fig/NN_fit_3.pdf}
@@ -204,9 +201,7 @@ contributions from $TT$, $TL$ and $LL$ components. There are five groups with fi
 These five groups represent $\ctsNN_2$ from -1 to 1 with a step size of 0.4, while five bins inside each group represent $\ctsNN_1$ from -1 to 1 with a step size of 0.4.}
 \end{figure}
 
-It is found that the $LL$ fraction of 6.7\% can be measured with a 68\% confidence limit of $\pm1.4\%$ with an ultimate luminosity of 3 ab$^{-1}$. When a similar fit is applied to the $R_{pT}$ varibale the 68\% confidence interval of $+7.1\% - 6.7\%$ is consistent with 0. The regression technique greatly enhance the senstivity to this process.
-
-However, this measurements were all performed with parton level predictions. While they show encouraging results  it is important 
+However, the above measurements  all performed with parton level predictions. While they show encouraging results  it is important 
 to also check if this procedure will stand up to experimental reality of finite detector resolution, and the event level selection that
 will be required to remove backgrounds from this analysis. To study the effects of event level cuts, we apply additional selection criteria as used by the ATLAS collaboration~\cite{ATLAS_ssWW} to obtain a
 tighter fiducial region which is dominated by the contribution from electroweak production of \ssWW events: jet $p_T > 30$ GeV, lepton $p_T > 25$ GeV, missing transverse energy $\slashed{E}_T > 40$ GeV, 
@@ -214,17 +209,17 @@ dijet mass $M_{jj} > $500 GeV, and dijet pseudorapidity difference $|\Delta \eta
 %If these criteria are applied at the generator level, jet $p_T$, $M_{jj}$ and $\Delta \eta_{jj}$ are calculated using the parton-level jets 
 %and $\slashed{E}_T$ are calculated using two generator-level neutrinos.
 
-To emulate the response of a typical general-purpose LHC detector, these events are parton-showered using {\sc pythia}\cite{pythia} and passed through the  response simulation of the CMS detector implemented in {\sc delphes}~\cite{delphes}. Parton level quantities are then approximated by taking the leading two jets clustered with an antikt algorithm~\cite{antikt} with an R parameter of 0.5.
+To emulate the response of a typical general-purpose LHC detector, these events are parton-showered using {\sc pythia}\cite{pythia} and passed through the  response simulation of the CMS detector implemented in {\sc delphes}~\cite{delphes}. Parton level quantities are then approximated by taking the leading two jets clustered with an anti-$kt$ algorithm~\cite{antikt} with an R parameter of 0.5.
 
-Backgrounds to the \ssWW process depend largely on experimental choice, and require detailed simulation. However, it can be seen in Figure~\ref{fig:polarization_comparison} that background from the $WZjj$ process (where one of 
-the leptons from the $Z$ boson decay is not detected) has a different \ctsNN shape than \ssWW events, however, its likely event level cuts will still need to be applied to reduce this component. Determing the systematics on the background shapes will require significant work from the experiments, and is not treated here. However, as mentioned early the backgrounds in the \ssWW channel are relatively small compared to other channels.
+Backgrounds to the \ssWW process depend largely on experimental choice, and require detailed simulation. It can be seen in Figure~\ref{fig:polarization_comparison} that background from the $WZjj$ process (where one of 
+the leptons from the $Z$ boson decay is not detected) has a different \ctsNN shape than \ssWW events, but it is likely event level cuts will still need to be applied to reduce this component. Determining the systematics on the background shapes will require significant work from the experiments, and is not treated here. However, as mentioned early the backgrounds in the \ssWW channel are relatively small compared to other channels.
 
 We determine the precision that can be achieved for fractions of $TT$, $TL$, and $LL$ components using four different scenarios: (a) using all  generated events at the parton level; 
-(b) using events which pass the additional selection criteria used by ATLAS at the parton level; 
+(b) using events passing the additional selection criteria used by ATLAS at the parton level; 
 (c) using all generated events processed with the {\sc delphes} detector simulation; and (d) using events processed with the {\sc delphes} detector simulation and passing the additional selection criteria used by ATLAS. 
 The precision for the three polarization fractions as a function of the integrated luminosity is presented in Fig.~\ref{fig:sensitivity}. 
- Transverse components can be measured with great precision, whereas separating pure longitudinal-longitudinal scattering from longitudinal-transverse scattering is challenging.
-In the most difficult scenario (d), the cuts slightly increase the $LL$ fraction to 7.0\% and 68\% confidence limits are found to be  <26\% (1-12\%) for an integrated luminosity of 100 (3000) fb$^{-1}$.  Equivalent limits from fits to $R_{pT}$ variable are found to be $<36\%$ and $<16\%$. The fit to the neural network almost doubles the sensitivy in this senario (from 7$\pm$9 to 7$\pm5$), reaching the same statistcal senstivity using the $R_{pT}$ variable would require approximatly 10 ab$^{-1}$ more than 3 time the total LHC program.
+ TT components can be measured with great precision, whereas separating pure LL scattering from LT scattering is challenging.
+In the most difficult scenario (d), the cuts slightly increase the mean $LL$ fraction to 7.0\% and 68\% confidence limits are found 7$^+{19}_{-7}$\% (7$^{+5}_{-6}\%$) for an integrated luminosity of 100 (3000) fb$^{-1}$.  Equivalent limits from fits to $R_{pT}$ variable are found to be 7$^{+29}_{-7}\%$ and 7$^{+9}_{-7}\%$. The fit to the neural network almost doubles the ultimate precision to anomlous $LL$ fractions in this senario, reaching the same statistcal senstivity using the $R_{pT}$ variable would require approximatly 10 ab$^{-1}$, more than 3 times the total LHC program.
 
 \begin{figure*}
 \includegraphics[width=.9\textwidth]{./fig/12_LL_LT_TT.pdf}
@@ -236,13 +231,12 @@ In the most difficult scenario (d), the cuts slightly increase the $LL$ fraction
 In conclusion, we present a method to determine the $WW$ polarization fractions in
 \ssWW events by using a deep machine learning technique.  This method
 allows to recover the charged lepton angular distributions in the $W$
-boson rest frame from measurable event kinematics.  We compare the
+boson rest frame from measurable event kinematics.  The
 results obtained from this method show greatly enhanced sensitivity over
 the example $R_{pT}$ variable.  Cuts to reject
 backgrounds as well as finite detector resolutions reduces the sensitivity as
 expected, but the method remains a powerful tool for the study of
-polarization fractions in VBS events, almost doubling the ultimate precision when
-compared to previous sensitive variables.
+polarization fractions in VBS events, almost doubling the ultimate precision when compared to a previous explored sensitive variable.
 
 
 \begin{thebibliography}{99}
