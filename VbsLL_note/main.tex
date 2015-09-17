@@ -72,7 +72,7 @@ the behavior of longitudinal $W$ boson scattering.
 %\section{Machine learning model}
 While it has become a common practice in high energy physics to use
 multi-variate techniques to separate signal from background, to the
-author's knowledge multi-variate regression has not been used to
+authors' knowledge multi-variate regression has not been used to
 directly measure underlying physics quantities of interest.
 In addition, recent success with deep learning in other areas of
 HEP~\cite{Baldi:2014kfa,Baldi:2014pta} suggest that deep learning
@@ -87,10 +87,13 @@ $\slashed{E}_T^y$).  The overall number of measurable quantities used hence is 1
 The goal of the multi-variate technique is to find
 the best mapping from these measurable quantities to the two truth
 values of \cts (one for each $W$ boson) present in each event.  We
-choose a multi-layer neural network with a final output layer with
+choose a multi-layer neural network with a final output layer \fixme{mention two nodes output already here?!} with
 linear activation. The neural network is implemented with the Theano
-software packages~\cite{theano1,theano2}. The cost function is defined as 
-${\cal{C}}= \sum_{i=1}^{N} [(\ctsnb_{1,i} -\cos \theta^{NN}_{1,i})^2+(\ctsnb_{2,i}-\cos \theta^{NN}_{2,i})^2]/N$, 
+software packages~\cite{theano1,theano2}. The cost function is defined as
+\begin{equation}
+ \label{eq:cost}
+{\cal{C}}= \frac{1}{N}\sum_{i=1}^{N} [(\ctsnb_{1,i} -\cos \theta^{NN}_{1,i})^2+(\ctsnb_{2,i}-\cos \theta^{NN}_{2,i})^2],
+\end{equation}
 where $N$ is the number of events per mini-batch,
 $\ctsnb_{1/2,i}$ is the truth value of \cts for each $W$ boson with
 random ordering for the $i$-th event, and $\cos \theta^{NN}_{1/2, i}$ is the value of
@@ -144,7 +147,7 @@ templates are created using generator level helicity information. In addition, a
 %% %obtained from the reweighted sample. 
 %% {\bf Does this mean you got the
 %%   MG5 scripts to work and add the helicity to the lhe? A. No this was never done removed this.}
-Since there are two $W$ bosons in each event, six distinct polarization states are possible. Events where both $W$ bosons have a polarization of 0 are referred to as $LL$, of 1 as $++$, and of $-1$ as $--$. Events with differing polarization fractions of ($-1$,1) or (1,$-1$) are referred to as $+-$, ($-1$,0) or (0,$-1$) as $L-$ and likewise (1,0) or (0,1) as $L+$. 
+Since there are two $W$ bosons in each event, six distinct polarization states are possible. Events where both $W$ bosons have a polarization of 0 are referred to as $LL$, of 1 as $++$, and of $-1$ as $--$. Events with differing polarizations of ($-1$,1) or (1,$-1$) are referred to as $+-$, ($-1$,0) or (0,$-1$) as $L-$ and likewise (1,0) or (0,1) as $L+$. 
 
 Fig.~\ref{fig:polarization_comparison}(a) shows the comparison between the truth \cts and 
 the NN output \ctsNN for $--$, $++$ and $LL$ events ( $+-/L+/L-$ are omitted for clarity, but closely resemble combinations of the templates shown). As expected, \ctsNN has less separation 
@@ -216,18 +219,20 @@ To emulate the response of a typical general-purpose LHC detector, these events 
 Backgrounds to the \ssWW process depend largely on experimental choice, and require detailed simulation. It can be seen in Fig.~\ref{fig:polarization_comparison} that background from the $WZjj$ process (where one of 
 the leptons from the $Z$ boson decay is not detected) has a different \ctsNN shape than \ssWW events, but it is likely event level cuts will still need to be applied to reduce this component. Determining the systematics on the background shapes will require significant work from the experiments, and is not treated here. However, as already mentioned the backgrounds in the \ssWW channel are relatively small compared to other channels.
 
+\fixme{Boil down to a,b,d scenarios, ordered wrt. increasingly realistic modelling?}
 We determine the precision that can be achieved for fractions of $TT$, $TL$, and $LL$ components using four different scenarios: (a) using all  generated events at the parton level; 
 (b) using events passing the additional selection criteria used by ATLAS at the parton level; 
 (c) using all generated events processed with the {\sc delphes} detector simulation; and (d) using events processed with the {\sc delphes} detector simulation and with reconstructed objects passing additional selection criteria used by \mbox{ATLAS}. 
-The precision for the three polarization fractions as a function of the integrated luminosity is presented in Fig.~\ref{fig:sensitivity}. 
- TT components can be measured with great precision, whereas separating pure LL scattering from LT scattering is challenging.
-In the most difficult scenario (d), the cuts slightly increase the mean $LL$ fraction to 7.0\% and 68\% confidence limits are found 7$^{+19}_{-7}$\% (7$^{+5}_{-6}\%$) for an integrated luminosity of 0.1 (3) ab$^{-1}$.  Equivalent limits from fits to $R_{pT}$ variable are found to be 7$^{+29}_{-7}\%$ and 7$^{+9}_{-7}\%$. The fit to the neural network almost doubles the ultimate precision to anomalous $LL$ fractions in this scenario. Reaching the same statistcal senstivity using the $R_{pT}$ variable would require approximatly 10 ab$^{-1}$, more than 3 times the total LHC program. We have shown that large sensitivity gains can be made with Neural Network regression. In scenario (d) our simple estimate falls short of the $5\sigma$ criteria for observation of longitudinal VBS, however, stringent limits on new physics can be set. In addition, the authors hope that experiments can improve on this methodology by training on fully simulated events or by improving detector performance through upgrades to enhance sensitivity and eventually complete the EWSB picture. 
 
 \begin{figure*}
 \includegraphics[width=.9\textwidth]{./fig/12_LL_LT_TT.pdf}
 \caption{ \label{fig:sensitivity} 68\% (yellow) and 95\% (green) confidence intervals for the LL (top), TL (middle), and TT (bottom) polarization fractions as a function of the integrated luminosity for from left to right scenarios (a),(b),(c), and (d) discussed in the text. \fixme{Add proper x/y axis labels, e.g. $f_{TT}$ etc. on y-axis?}}
 \end{figure*}
 
+The precision for the three polarization fractions as a function of the integrated luminosity is presented in Fig.~\ref{fig:sensitivity}. 
+ TT components can be measured with great precision, whereas separating pure LL scattering from LT scattering is challenging.
+In the most difficult scenario (d), the cuts slightly increase the mean $LL$ fraction to 7.0\% and 68\% confidence limits are found 7$^{+19}_{-7}$\% (7$^{+5}_{-6}\%$) for an integrated luminosity of 0.1 (3) ab$^{-1}$.  Equivalent limits from fits to $R_{pT}$ variable are found to be 7$^{+29}_{-7}\%$ and 7$^{+9}_{-7}\%$. The fit to the neural network almost doubles the ultimate precision to anomalous $LL$ fractions in this scenario. Reaching the same statistcal senstivity using the $R_{pT}$ variable would require approximatly 10 ab$^{-1}$, more than 3 times the total LHC program. We have shown that large sensitivity gains can be made with Neural Network regression. In scenario (d) our simple estimate falls short of the $5\sigma$ criteria for observation of longitudinal VBS, however, stringent limits on new physics can be set. In addition, the authors hope that experiments can improve on this methodology by training on fully simulated events or by improving detector performance through upgrades to enhance sensitivity and eventually complete the EWSB picture. 
+\fixme{Add stronger statement along the lines: ``if SM is wrong, LL could be dramatically enhanced~\cite{VLVLBSM}, so an improved capability to set limits on $f_{LL}$ will be key to use VBS as a window to new physics phenomena.'' Might also need to mention this already in the introduction?}
 
 %\section{Conclusions}
 In conclusion, we present a method to determine the $WW$ polarization fractions in
