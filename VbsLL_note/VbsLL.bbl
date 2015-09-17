@@ -1,53 +1,124 @@
-%merlin.mbs apsrev4-1.bst 2010-07-25 4.21a (PWD, AO, DPC) hacked
-%Control: key (0)
-%Control: author (8) initials jnrlst
-%Control: editor formatted (1) identically to author
-%Control: production of article title (-1) disabled
-%Control: page (0) single
-%Control: year (1) truncated
-%Control: production of eprint (0) enabled
-\begin{thebibliography}{0}%
-\makeatletter
-\providecommand \@ifxundefined [1]{%
- \@ifx{#1\undefined}
-}%
-\providecommand \@ifnum [1]{%
- \ifnum #1\expandafter \@firstoftwo
- \else \expandafter \@secondoftwo
- \fi
-}%
-\providecommand \@ifx [1]{%
- \ifx #1\expandafter \@firstoftwo
- \else \expandafter \@secondoftwo
- \fi
-}%
-\providecommand \natexlab [1]{#1}%
-\providecommand \enquote  [1]{``#1''}%
-\providecommand \bibnamefont  [1]{#1}%
-\providecommand \bibfnamefont [1]{#1}%
-\providecommand \citenamefont [1]{#1}%
-\providecommand \href@noop [0]{\@secondoftwo}%
-\providecommand \href [0]{\begingroup \@sanitize@url \@href}%
-\providecommand \@href[1]{\@@startlink{#1}\@@href}%
-\providecommand \@@href[1]{\endgroup#1\@@endlink}%
-\providecommand \@sanitize@url [0]{\catcode `\\12\catcode `\$12\catcode
-  `\&12\catcode `\#12\catcode `\^12\catcode `\_12\catcode `\%12\relax}%
-\providecommand \@@startlink[1]{}%
-\providecommand \@@endlink[0]{}%
-\providecommand \url  [0]{\begingroup\@sanitize@url \@url }%
-\providecommand \@url [1]{\endgroup\@href {#1}{\urlprefix }}%
-\providecommand \urlprefix  [0]{URL }%
-\providecommand \Eprint [0]{\href }%
-\providecommand \doibase [0]{http://dx.doi.org/}%
-\providecommand \selectlanguage [0]{\@gobble}%
-\providecommand \bibinfo  [0]{\@secondoftwo}%
-\providecommand \bibfield  [0]{\@secondoftwo}%
-\providecommand \translation [1]{[#1]}%
-\providecommand \BibitemOpen [0]{}%
-\providecommand \bibitemStop [0]{}%
-\providecommand \bibitemNoStop [0]{.\EOS\space}%
-\providecommand \EOS [0]{\spacefactor3000\relax}%
-\providecommand \BibitemShut  [1]{\csname bibitem#1\endcsname}%
-\let\auto@bib@innerbib\@empty
-%</preamble>
-\end{thebibliography}%
+\providecommand{\href}[2]{#2}\begingroup\raggedright\begin{thebibliography}{10}
+
+\bibitem{Baldi:2014kfa}
+P.~Baldi, P.~Sadowski, and D.~Whiteson
+  \href{http://dx.doi.org/10.1038/ncomms5308}{{\em Nature Commun.} {\bfseries
+  5} (2014) 4308},
+\href{http://arxiv.org/abs/1402.4735}{{\ttfamily arXiv:1402.4735 [hep-ph]}}.
+%%CITATION = ARXIV:1402.4735;%%.
+
+\bibitem{Baldi:2014pta}
+P.~Baldi, P.~Sadowski, and D.~Whiteson
+  \href{http://dx.doi.org/10.1103/PhysRevLett.114.111801}{{\em Phys.Rev.Lett.}
+  {\bfseries 114} no.~11, (2015) 111801},
+\href{http://arxiv.org/abs/1410.3469}{{\ttfamily arXiv:1410.3469 [hep-ph]}}.
+%%CITATION = ARXIV:1410.3469;%%.
+
+\bibitem{ATLAS_higgs}
+{\bfseries ATLAS} Collaboration, G.~Aad {\em et~al.}
+  \href{http://dx.doi.org/10.1016/j.physletb.2012.08.020}{{\em Phys.Lett.}
+  {\bfseries B716} (2012) 1--29},
+\href{http://arxiv.org/abs/1207.7214}{{\ttfamily arXiv:1207.7214 [hep-ex]}}.
+%%CITATION = ARXIV:1207.7214;%%.
+
+\bibitem{CMS_higgs}
+{\bfseries CMS} Collaboration, S.~Chatrchyan {\em et~al.}
+  \href{http://dx.doi.org/10.1016/j.physletb.2012.08.021}{{\em Phys.Lett.}
+  {\bfseries B716} (2012) 30--61},
+\href{http://arxiv.org/abs/1207.7235}{{\ttfamily arXiv:1207.7235 [hep-ex]}}.
+%%CITATION = ARXIV:1207.7235;%%.
+
+\bibitem{ATLAS_ssWW}
+{\bfseries ATLAS} Collaboration, G.~Aad {\em et~al.}
+  \href{http://dx.doi.org/10.1103/PhysRevLett.113.141803}{{\em Phys.Rev.Lett.}
+  {\bfseries 113} no.~14, (2014) 141803},
+\href{http://arxiv.org/abs/1405.6241}{{\ttfamily arXiv:1405.6241 [hep-ex]}}.
+%%CITATION = ARXIV:1405.6241;%%.
+
+\bibitem{CMS_ssWW}
+{\bfseries CMS} Collaboration, V.~Khachatryan {\em et~al.}
+  \href{http://dx.doi.org/10.1103/PhysRevLett.114.051801}{{\em Phys.Rev.Lett.}
+  {\bfseries 114} no.~5, (2015) 051801},
+\href{http://arxiv.org/abs/1410.6315}{{\ttfamily arXiv:1410.6315 [hep-ex]}}.
+%%CITATION = ARXIV:1410.6315;%%.
+
+\bibitem{Wpol}
+R.~K. Ellis, W.~J. Stirling, and B.~R. Webber
+{\em Camb. Monogr. Part. Phys. Nucl. Phys. Cosmol.} {\bfseries 8} (1996)
+  1--435.
+%%CITATION = CMPCE,8,1;%%.
+
+\bibitem{Han:2009em}
+T.~Han, D.~Krohn, L.-T. Wang, and W.~Zhu
+  \href{http://dx.doi.org/10.1007/JHEP03(2010)082}{{\em JHEP} {\bfseries 1003}
+  (2010) 082},
+\href{http://arxiv.org/abs/0911.3656}{{\ttfamily arXiv:0911.3656 [hep-ph]}}.
+%%CITATION = ARXIV:0911.3656;%%.
+
+\bibitem{VBSCuts1}
+A.~Ballestrero, D.~B. Franzosi, and E.~Maina
+  \href{http://dx.doi.org/10.1007/JHEP06(2011)013}{{\em JHEP} {\bfseries 06}
+  (2011) 013},
+\href{http://arxiv.org/abs/1011.1514}{{\ttfamily arXiv:1011.1514 [hep-ph]}}.
+%%CITATION = ARXIV:1011.1514;%%.
+
+\bibitem{VBSME}
+A.~Freitas and J.~S. Gainer
+  \href{http://dx.doi.org/10.1103/PhysRevD.88.017302}{{\em Phys. Rev.}
+  {\bfseries D88} no.~1, (2013) 017302},
+\href{http://arxiv.org/abs/1212.3598}{{\ttfamily arXiv:1212.3598}}.
+%%CITATION = ARXIV:1212.3598;%%.
+
+\bibitem{Doroba:2012pd}
+K.~Doroba, J.~Kalinowski, J.~Kuczmarski, S.~Pokorski, J.~Rosiek, {\em et~al.}
+  \href{http://dx.doi.org/10.1103/PhysRevD.86.036011}{{\em Phys.Rev.}
+  {\bfseries D86} (2012) 036011},
+\href{http://arxiv.org/abs/1201.2768}{{\ttfamily arXiv:1201.2768 [hep-ph]}}.
+%%CITATION = ARXIV:1201.2768;%%.
+
+\bibitem{theano1}
+J.~Bergstra, O.~Breuleux, F.~Bastien, P.~Lamblin, R.~Pascanu, G.~Desjardins,
+  J.~Turian, D.~Warde-Farley, and Y.~Bengio in {\em Proceedings of the 9th
+  Python in Science Conference}, pp.~3 -- 10.
+\newblock 2010.
+
+\bibitem{theano2}
+F.~Bastien, P.~Lamblin, R.~Pascanu, J.~Bergstra, I.~J. Goodfellow, A.~Bergeron,
+  N.~Bouchard, D.~Warde{-}Farley, and Y.~Bengio {\em CoRR} {\bfseries
+  abs/1211.5590} (2012) , \url{http://arxiv.org/abs/1211.5590}.
+
+\bibitem{madgraph}
+J.~Alwall, R.~Frederix, S.~Frixione, V.~Hirschi, F.~Maltoni, {\em et~al.}
+  \href{http://dx.doi.org/10.1007/JHEP07(2014)079}{{\em JHEP} {\bfseries 1407}
+  (2014) 079},
+\href{http://arxiv.org/abs/1405.0301}{{\ttfamily arXiv:1405.0301 [hep-ph]}}.
+%%CITATION = ARXIV:1405.0301;%%.
+
+\bibitem{RooFit}
+W.~Verkerke and D.~P. Kirkby {\em eConf} {\bfseries C0303241} (2003) MOLT007,
+\href{http://arxiv.org/abs/physics/0306116}{{\ttfamily arXiv:physics/0306116
+  [physics]}}.
+%%CITATION = PHYSICS/0306116;%%.
+
+\bibitem{pythia}
+T.~Sj{\"o}strand, S.~Mrenna, and P.~Z. Skands
+  \href{http://dx.doi.org/10.1016/j.cpc.2008.01.036}{{\em Comput. Phys.
+  Commun.} {\bfseries 178} (2008) 852--867},
+\href{http://arxiv.org/abs/0710.3820}{{\ttfamily arXiv:0710.3820 [hep-ph]}}.
+%%CITATION = ARXIV:0710.3820;%%.
+
+\bibitem{delphes}
+{\bfseries DELPHES 3} Collaboration, J.~de~Favereau {\em et~al.}
+  \href{http://dx.doi.org/10.1007/JHEP02(2014)057}{{\em JHEP} {\bfseries 1402}
+  (2014) 057},
+\href{http://arxiv.org/abs/1307.6346}{{\ttfamily arXiv:1307.6346 [hep-ex]}}.
+%%CITATION = ARXIV:1307.6346;%%.
+
+\bibitem{antikt}
+M.~Cacciari, G.~P. Salam, and G.~Soyez
+  \href{http://dx.doi.org/10.1088/1126-6708/2008/04/063}{{\em JHEP} {\bfseries
+  04} (2008) 063},
+\href{http://arxiv.org/abs/0802.1189}{{\ttfamily arXiv:0802.1189 [hep-ph]}}.
+%%CITATION = ARXIV:0802.1189;%%.
+
+\end{thebibliography}\endgroup
