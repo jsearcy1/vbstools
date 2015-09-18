@@ -676,7 +676,7 @@ FUNCTION {format.volume}
 FUNCTION {format.number}
 { number empty$
     { "" }
-    { "no.~" number * ", " *}
+    { "" }
   if$
 }
 
@@ -840,7 +840,7 @@ FUNCTION {article}
   format.collaboration output
   format.authors "author" output.check
   %format.title "title" output.check
-  blank.sep
+  %blank.sep
   crossref missing$
   { journal missing$   
         {}
