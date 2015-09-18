@@ -1,4 +1,4 @@
-%\section{Introduction}
+\section{Introduction}
 Recent studies have shown that advances in machine learning can
 improve the prospects for measurements at the Large Hadron Collider~\cite{Baldi:2014kfa,Baldi:2014pta}.
 In this paper we explore a machine learning technique, that
@@ -87,8 +87,9 @@ $\slashed{E}_T^y$).  The overall number of measurable quantities used hence is 1
 The goal of the multi-variate technique is to find
 the best mapping from these measurable quantities to the two truth
 values of \cts (one for each $W$ boson) present in each event.  We
-choose a multi-layer neural network with a final output layer \fixme{mention two nodes output already here?!} with
-linear activation. The neural network is implemented with the Theano
+choose a multi-layer neural network with a two node final output layer with
+linear activation to approximate the true $\cts$ distribution of each $W$ boson.
+ The neural network is implemented with the Theano
 software packages~\cite{theano1,theano2}. The cost function is defined as
 \begin{equation}
  \label{eq:cost}
@@ -232,7 +233,7 @@ contributions from $TT$, $TL$ and $LL$ components. It is found that the $LL$ fra
 %\includegraphics[width=.49\textwidth]{./fig/NN_fit_3.pdf}
 \caption{\label{fig:fit_example} One example fit where the pseudo data are compared to the sum of 
 contributions from $TT$, $TL$ and $LL$ components. There are five groups with five bins inside each group. 
-These five groups represent $\ctsNN_2$ from $-1$ to 1 with a step size of 0.4, while five bins inside each group represent $\ctsNN_1$ from $-1$ to 1 with a step size of 0.4. \fixme{y-axis: ``Event'' $\to$ ``Events''}}
+These five groups represent $\ctsNN_2$ from $-1$ to 1 with a step size of 0.4, while five bins inside each group represent $\ctsNN_1$ from $-1$ to 1 with a step size of 0.4. }
 \end{figure}
 
 The above measurements are performed with parton level predictions. While they show encouraging results  it is important 
@@ -248,10 +249,10 @@ To emulate the response of a typical general-purpose LHC detector, these events 
 Backgrounds to the \ssWW process depend largely on experimental choice, and require detailed simulation. It can be seen in Fig.~\ref{fig:polarization_comparison} that background from the $WZjj$ process (where one of 
 the leptons from the $Z$ boson decay is not detected) has a different \ctsNN shape than \ssWW events, but it is likely event level cuts will still need to be applied to reduce this component. Determining the systematics on the background shapes will require significant work from the experiments, and is not treated here. However, as already mentioned the backgrounds in the \ssWW channel are relatively small compared to other channels.
 
-\fixme{Boil down to a,b,d scenarios, ordered wrt. increasingly realistic modelling?}
-We determine the precision that can be achieved for fractions of $TT$, $TL$, and $LL$ components using four different scenarios: (a) using all  generated events at the parton level; 
+
+We determine the precision that can be achieved for fractions of $TT$, $TL$, and $LL$ components using three different scenarios increaseing in realism: (a) using all  generated events at the parton level; 
 (b) using events passing the additional selection criteria used by ATLAS at the parton level; 
-(c) using all generated events processed with the {\sc delphes} detector simulation; and (d) using events processed with the {\sc delphes} detector simulation and with reconstructed objects passing additional selection criteria used by \mbox{ATLAS}. 
+(c) using events processed with the {\sc delphes} detector simulation and with reconstructed objects passing additional selection criteria used by \mbox{ATLAS}. 
 
 \begin{figure*}
 \includegraphics[width=.9\textwidth]{./fig/12_LL_LT_TT.pdf}
@@ -260,8 +261,7 @@ We determine the precision that can be achieved for fractions of $TT$, $TL$, and
 
 The precision for the three polarization fractions as a function of the integrated luminosity is presented in Fig.~\ref{fig:sensitivity}. 
  TT components can be measured with great precision, whereas separating pure LL scattering from LT scattering is challenging.
-In the most difficult scenario (d), the cuts slightly increase the mean $LL$ fraction to 7.0\% and 68\% confidence limits are found 7$^{+19}_{-7}$\% (7$^{+5}_{-6}\%$) for an integrated luminosity of 0.1 (3) ab$^{-1}$.  Equivalent limits from fits to $R_{pT}$ variable are found to be 7$^{+29}_{-7}\%$ and 7$^{+9}_{-7}\%$. The fit to the neural network almost doubles the ultimate precision to anomalous $LL$ fractions in this scenario. Reaching the same statistcal senstivity using the $R_{pT}$ variable would require approximatly 10 ab$^{-1}$, more than 3 times the total LHC program. We have shown that large sensitivity gains can be made with Neural Network regression. In scenario (d) our simple estimate falls short of the $5\sigma$ criteria for observation of longitudinal VBS, however, stringent limits on new physics can be set. In addition, the authors hope that experiments can improve on this methodology by training on fully simulated events or by improving detector performance through upgrades to enhance sensitivity and eventually complete the EWSB picture. 
-\fixme{Add stronger statement along the lines: ``if SM is wrong, LL could be dramatically enhanced~\cite{VLVLBSM}, so an improved capability to set limits on $f_{LL}$ will be key to use VBS as a window to new physics phenomena.'' Might also need to mention this already in the introduction?}
+In the most difficult and realistic scenario (c), the cuts and object efficiencies slightly increase the mean $LL$ fraction to 7.0\% and 68\% confidence limits are found 7$^{+19}_{-7}$\% (7$^{+5}_{-6}\%$) for an integrated luminosity of 0.1 (3) ab$^{-1}$.  Equivalent limits from fits to $R_{pT}$ variable are found to be 7$^{+29}_{-7}\%$ and 7$^{+9}_{-7}\%$. The fit to the neural network almost doubles the ultimate precision to anomalous $LL$ fractions in this scenario. Reaching the same statistical sensitivity using the $R_{pT}$ variable would require approximately 10 ab$^{-1}$, more than 3 times the total LHC program. We have shown that large sensitivity gains can be made with Neural Network regression. In scenario (c) our simple estimate falls short of the $5\sigma$ criteria for observation of longitudinal VBS, however, new physics beyond the standard model could greatly enhance this fraction~\cite{VLVLBSM}, making stringent limits or a future observation of this fraction very important. In addition, the authors hope that experiments can improve on this methodology by training on fully simulated events or by improving detector performance through upgrades to enhance sensitivity and eventually complete the EWSB picture. 
 
 %\section{Conclusions}
 In conclusion, we present a method to determine the $WW$ polarization fractions in
@@ -275,7 +275,8 @@ expected, but the method remains a powerful tool for the study of
 polarization fractions in VBS events, almost doubling the ultimate precision when compared to a previously explored sensitive variable.
 
 We would like to thank our colleagues Sally Dawson and Olivier Mattelaer for their help and guidance while preparing this manuscript.
-The contributions from JS, LH and JZ were supported by the Department of Energy Early Career Grant under contract DE-SC0008062. The work of M-AP is supported by DOE Contract No. DE-SC0012704. \fixme{ATLAS scholarship to be added for JS}
+The contributions from JS, LH and JZ were supported by the Department of Energy Early Career Grant under contract DE-SC0008062. The work of M-AP is supported by DOE Contract No. DE-SC0012704.
+We would also like to acknowledge the role of the U.S. ATLAS Scholar program for fostering collaboration between Michigan and Brookhaven National Laboratory.
 
 \bibliographystyle{myutphys}
 \bibliography{ref}
