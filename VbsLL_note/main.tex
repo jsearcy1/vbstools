@@ -1,6 +1,6 @@
 %\section{Introduction}
 
-Measuring longitudinal Vector Boson Scattering (VBS) processes has
+Studying longitudinal Vector Boson Scattering (VBS) processes has
 long been a central goal of high energy
 colliders~\cite{SSC_1}. Without a Higgs boson, the scattering
 amplitude of longitudinal vector bosons ($V_{L}V_{L} \rightarrow
@@ -9,11 +9,11 @@ violates unitarity~\cite{Uni_1,Uni_2,Uni_3}. The discovery of a
 Higgs-like boson at the LHC~\cite{ATLAS_higgs,CMS_higgs} was the first
 step towards understanding these interactions. However, if this Higgs
 boson's couplings to vector bosons deviate from the Standard Model
-(SM) expectation VBS processes can still increase with center-of-mass
+(SM) expectation the scattering amplitude of VBS processes can still increase with center-of-mass
 energy, which makes VBS a sensitive probe of anomalous Higgs
 couplings~\cite{Higgs_con}. In addition, many new physics scenarios
 predict increases in
-VBS~\cite{Tmatrix,VLVLBSM,Trip_Higgs_old,Trip_higgs_new}, through
+VBS~\cite{Tmatrix,VLVLBSM,Trip_Higgs_old,Trip_higgs_new} cross sections, through
 extended Higgs sectors or other new resonances. VBS measurements hence
 are both a window to new physics and a constraint on fundamental properties
 of the Higgs boson. Measuring VBS processes at a hadron collider is
@@ -38,8 +38,7 @@ Collider~\cite{Baldi:2014kfa,Baldi:2014pta}.  In this paper we explore
 a machine learning technique that has not previously been used in the
 experimental high energy physics community: regression with deep
 neural networks. We apply this method to the difficult problem of
-measuring longitudinal VBS, which is integral to understanding
-electroweak symmetry breaking in the SM.
+measuring longitudinal VBS in \ssWW.
 
 In general, the polarization of a gauge boson can be determined from
 the angular distribution of its decay products. The normalized differential cross section of a
@@ -97,7 +96,7 @@ classification where the goal of the neural network is to produce
 discrete assignments, for example signal and background, NN regression
 relies on the fact that a neural network can serve as a universal
 approximator~\cite{NN_1}, to instead approximate an unknown continuous
-function.  The goal of our Neural Network is to find the best
+function.  The goal of our NN is to find the best
 approximation using measurable quantities of the two truth values
 of \cts (one for each $W$ boson) present in each event. Similar
 techniques are currently in use to address the problem of estimating
@@ -142,7 +141,8 @@ where $N$ is the number of events per mini-batch, $\ctsnb_{1/2,i}$ is
 the truth value of \cts for each $W$ boson with random ordering for
 the $i$-th event, and $\cos \theta^{NN}_{1/2, i}$ is the value of the
 two neural network outputs. A Stochastic gradient descent algorithm is
-used to train the neural network. Hyper-parameters are tuned by hand
+used to train the neural network by minimizing the cost function.
+ Hyper-parameters are tuned by hand
 and confirmed by a local grid search, with the best performance given
 by a deep network with 20 layers each with 200 hidden nodes.  This
 network yields a 20\% better cost value in a validation data set than
