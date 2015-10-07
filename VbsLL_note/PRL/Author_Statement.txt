@@ -1,3 +1,11 @@
+USED:
+Our paper presents a significant step toward solving the long standing
+problem of measuring longitudinal Vector Boson Scattering. We address
+it with modern machine learning techniques, and show that we can
+double the LHC's experimental sensitivity to this process. The
+presented technique is of general interest, applicable to many areas.
+
+
 Our paper presents a significant step toward solving the long
 standing problem of measuring longitudinal Vector Boson
 Scattering (VBS). Longitudinal VBS is an integral part of
