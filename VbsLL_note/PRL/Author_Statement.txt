@@ -1,0 +1,12 @@
+Our paper presents a significant step toward solving the long
+standing problem of measuring longitudinal Vector Boson
+Scattering (VBS). Longitudinal VBS is an integral part of
+Electroweak symmetry breaking, and its measurement has been a
+goal of High Energy physics for several decades. We address this
+problem with modern machine learning techniques, and show that we
+can double the LHC's experimental sensitivity to this process. We
+feel that the increase in this sensitivity is particularity
+noteworthy, but also that the techniques we have developed are
+applicable to many areas making our result of general interest.
+
+Longitudinal Vector Boson Scattering is deeply entwined with the Higgs mechanism, and measuring it has been a goal of physicists for decades. In the most sensitive VBS channel, W+W+jj, the longitudinal component cannot be directly extracted at the LHC because of un-measurable neutrinos in its final state. We address this problem with modern machine learning techniques, and show that we can double the LHC's experimental sensitivity to this process. We feel that the increase in this sensitivity is particularity noteworthy, but also that the techniques we have developed are applicable to other areas making our result of general interest.
