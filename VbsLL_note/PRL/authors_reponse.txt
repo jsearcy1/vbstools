@@ -1,0 +1,202 @@
+Re: LK14763 
+Determination of the WW polarization fractions in pp rightarrow W  pm 
+W  pm jj using a deep machine learning technique 
+by Jacob Searcy, Lillian Huang, Marc-Andr\'e Pleier, et al. 
+Dear Dr. Pleier,
+
+The above manuscript has been reviewed by our referees.  A critique
+drawn from the reports appears below.  On this basis, we judge that
+while the work probably warrants publication in some form, it does not
+meet the Physical Review Letters criteria of impact, innovation, and
+interest.
+
+The paper, with revision as appropriate, might be suitable for
+publication in Physical Review.  If you submit the paper to Physical
+Review, the editors of that journal will make the decision on
+publication of the paper, and may seek further review; however, our
+complete file will be available.
+
+If you submit this manuscript or a revision of it to Physical Review,
+be sure to respond to all referee comments and cite the code number
+assigned to the paper to facilitate transfer of the records.
+If you feel that you can overcome or refute the criticism, you may
+resubmit to Physical Review Letters.  Please accompany any resubmittal
+by a summary of the changes made and a brief response to all
+recommendations and criticisms.
+
+Yours sincerely,
+Kevin Dusling
+Associate Editor
+Physical Review Letters
+Email: prl@aps.org
+http://journals.aps.org/prl/
+IMPORTANT: Editorial "Review Changes"
+
+http://journals.aps.org/prl/edannounce/PhysRevLett.111.180001
+
+----------------------------------------------------------------------
+
+Report of Referee A -- LK14763/Searcy
+
+----------------------------------------------------------------------
+
+This is an interesting, very readable paper. The use of deep learning
+NNs to actually calculate an under constrained quantity in particle
+physics is new to me.
+I have a number of serious comments though and it works best to attach
+them to the plots:
+
+Fig 1a: it compares LL, -- and ++ according to the labeling, but in
+fact in only shows a single cos theta* distribution for +, - and L.
+
+Authors:This plot shows cos theta* distribution for the first lepton in LL, -- and ++ events. The distribution for 
+the first and the second leptons are the same since we do not label two leptons in a particular order. 
+We think it is better easier to make comparisons in 1D instead of 2D for clarity. We modified the caption to clarify what is
+being shown.
+
+
+Fig 1b: the log scale is necessary but makes a meaningful comparison
+with the NN impossible.
+
+Authors:We agree with you. We modified the caption to emphasize the scale difference for these two plots. We 
+compared the uncertainty on the fitted LL fraction using both variables quantitatively in the text.
+
+
+Fig 1c: the x-axis is cos theta NN and not cos theta*. Since this is
+the distribution used in the template fit, it is not possible to cut
+on it to suppress background, so why show it. The actual background
+shape can be derived from data using fully reconstructed (3 lepton)
+background and removing the appropriate lepton. Probably this figure
+can go.
+
+Authors:We corrected the label of the x-axis to cos theta NN. It may be possible to use 3-leptons data events to 
+derive the cos theta NN distribution as you suggested, we feel this figure is interesting because it shows 
+the discrimination power of this variable between the signal and dominant background.
+
+Fig2: Confusing, if cos theta_1 NN and cos theta_2 NN are correlated
+maybe 3 different 2D plots would be best, if not a 1-D distribution
+would be a lot clearer.
+
+Authors:We followed your suggestions to add three 2D plots to show the differences for cos theta NN 1 vs 2 
+correlations, but we also want to keep the original 1D plot that clearly demonstrate the fitting procedure 
+and also the fraction from each template. 
+
+Fig3: part a and b are not realistic and therefore not relevant and
+can go, only use c. The x-axis should be integrated luminosity. In
+general, even the realism of c) is limited. To obtain a dataset of
+several ab-1 years of running with high pile-up is needed. The issue
+of pile-up, leading to misidentification of the tagging jets and
+decreasing the precision of the missing Et measurement is not
+addressed at all. While I expect the deep learning NN still to
+outperform the Rt method, the most realistic and difficult scenario
+does not look good for a meaningful LL measurement
+
+Authors:We agree with you that parts a) and b) are not realistic, but we think these two plots provides additional 
+information about these detector effects on the LL fraction measurement. For example when comparing a) 
+to b) you can see that the cuts used significantly impact the significance implying optimization could be 
+possible. Similarly from b) to c) shows the degradation on the final sensitivity due to finite detector 
+resolutions and detection efficiencies. This has been clarified in the text.
+In regards to c) pile-up was in part included in the Delphes parameterization. Mis-tagged jets, however, in this case are not
+a major concern, since they are generally easily rejected by increased pt cuts. This can be performed with almost no loss of efficiency 
+because of the already relatively high M(j,j) cuts.
+
+----------------------------------------------------------------------
+
+Report of Referee B -- LK14763/Searcy
+
+----------------------------------------------------------------------
+
+The paper outlines the use of a machine learning technique,
+specifically, the use of deep neural networks, to measure WW
+polarization fractions in events with two same sign W bosons and two
+hadronic jets. These measurements and study of vector boson scattering
+are important to carry out at the LHC and particularly at the high
+luminosity LHC.
+
+Neural networks method has been used extensively in High Energy
+Physics for almost 25 years now. Recently, the CMS collaboration used
+it in many aspects of Higgs boson searches and discovery. It is not
+surprising that deep neural networks with several hidden layers do
+somewhat better than the single hidden layer or shallow networks
+because of a large number of parameters in the deep networks and
+building up of the mapping from input to output over several layers.
+Therefore, I am not convinced of the novelty or urgency for the paper
+to be published in physical review letters. The paper describes an
+interesting and useful study and an interesting application. It might
+be useful to include more details regarding the deep neural network
+training, provide comparisons with performance of single hidden layer
+network to clearly demonstrate the gains, and publish a detailed paper
+in Physical Review D.
+
+Authors:Thank you for finding our application interesting, we will respond in detail to your questions below. As 
+we know, most people use the neural network that combines many observables to form new 
+discriminators to separate signal and backgrounds, while in this paper, we exploit the idea to use the 
+neural network to approximate variables that cannot be directly measured. We then applied this method 
+on an interesting physics problem and provided the first generic way of measuring the VBS polarization 
+fraction using any multi-variate technique. The choice of Deep-learning algorithm in this case was 
+motivated by gains seen by (references), in situations where high level variables are not known. Other 
+regression techniques, including signal layer neural network, could be used. A discussion of the merits of 
+deep versus single neural networks is not intended to be the focus of this paper. Other papers addressing
+this topic can be found in the literature, for example, references
+
+Following are some specific comments and suggestions that should to be
+addressed.
+
+1. Page 2, paragraph 2: The authors suggest that multivariate
+techniques have not been used directly to measure underlying physics
+quantities of interest. MVA regression techniques have been used by
+Tevatron and LHC experiments (CMS) to estimate energy scale and energy
+resolution of photons and jets. This is no different from using MVA
+regression to directly measure a physics quantity. (Monte Carlo
+studies have been made to measure top mass or Higgs mass from event
+kinematics using MVA regression.)
+
+Authors: 
+Thanks you for bring this to our attention, since we were not able to find this information publicly available.
+We changed this to read.
+
+While it has become a common practice in high energy physics to use
+multi-variate techniques to separate signal from background, multi-variate
+regression is not commonly used to measure underlying physics quantities of interest.
+
+2. How many events were generated and used for deep network training?
+Did the training of single layer network also use the same number of
+events? What was the architecture of the best single layer network?
+The 20% improvement in cost value, presumably is for events generated
+at the parton-level?
+
+Authors:500,000 events where used for training and another 1 Million for testing and validation.
+Single layer training was done with the same data
+
+3. Fig. 1: In the text, authors refer to Fig. 1(a), 1(b) etc. and the
+plots in figures are not labeled as such. Also, the ordinate labeled
+as ?A.U.? This should be changed to, say, ?Events (arbitrary units)?.
+
+Authors: A.U. represents arbitrary units, we will correct the labels.
+
+4. Fig. 2.: The top and bottom axes are confusing. Suggest remaking
+the plot with gaps between groups to indicate axes values of -1 and +1
+appropriately, or have five different plots arranged side-by-side.
+Cos(theta)_2^NN values should be shown as -1., -0.6, .. etc., not as a
+continuous variable as the top axis presently suggests.
+
+Authors:We have add additional space between groups as you suggest, and modified the labels.
+
+5. The deep network results with events generated at parton-level
+yield a 68% confidence level limit on the LL fraction of (6.7 +/-
+1.4)% whereas with modeling of detector simulation, this becomes (7^+5
+-6)%. This result is then compared to results obtained using the
+single R_pT variable (which does not have good discrimination). What
+would the result be with single layer neural network using the same
+variables as the deep network? How much gain does the deep neural
+network provide relative to the shallow network in the scenario with
+detector modeling? What is the expected effect of the pile-up problem
+at the HL-LHC on the significance of the result and the relative gain?
+
+Authors:The focus of this paper is to use the neural network regression technique to approximate a physics 
+quantity that cannot be directly measured and to apply it on the physics problem that is directly related to 
+electroweak symmetry symmetry breaking. Since there can be many different ways and parameters to 
+train single and multiple layer network, we choose to not directly compare the results. 
+In the case the gains in deep were similar to the decrease in cost, however, we will refer to the general 
+comment above. To some degree the effect of pileup is included in the delphes simulation, however, we feel
+that VBS processes warrants dedicated detector studies by the collaborations. 
