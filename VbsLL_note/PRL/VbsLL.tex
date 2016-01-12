@@ -140,12 +140,11 @@ approximation mitigates the limitation of missing kinematic information
 in this final state, and makes \ssWW a promising channel for observing
 the behavior of longitudinal $W$ boson scattering.
  
-
+ 
 While it has become a common practice in high energy physics to use
-multi-variate techniques to separate signal from background, to the
-authors' knowledge multi-variate regression has not been used to
-directly measure underlying physics quantities of interest. Unlike
-classification where the goal of the neural network is to produce
+multi-variate techniques to separate signal from background, multi-variate
+regression is not commonly used to measure underlying physics quantities of interest. 
+Unlike classification where the goal of the neural network is to produce
 discrete assignments, for example signal and background, NN regression
 relies on the fact that a neural network can serve as a universal
 approximator~\cite{NN_1}, to instead approximate an unknown continuous
@@ -215,14 +214,19 @@ and off-shell effects, and the results were found to be comparable.
 Since there are two $W$ bosons in each event, six distinct polarization states are possible. Events where both $W$ bosons have a polarization of 0 are referred to as $LL$, of 1 as $++$, and of $-1$ as $--$. Events with differing polarizations of ($-1$,1) or (1,$-1$) are referred to as $+-$, ($-1$,0) or (0,$-1$) as $L-$ and likewise (1,0) or (0,1) as $L+$. 
 
 \begin{figure*}
-\includegraphics[width=.32\textwidth,height=.18\textheight]{fig_01a.pdf}
-\includegraphics[width=.32\textwidth,height=.18\textheight]{fig_01b.pdf}
-\includegraphics[width=.32\textwidth,height=.18\textheight]{fig_01c.pdf}
+\begin{tabular}{ccc}
+\includegraphics[width=.32\textwidth,height=.18\textheight]{fig_01a.pdf}&
+\includegraphics[width=.32\textwidth,height=.18\textheight]{fig_01b.pdf}&
+\includegraphics[width=.32\textwidth,height=.19\textheight]{fig_01c.pdf}\\
+(a)&(b)&(c)\\
+\end{tabular}
 \caption{\label{fig:polarization_comparison} Comparison of the truth level \cts and the 
-NN output \ctsNN distributions for $--$, $++$ and $LL$ events (Left), 
-$R_{pT}$ templates for the corresponding polarization states (Middle), 
-and comparison of the \ctsNN for the signal and dominant $WZjj$ background (Right).}
+NN output \ctsNN distributions for $--$, $++$ and $LL$ events (a), 
+$R_{pT}$ templates for the corresponding polarization states are shown with log scaling in (b), 
+and comparison of the \ctsNN for the signal and dominant $WZjj$ background (c) are shown with arbitrary units (A.U.). (a) and (c) are the 
+projections of the 2D distributions onto lepton 1, however, due to arbitrary sorting the projection onto lepton 2 is identical.}
 \end{figure*}
+
 
 Figure~\ref{fig:polarization_comparison}(a) shows the comparison between the truth \cts and 
 the NN output \ctsNN for $--$, $++$ and $LL$ events ( $+-/L+/L-$ are omitted for clarity, but closely resemble combinations of the templates shown). As expected, \ctsNN has less separation 
@@ -244,32 +248,47 @@ longitudinally-polarized as ``$TL$'' (the sum of $L-$ and $L+$
 combinations), and events with both $W$ bosons
 longitudinally-polarized as ``$LL$''. This reduces the free fitting parameters from 5 to 2 and 
 allows for a better constraint on the $LL$ scattering fraction of interest, under the assumption that
-the relative admixture of contributions within $TT$ and $TL$ does not change. Statistical fit uncertainties are determined by randomly
+the relative admixture of contributions within $TT$ and $TL$ does not change. The two dimensional distributions for these templates are shown in Fig.~\ref{fig:2d_templates}. Statistical fit uncertainties are determined by randomly
 fluctuating data expectations within their Poisson uncertainties and
 repeating the fit, and confidence intervals are derived from these toy experiments.  
+
+\begin{figure*}
+\begin{tabular}{ccc}
+$TT$ &$TL$&$LL$\\
+\includegraphics[width=.32\textwidth,height=.18\textheight]{fig_02a.pdf}&
+\includegraphics[width=.32\textwidth,height=.18\textheight]{fig_02b.pdf}&
+\includegraphics[width=.32\textwidth,height=.18\textheight]{fig_02c.pdf}\\
+\end{tabular}
+\caption{\label{fig:2d_templates} The two dimensional distribution for the neural-network approximation is show for each of the three polarization states: $TT$,$TL$,and $LL$ respectively.}
+\end{figure*}
+
 
 Fits are performed in a range of integrated luminosities from $0.01-3$~ab$^{-1}$. An example fit for 1 ab$^{-1}$ is shown in Fig.~\ref{fig:fit_example} where the pseudo data are compared to the sum of 
 contributions from $TT$, $TL$ and $LL$ components. It is found that the $LL$ fraction can be measured with a 68\% confidence limit of (6.7$\pm 1.4)\%$ with an ultimate luminosity of 3 ab$^{-1}$. When a similar fit is applied to the $R_{pT}$ variable the precision of (6.7$^{+7.1}_{- 6.7})\%$ is found to be consistent with 0. The regression technique hence greatly enhances the sensitivity to this process.
 
+
+
 \begin{figure}[h]
 
-\begin{overpic}[width=0.49\textwidth]{fig_02.pdf}
-\put (77,-1) {$\ctsNN_1$}
-\put (7,2.5){\footnotesize$-1$}
-\put (22.3,2.5){\footnotesize$\pm 1$}
-\put (38.7,2.5){\footnotesize$\mp 1$}
-\put (54.6,2.5){\footnotesize$\pm1$}
-\put (70.6,2.5){\footnotesize$\mp1$}
-\put (89.3,2.5){\footnotesize$1$}
-\put (77,54) {$\ctsNN_2$}
-\put (7,51){\footnotesize$-1$}
-\put (21.5,51){\footnotesize$-0.6$}
-\put (37.5,51){\footnotesize$-0.2$}
-\put (55.5,51){\footnotesize$0.2$}
-\put (72,51){\footnotesize$0.6$}
-\put (89.3,51){\footnotesize$1$}
+\includegraphics[width=.45\textwidth,height=.18\textheight]{fig_03.pdf}
 
-\end{overpic}
+%\begin{overpic}[width=0.49\textwidth]{fig_03.pdf}
+%% \put (77,-1) {$\ctsNN_1$}
+%% \put (7,2.5){\footnotesize$-1$}
+%% \put (22.3,2.5){\footnotesize$\pm 1$}
+%% \put (38.7,2.5){\footnotesize$\mp 1$}
+%% \put (54.6,2.5){\footnotesize$\pm1$}
+%% \put (70.6,2.5){\footnotesize$\mp1$}
+%% \put (89.3,2.5){\footnotesize$1$}
+%% \put (77,54) {$\ctsNN_2$}
+%% \put (7,51){\footnotesize$-1$}
+%% \put (21.5,51){\footnotesize$-0.6$}
+%% \put (37.5,51){\footnotesize$-0.2$}
+%% \put (55.5,51){\footnotesize$0.2$}
+%% \put (72,51){\footnotesize$0.6$}
+%% \put (89.3,51){\footnotesize$1$}
+
+%%\end{overpic}
 \caption{\label{fig:fit_example} One example fit where the pseudo data are compared to the sum of 
 contributions from $TT$, $TL$ and $LL$ components. There are five groups with five bins inside each group. 
 These five groups represent $\ctsNN_2$ from $-1$ to 1 with a step size of 0.4, while five bins inside each group represent $\ctsNN_1$ from $-1$ to 1 with a step size of 0.4. }
@@ -281,13 +300,9 @@ will be required to remove backgrounds from this analysis. To study the effects 
 tighter fiducial region which is dominated by the contribution from electroweak production of \ssWW events: jet $p_T > 30$ GeV, lepton $p_T > 25$ GeV, missing transverse energy $\slashed{E}_T > 40$ GeV, 
 dijet mass $M_{jj} > $500 GeV, and dijet pseudorapidity difference $|\Delta \eta_{jj}| > 2.4 $. 
 
-\begin{figure*}
-\includegraphics[width=.9\textwidth]{fig_03.pdf}
-\caption{ \label{fig:sensitivity} 68\% (yellow) and 95\% (green) expected confidence intervals for the measured LL fraction $f_{LL}$ (top), the TL fraction $f_{TL}$ (middle), and TT fraction $f_{TT}$ (bottom) as a function of the integrated luminosity for from left to right scenarios (a),(b), and (c) discussed in the text.}
-\end{figure*}
 
 
-To emulate the response of a typical general-purpose LHC detector, these events are parton-showered using {\sc pythia}\cite{pythia} and passed through the  response simulation of the CMS detector implemented in {\sc delphes}~\cite{delphes}. Parton level quantities are then approximated by taking the leading two jets clustered with an anti-$k_t$ algorithm~\cite{antikt} with jet size parameter R=0.5.
+To emulate the response of a typical general-purpose LHC detector, these events are parton-showered using {\sc pythia}\cite{pythia} and passed through the  response simulation of the CMS detector implemented in {\sc delphes}~\cite{delphes}. This resolution takes into account some degree of pile-up up, but leave studies of dedicated detector effects to the experiments.  Parton level quantities are then approximated by taking the leading two jets clustered with an anti-$k_t$ algorithm~\cite{antikt} with jet size parameter R=0.5.
 
 
 Backgrounds to the \ssWW process depend largely on experimental choice, and require detailed simulation. It can be seen in Fig.~\ref{fig:polarization_comparison} that background from the $WZjj$ process (where one of 
@@ -300,7 +315,7 @@ We determine the precision that can be achieved for fractions of $TT$, $TL$, and
 
 The precision for the three polarization fractions as a function of the integrated luminosity is presented in Fig.~\ref{fig:sensitivity}. 
  TT components can be measured with great precision, whereas separating pure LL scattering from LT scattering is challenging.
-In the most difficult and realistic scenario (c), the cuts and object efficiencies slightly increase the mean $LL$ fraction to 7.0\% and 68\% confidence limits are found 7$^{+19}_{-7}$\% (7$^{+5}_{-6}\%$) for an integrated luminosity of 0.1 (3) ab$^{-1}$.  Equivalent limits from fits to $R_{pT}$ variable are found to be 7$^{+29}_{-7}\%$ and 7$^{+9}_{-7}\%$. The fit to the neural network almost doubles the ultimate precision to anomalous $LL$ fractions in this scenario. Reaching the same statistical sensitivity using the $R_{pT}$ variable would require approximately 10 ab$^{-1}$, more than three times the total expected luminosity of the LHC program. We have shown that large sensitivity gains can be made with NN regression. In scenario (c) our simple estimate falls short of the $5\sigma$ criteria for observation of longitudinal VBS, however, new physics beyond the SM could greatly enhance this fraction~\cite{VLVLBSM}, making stringent limits or a future observation of this fraction very important. In addition, the authors hope that experiments can improve on this methodology by training on fully simulated events or by improving detector performance through upgrades to enhance sensitivity. 
+In the most difficult and realistic scenario (c), the cuts and object efficiencies slightly increase the mean $LL$ fraction to 7.0\% and 68\% confidence limits are found 7$^{+19}_{-7}$\% (7$^{+5}_{-6}\%$) for an integrated luminosity of 0.1 (3) ab$^{-1}$.  Equivalent limits from fits to $R_{pT}$ variable are found to be 7$^{+29}_{-7}\%$ and 7$^{+9}_{-7}\%$. The fit to the neural network almost doubles the ultimate precision to anomalous $LL$ fractions in this scenario. Reaching the same statistical sensitivity using the $R_{pT}$ variable would require approximately 10 ab$^{-1}$, more than three times the total expected luminosity of the LHC program. We have shown that large sensitivity gains can be made with NN regression. In scenario (c) our simple estimate falls short of the $5\sigma$ criteria for observation of longitudinal VBS, however, new physics beyond the SM could greatly enhance this fraction~\cite{VLVLBSM}, making stringent limits or a future observation of this fraction very important. However, it can be seen by comparing scenarios (a) and (b) to (c) that potential gains are possible with dedicated optimization. In addition, the authors hope that experiments can improve on this methodology by training on fully simulated events or by improving detector performance through upgrades to enhance sensitivity. 
 
 In conclusion, we present a method to determine the $WW$ polarization fractions in
 \ssWW events by using a deep machine learning technique.  This method
@@ -315,6 +330,12 @@ polarization fractions in VBS events, almost doubling the ultimate precision whe
 We would like to thank our colleagues Sally Dawson, Frank Paige, and Olivier Mattelaer for their help and guidance while preparing this manuscript.
 The contributions from JS, LH and JZ were supported by the DOE Early Career Grant under contract DE-SC0008062. The work of M-AP is supported by DOE Contract No. DE-SC0012704. We would also like to acknowledge the role of the U.S. ATLAS Scholar program for fostering collaboration between Michigan and Brookhaven National Laboratory.
 
+\begin{figure*}[h]
+\includegraphics[width=.9\textwidth]{fig_04.pdf}
+\caption{ \label{fig:sensitivity} 68\% (yellow) and 95\% (green) expected confidence intervals for the measured LL fraction $f_{LL}$ (top), the TL fraction $f_{TL}$ (middle), and TT fraction $f_{TT}$ (bottom) as a function of the integrated luminosity for from left to right scenarios (a),(b), and (c) discussed in the text.}
+\end{figure*}
+
+\clearpage
 \input{VbsLL.bbl}
 
 
