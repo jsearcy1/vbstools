@@ -304,7 +304,7 @@ dijet mass $M_{jj} > $500 GeV, and dijet pseudorapidity difference $|\Delta \eta
 
 
 
-To emulate the response of a typical general-purpose LHC detector, these events are parton-showered using {\sc pythia}\cite{pythia} and passed through the  response simulation of the CMS detector implemented in {\sc delphes}~\cite{delphes}. This resolution takes into account some degree of pile-up up, but leave studies of dedicated detector effects to the experiments.  Parton level quantities are then approximated by taking the leading two jets clustered with an anti-$k_t$ algorithm~\cite{antikt} with jet size parameter R=0.5.
+To emulate the response of a typical general-purpose LHC detector, these events are parton-showered using {\sc pythia}\cite{pythia} and passed through the  response simulation of the CMS detector implemented in {\sc delphes}~\cite{delphes}. This detector smearing adds some degree of realism, but could neglect some effect due to high pile-up at the LHC. Since these effects are often mitigated with specific reconstruction techniques we leave studies of this nature to dedicated effects by the experiments.  After detector simulation, parton level quantities are then approximated by taking the leading two jets clustered with an anti-$k_t$ algorithm~\cite{antikt} with jet size parameter R=0.5.
 
 
 Backgrounds to the \ssWW process depend largely on experimental choice, and require detailed simulation. It can be seen in Fig.~\ref{fig:polarization_comparison} that background from the $WZjj$ process (where one of 

@@ -34,6 +34,11 @@ IMPORTANT: Editorial "Review Changes"
 
 http://journals.aps.org/prl/edannounce/PhysRevLett.111.180001
 
+
+Need intro statement: Dear Editor and referees, 
+Thank you very much for the comments on our paper-
+They helped improve its clarity.
+Please find our detailed answers to your questions below.
 ----------------------------------------------------------------------
 
 Report of Referee A -- LK14763/Searcy
@@ -51,16 +56,15 @@ fact in only shows a single cos theta* distribution for +, - and L.
 
 Authors:This plot shows cos theta* distribution for the first lepton in LL, -- and ++ events. The distribution for 
 the first and the second leptons are the same since we do not label two leptons in a particular order. 
-We think it is better easier to make comparisons in 1D instead of 2D for clarity. We modified the caption to clarify what is
-being shown.
-
+We think it is better to make comparisons in 1D instead of 2D for clarity. We modified the caption to clarify what is
+being shown by adding "(a) and (c) are the
+projections of the 2D distributions onto lepton 1, however, due to arbitrary sorting the projection onto lepton 2 is identical."
 
 Fig 1b: the log scale is necessary but makes a meaningful comparison
 with the NN impossible.
 
-Authors:We agree with you. We modified the caption to emphasize the scale difference for these two plots. We 
-compared the uncertainty on the fitted LL fraction using both variables quantitatively in the text.
-
+Authors:We agree with you. We modified the caption to emphasize the scale difference for these two plots by adding "$R_{pT}$ templates for the corresponding polarization states are shown with log scaling in (b)". To account for we previously
+compared the uncertainty on the fitted LL fraction using both variables quantitatively in the text, in the third paragraph on the fourth page.
 
 Fig 1c: the x-axis is cos theta NN and not cos theta*. Since this is
 the distribution used in the template fit, it is not possible to cut
@@ -69,7 +73,7 @@ shape can be derived from data using fully reconstructed (3 lepton)
 background and removing the appropriate lepton. Probably this figure
 can go.
 
-Authors:We corrected the label of the x-axis to cos theta NN. It may be possible to use 3-leptons data events to 
+Authors:We corrected the label of the x-axis to cos theta NN. While it may be possible to use 3-leptons data events to 
 derive the cos theta NN distribution as you suggested, we feel this figure is interesting because it shows 
 the discrimination power of this variable between the signal and dominant background.
 
@@ -77,13 +81,13 @@ Fig2: Confusing, if cos theta_1 NN and cos theta_2 NN are correlated
 maybe 3 different 2D plots would be best, if not a 1-D distribution
 would be a lot clearer.
 
-Authors:We followed your suggestions to add three 2D plots to show the differences for cos theta NN 1 vs 2 
-correlations, but we also want to keep the original 1D plot that clearly demonstrate the fitting procedure 
-and also the fraction from each template. 
+Authors:We followed your suggestion  to add three 2D plots to show the differences in cos theta NN 1 vs 2 
+correlations, but we also want to keep the original 1D plot that clearly demonstrates the fitting procedure 
+as well as the fraction from each template. 
 
 Fig3: part a and b are not realistic and therefore not relevant and
 can go, only use c. The x-axis should be integrated luminosity. In
-general, even the realism of c) is limited. To obtain a dataset of
+general, even the realism of c) is limited. To obtain a data set of
 several ab-1 years of running with high pile-up is needed. The issue
 of pile-up, leading to misidentification of the tagging jets and
 decreasing the precision of the missing Et measurement is not
@@ -91,14 +95,17 @@ addressed at all. While I expect the deep learning NN still to
 outperform the Rt method, the most realistic and difficult scenario
 does not look good for a meaningful LL measurement
 
-Authors:We agree with you that parts a) and b) are not realistic, but we think these two plots provides additional 
-information about these detector effects on the LL fraction measurement. For example when comparing a) 
-to b) you can see that the cuts used significantly impact the significance implying optimization could be 
-possible. Similarly from b) to c) shows the degradation on the final sensitivity due to finite detector 
-resolutions and detection efficiencies. This has been clarified in the text.
-In regards to c) pile-up was in part included in the Delphes parameterization. Mis-tagged jets, however, in this case are not
-a major concern, since they are generally easily rejected by increased pt cuts. This can be performed with almost no loss of efficiency 
-because of the already relatively high M(j,j) cuts.
+Authors:We agree with you that parts a) and b) are not realistic, but we think these two plots provide  additional 
+information about these detector effects on the LL fraction measurement and still prefer to keep these two plots. For example, when comparing a) 
+to b) one can see that the cuts used strongly impact the significance implying optimization could be 
+possible. Similarly, the transition from b) to c) shows the degradation on the final sensitivity due to finite detector 
+resolution  and detection efficiency. This has been clarified in the text, adding the statement "It can
+be seen by comparing scenarios (a) and (b) to (c) that gains in sensitivity are possible."
+
+
+Concerning the realism of c) due to pileup-effects. Mis-tagged jets in this case are not
+a major concern, since they are generally easily rejected by increased pt cuts. This can be performed with almost no loss of efficiency because of the already relatively high M(j,j) cuts. We rely on delphes for the MissingET resolution, which could miss some effects of high pile-up. We feel that the mitigation of pile-up is an interesting topic which requires accurate simulation and detector specific reconstruction which we do not investigate in this paper we point out this limitation by adding the statement.
+"This detector smearing adds some degree of realism, but could neglect some effects due to the large number of overlapping interactions during the high luminosity LHC runs. Since these effects are often mitigated with specific reconstruction techniques we leave studies of this nature to dedicated effects by the experiments."  
 
 ----------------------------------------------------------------------
 
@@ -128,14 +135,14 @@ training, provide comparisons with performance of single hidden layer
 network to clearly demonstrate the gains, and publish a detailed paper
 in Physical Review D.
 
-Authors:Thank you for finding our application interesting, we will respond in detail to your questions below. As 
-we know, most people use the neural network that combines many observables to form new 
-discriminators to separate signal and backgrounds, while in this paper, we exploit the idea to use the 
+Authors:Thank you for finding our application interesting, we will respond in detail to your questions below. 
+Most people use the neural network that combines many observable to form new 
+discriminant to separate signal and backgrounds, while in this paper, we exploit the idea to use the 
 neural network to approximate variables that cannot be directly measured. We then applied this method 
 on an interesting physics problem and provided the first generic way of measuring the VBS polarization 
 fraction using any multi-variate technique. The choice of Deep-learning algorithm in this case was 
-motivated by gains seen by (references), in situations where high level variables are not known. Other 
-regression techniques, including signal layer neural network, could be used. A discussion of the merits of 
+motivated by gains seen by (references), in situations where high-level variables are not known. Other 
+regression techniques, including single layer neural network, could be used. A discussion of the merits of 
 deep versus single neural networks is not intended to be the focus of this paper. Other papers addressing
 this topic can be found in the literature, for example, references
 
@@ -152,12 +159,18 @@ studies have been made to measure top mass or Higgs mass from event
 kinematics using MVA regression.)
 
 Authors: 
-Thanks you for bring this to our attention, since we were not able to find this information publicly available.
-We changed this to read.
+Thank you for bringing this to our attention, since we were not able to find this information publicly available. 
+We changed our text to read:
 
-While it has become a common practice in high energy physics to use
+“While it has become a common practice in high energy physics to use
 multi-variate techniques to separate signal from background, multi-variate
 regression is not commonly used to measure underlying physics quantities of interest.
+Unlike classification where the goal of the neural network is to produce discrete 
+assignments, for example signal and background, NN regression relies on
+the fact that a neural network can serve as a universal approximator, to 
+instead approximate an unknown continuous function. The goal of our NN is to 
+find the best approximation using measurable quantities of the
+two truth values of cos theta* (one for each W boson) present in each event.”
 
 2. How many events were generated and used for deep network training?
 Did the training of single layer network also use the same number of
@@ -165,14 +178,17 @@ events? What was the architecture of the best single layer network?
 The 20% improvement in cost value, presumably is for events generated
 at the parton-level?
 
-Authors:500,000 events where used for training and another 1 Million for testing and validation.
-Single layer training was done with the same data
+Authors: 500,000 events were used for training and another 1 million for testing and validation.
+Single layer training was done with the same data. The architecture of the single 
+layer network is the same as that of the deep network with 14 input and 2 output variables. 
+Yes, you are right, the 20% improvement in cost value is for events at the parton-level. We added this 
+information to the text, but including. "500,000 events were used for training and another one-million for testing and validation".
 
 3. Fig. 1: In the text, authors refer to Fig. 1(a), 1(b) etc. and the
 plots in figures are not labeled as such. Also, the ordinate labeled
 as ?A.U.? This should be changed to, say, ?Events (arbitrary units)?.
 
-Authors: A.U. represents arbitrary units, we will correct the labels.
+Authors: A.U. represents arbitrary units, we corrected the a,b,c labels in the new version, and defined A.U in the caption.
 
 4. Fig. 2.: The top and bottom axes are confusing. Suggest remaking
 the plot with gaps between groups to indicate axes values of -1 and +1
@@ -180,7 +196,7 @@ appropriately, or have five different plots arranged side-by-side.
 Cos(theta)_2^NN values should be shown as -1., -0.6, .. etc., not as a
 continuous variable as the top axis presently suggests.
 
-Authors:We have add additional space between groups as you suggest, and modified the labels.
+Authors: We followed your suggestion and have added additional space between groups and modified the labels.
 
 5. The deep network results with events generated at parton-level
 yield a 68% confidence level limit on the LL fraction of (6.7 +/-
@@ -197,6 +213,10 @@ Authors:The focus of this paper is to use the neural network regression techniqu
 quantity that cannot be directly measured and to apply it on the physics problem that is directly related to 
 electroweak symmetry symmetry breaking. Since there can be many different ways and parameters to 
 train single and multiple layer network, we choose to not directly compare the results. 
-In the case the gains in deep were similar to the decrease in cost, however, we will refer to the general 
-comment above. To some degree the effect of pileup is included in the delphes simulation, however, we feel
-that VBS processes warrants dedicated detector studies by the collaborations. 
+In this case the gains in the sensitivity for the deep network were similar to the decrease in cost. 
+
+In regards to the question of pile-up two concerns have been brought up. One is mis-identifying the tagging jets, the other is effects on missing Et resolution. Mis-tagged jets in this case are not
+a major concern, since they are generally easily rejected by increased pt cuts. This can be performed with almost no loss of efficiency because of the already relatively high M(j,j) cuts. We rely on delphes for the MissingET resolution, which could miss some effects of high pile-up. We feel that the mitigation of pile-up is an interesting topic which requires accurate simulation and detector specific reconstruction which we do not investigate in this paper we point out this limitation by adding the statement. "This detector smearing adds some degree of realism, but could neglect some effects due to the large number of overlapping interactions during the high luminosity LHC runs. Since these effects are often mitigated with specific reconstruction techniques we leave studies of this nature to dedicated effects by the experiments."  
+
+
+
