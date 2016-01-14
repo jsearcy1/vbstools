@@ -201,7 +201,7 @@ network yields a 20\% better cost value in a validation data set than
 the best single layer NN tested.
 
 Signal \ssWW events are generated using the {\sc madgraph} event generator~\cite{madgraph} at a proton-proton center-of-mass energy of 13 TeV. 
- The invariant mass of the two outgoing partons were required to be greater than 150 GeV. The $W$ bosons are decayed, assuming they are on-shell and have no spin correlations, with the {\sc decay} routine provided with {\sc madgraph}.
+ The invariant mass of the two outgoing partons were required to be greater than 150 GeV. The $W$ bosons are decayed, assuming they are on-shell and have no spin correlations, with the {\sc decay} routine provided with {\sc madgraph}. 500,000 events were generated for training and another one million for testing and validation
 
 Polarization fractions can then be obtained experimentally by fitting
 the two-dimensional distribution of the NN output \ctsNN.  In order to
@@ -304,7 +304,7 @@ dijet mass $M_{jj} > $500 GeV, and dijet pseudorapidity difference $|\Delta \eta
 
 
 
-To emulate the response of a typical general-purpose LHC detector, these events are parton-showered using {\sc pythia}\cite{pythia} and passed through the  response simulation of the CMS detector implemented in {\sc delphes}~\cite{delphes}. This detector smearing adds some degree of realism, but could neglect some effect due to high pile-up at the LHC. Since these effects are often mitigated with specific reconstruction techniques we leave studies of this nature to dedicated effects by the experiments.  After detector simulation, parton level quantities are then approximated by taking the leading two jets clustered with an anti-$k_t$ algorithm~\cite{antikt} with jet size parameter R=0.5.
+To emulate the response of a typical general-purpose LHC detector, these events are parton-showered using {\sc pythia}\cite{pythia} and passed through the  response simulation of the CMS detector implemented in {\sc delphes}~\cite{delphes}. This detector smearing adds some degree of realism, but could neglect some effects due to the large number of overlapping interactions during the high luminosity LHC runs. Since these effects are often mitigated with specific reconstruction techniques we leave studies of this nature to dedicated effects by the experiments.  After detector simulation, parton level quantities are then approximated by taking the leading two jets clustered with an anti-$k_t$ algorithm~\cite{antikt} with jet size parameter R=0.5.
 
 
 Backgrounds to the \ssWW process depend largely on experimental choice, and require detailed simulation. It can be seen in Fig.~\ref{fig:polarization_comparison} that background from the $WZjj$ process (where one of 
