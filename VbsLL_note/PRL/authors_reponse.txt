@@ -1,11 +1,11 @@
 Dear editor and referees, 
 
-Thank you very much for the comments on our paper-
-they helped improve its clarity.
-We will follow the editor's recommendation and
-resubmit our updated manuscript to Phys. Rev. D.
-Please find our detailed answers to your comments and
-questions below, starting with "===>".
+Thank you very much for the comments on our paper - they helped
+improve its clarity.
+We will follow the editor's and one referee's recommendation and
+resubmit our updated manuscript to Phys. Rev. D.  Please find our
+detailed answers to your comments and questions below, starting with
+"===>".
 
 Best regards,
 The authors.
@@ -76,10 +76,10 @@ with the NN impossible.
 
 ===> We agree and modified the caption to emphasize the scale
 difference for these two plots by adding: "$R_{pT}$ templates for the
-corresponding polarization states are shown with log scaling in
-(b)". A more quantitative comparison is provided in the paragraph
-before the conclusion, where we give the uncertainty on the fitted LL
-fraction using both variables.
+corresponding polarization states *with log scaling* (b)". A more
+quantitative comparison is provided in the paragraph before the
+conclusion, where we give the uncertainty on the fitted LL fraction
+using both variables.
 
 
 Fig 1c: the x-axis is cos theta NN and not cos theta*. Since this is
@@ -136,13 +136,13 @@ M(j,j) cuts. We rely on delphes for the MissingET resolution, which
 could miss some effects of high pile-up. We feel that the mitigation
 of pile-up is an interesting topic which requires accurate simulation
 and detector specific reconstruction which we do not (and cannot)
-investigate in this paper. We point out this limitation by adding the
-statement: "This detector smearing adds some degree of realism, but
-could neglect various effects due to the large number of overlapping
-interactions during the high luminosity LHC runs. Since these effects
-are often mitigated with specific reconstruction techniques and need
-detailed detector modeling, we leave studies of this nature to
-dedicated efforts by the experiments."
+investigate in this paper. We pointed out this limitation by adding
+the statement: "This detector smearing adds some degree of realism,
+but could neglect various effects due to the large number of
+overlapping interactions during the high luminosity LHC runs. Since
+these effects are often mitigated with specific reconstruction
+techniques and need detailed detector modeling, we leave studies of
+this nature to dedicated efforts by the experiments."
 
 ----------------------------------------------------------------------
 
@@ -172,16 +172,21 @@ training, provide comparisons with performance of single hidden layer
 network to clearly demonstrate the gains, and publish a detailed paper
 in Physical Review D.
 
-===> Thank you for finding our application interesting, we will respond in detail to your questions below. 
-Most people use the neural network that combines many observable to form new 
-discriminant to separate signal and backgrounds, while in this paper, we exploit the idea to use the 
-neural network to approximate variables that cannot be directly measured. We then applied this method 
-on an interesting physics problem and provided the first generic way of measuring the VBS polarization 
-fraction using any multi-variate technique. The choice of Deep-learning algorithm in this case was 
-motivated by gains seen by (references), in situations where high-level variables are not known. Other 
-regression techniques, including single layer neural network, could be used. A discussion of the merits of 
-deep versus single neural networks is not intended to be the focus of this paper. Other papers addressing
-this topic can be found in the literature, for example, references
+===> Thank you for finding our application interesting - we will
+respond in detail to your questions below.  Neural networks most
+commonly are used combining many observables to form a new
+discriminant to separate signal and backgrounds, while in this paper
+we exploit the idea to use a neural network to approximate variables
+that cannot be directly measured. We then applied this method to an
+interesting physics problem and provided the first generic way of
+measuring the VBS polarization fraction using a multi-variate
+technique. The choice of a deep-learning algorithm in this case was
+motivated by gains seen by (!!!references), in situations where
+high-level variables are not known. Other regression techniques
+such as a single layer neural network could be used. A discussion of
+the merits of deep versus single neural networks is not intended to be
+the focus of this paper. Other papers addressing this topic can be
+found in the literature, for example, !!!references
 
 Following are some specific comments and suggestions that should to be
 addressed.
@@ -195,19 +200,19 @@ regression to directly measure a physics quantity. (Monte Carlo
 studies have been made to measure top mass or Higgs mass from event
 kinematics using MVA regression.)
 
-===>  
-Thank you for bringing this to our attention, since we were not able to find this information publicly available. 
-We changed our text to read:
-
+===> Thank you for bringing this to our attention, since we were not
+able to find this information publicly available.  We changed our text
+to read:
 “While it has become a common practice in high energy physics to use
-multi-variate techniques to separate signal from background, multi-variate
-regression is not commonly used to measure underlying physics quantities of interest.
-Unlike classification where the goal of the neural network is to produce discrete 
-assignments, for example signal and background, NN regression relies on
-the fact that a neural network can serve as a universal approximator, to 
-instead approximate an unknown continuous function. The goal of our NN is to 
-find the best approximation using measurable quantities of the
-two truth values of cos theta* (one for each W boson) present in each event.”
+multi-variate techniques to separate signal from background,
+multi-variate regression is not commonly used to measure underlying
+physics quantities of interest.  Unlike classification where the goal
+of the neural network is to produce discrete assignments, for example
+signal and background, NN regression relies on the fact that a neural
+network can serve as a universal approximator, to instead approximate
+an unknown continuous function. The goal of our NN is to find the best
+approximation of the two truth values of cos theta* (one for each W
+boson) present in each event, using measurable quantities.”
 
 2. How many events were generated and used for deep network training?
 Did the training of single layer network also use the same number of
@@ -215,17 +220,21 @@ events? What was the architecture of the best single layer network?
 The 20% improvement in cost value, presumably is for events generated
 at the parton-level?
 
-===>  500,000 events were used for training and another 1 million for testing and validation.
-Single layer training was done with the same data. The architecture of the single 
-layer network is the same as that of the deep network with 14 input and 2 output variables. 
-Yes, you are right, the 20% improvement in cost value is for events at the parton-level. We added this 
-information to the text, but including. "500,000 events were used for training and another one-million for testing and validation".
+===> 500,000 events were used for training and another million for
+testing and validation.  We added this information to the text:
+"500,000 events were used for training and another million for testing
+and validation". Single layer training was done with the same
+data. The architecture of the single layer network is the same as that
+of the deep network with 14 input and 2 output variables.  Indeed the
+20% improvement in cost value is for events at the parton-level.
+!!!Is the above info in the paper now???
 
 3. Fig. 1: In the text, authors refer to Fig. 1(a), 1(b) etc. and the
 plots in figures are not labeled as such. Also, the ordinate labeled
 as ?A.U.? This should be changed to, say, ?Events (arbitrary units)?.
 
-===>  A.U. represents arbitrary units, we corrected the a,b,c labels in the new version, and defined A.U in the caption.
+===> We added (a), (b) and (c) labels to Figure 1.  A.U. represents
+arbitrary units; we added this definition in the caption.
 
 4. Fig. 2.: The top and bottom axes are confusing. Suggest remaking
 the plot with gaps between groups to indicate axes values of -1 and +1
@@ -233,7 +242,8 @@ appropriately, or have five different plots arranged side-by-side.
 Cos(theta)_2^NN values should be shown as -1., -0.6, .. etc., not as a
 continuous variable as the top axis presently suggests.
 
-===>  We followed your suggestion and have added additional space between groups and modified the labels.
+===> We followed your suggestion and have added additional space
+between groups and modified the labels.
 
 5. The deep network results with events generated at parton-level
 yield a 68% confidence level limit on the LL fraction of (6.7 +/-
@@ -246,14 +256,31 @@ network provide relative to the shallow network in the scenario with
 detector modeling? What is the expected effect of the pile-up problem
 at the HL-LHC on the significance of the result and the relative gain?
 
-===> The focus of this paper is to use the neural network regression technique to approximate a physics 
-quantity that cannot be directly measured and to apply it on the physics problem that is directly related to 
-electroweak symmetry symmetry breaking. Since there can be many different ways and parameters to 
-train single and multiple layer network, we choose to not directly compare the results. 
-In this case the gains in the sensitivity for the deep network were similar to the decrease in cost. 
-
-In regards to the question of pile-up two concerns have been brought up. One is mis-identifying the tagging jets, the other is effects on missing Et resolution. Mis-tagged jets in this case are not
-a major concern, since they are generally easily rejected by increased pt cuts. This can be performed with almost no loss of efficiency because of the already relatively high M(j,j) cuts. We rely on delphes for the MissingET resolution, which could miss some effects of high pile-up. We feel that the mitigation of pile-up is an interesting topic which requires accurate simulation and detector specific reconstruction which we do not investigate in this paper we point out this limitation by adding the statement. "This detector smearing adds some degree of realism, but could neglect some effects due to the large number of overlapping interactions during the high luminosity LHC runs. Since these effects are often mitigated with specific reconstruction techniques we leave studies of this nature to dedicated effects by the experiments."  
+===> The focus of this paper is to use the neural network regression
+technique to approximate a physics quantity that cannot be directly
+measured and to apply it on the physics problem that is directly
+related to electroweak symmetry symmetry breaking. Since there can be
+many different ways and parameters to train single and multiple layer
+network, we choose to not directly compare the results.  In this case
+the gains in the sensitivity for the deep network were similar to the
+decrease in cost.
+In regards to the question of pile-up two concerns have been brought
+up. One is mis-identifying the tagging jets, the other is effects on
+missing Et resolution. Mis-tagged jets in this case are not a major
+concern, since they are generally easily rejected by increased pt
+cuts. This can be performed with almost no loss of efficiency because
+of the already relatively high M(j,j) cuts. We rely on delphes for the
+MissingET resolution, which could miss some effects of high
+pile-up. We feel that the mitigation of pile-up is an interesting
+topic which requires accurate simulation and detector specific
+reconstruction which we do not (and cannot) investigate in this paper.
+We pointed out this limitation by adding the statement: "This detector
+smearing adds some degree of realism, but could neglect various
+effects due to the large number of overlapping interactions during the
+high luminosity LHC runs. Since these effects are often mitigated with
+specific reconstruction techniques and need detailed detector
+modeling, we leave studies of this nature to dedicated efforts by the
+experiments."
 
 
 
@@ -262,12 +289,13 @@ a major concern, since they are generally easily rejected by increased pt cuts. 
 ===========================================
 
 
-Added text to Figure 1 caption:
-*"$R_{pT}$ templates for the corresponding polarization states are
- shown with log scaling in (b)."
-*"(a) and (c) are the projections of the 2D distributions onto one of
+Added text to Figure 1 caption, enclosed between **:
+-"$R_{pT}$ templates for the corresponding polarization states *with
+ log scaling* (b)"
+-"...distributions...*are shown with arbitrary units (A.U.).*"
+-"*(a) and (c) are the projections of the 2D distributions onto one of
  the two leptons, which are identical to the projections onto the
- other lepton due to arbitrary sorting."
+ other lepton due to arbitrary sorting.*"
 
 Added (a), (b) and (c) labels to Figure 1.
 
@@ -278,16 +306,45 @@ correlations as new Figure 2.
 
 Updated the x-axis labels to "Integrated Luminosity" on Figure 4.
 
-Added sentence motivating the comparison of scenarios (a), (b) and (c):
+Added a sentence motivating the comparison of scenarios (a), (b) and (c):
 "A comparison of scenarios (a) and (b) to (c) illustrates potential
 gains in sensitivity through cut optimization and improved detector
 performance."
 
 Added sentence qualifying the delphes detector simulation used regarding
-pileup modelling:
+pileup modeling:
 "This detector smearing adds some degree of realism, but could neglect
 various effects due to the large number of overlapping interactions
 during the high luminosity LHC runs. Since these effects are often
 mitigated with specific reconstruction techniques and need detailed
 detector modeling, we leave studies of this nature to dedicated
 efforts by the experiments."
+
+
+Modified the paragraph:
+"While it has become a common practice in high energy physics to use
+multi-variate techniques to separate signal from background, to the
+authors' knowledge multi-variate regression has not been used to
+directly measure underlying physics quantities of interest. Unlike
+classification where the goal of the neural network is to produce
+discrete assignments, for example signal and background, NN regression
+relies on the fact that a neural network can serve as a universal
+approximator~\cite{NN_1}, to instead approximate an unknown continuous
+function.  The goal of our NN is to find the best
+approximation using measurable quantities of the two truth values
+of \cts (one for each $W$ boson) present in each event."
+to read
+"While it has become a common practice in high energy physics to use
+multi-variate techniques to separate signal from background,
+multi-variate regression is not commonly used to measure underlying
+physics quantities of interest.  Unlike classification where the goal
+of the neural network is to produce discrete assignments, for example
+signal and background, NN regression relies on the fact that a neural
+network can serve as a universal approximator, to instead approximate
+an unknown continuous function. The goal of our NN is to find the best
+approximation of the two truth values of cos theta* (one for each W
+boson) present in each event, using measurable quantities."
+
+Added more information on NN training:
+"500,000 events were used for training and another million for testing
+and validation"

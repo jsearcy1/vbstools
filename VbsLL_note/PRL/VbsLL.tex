@@ -142,17 +142,17 @@ the behavior of longitudinal $W$ boson scattering.
  
  
 While it has become a common practice in high energy physics to use
-multi-variate techniques to separate signal from background, multi-variate
-regression is not commonly used to measure underlying physics quantities of interest. 
-Unlike classification where the goal of the neural network is to produce
-discrete assignments, for example signal and background, NN regression
-relies on the fact that a neural network can serve as a universal
-approximator~\cite{NN_1}, to instead approximate an unknown continuous
-function.  The goal of our NN is to find the best
-approximation using measurable quantities of the two truth values
-of \cts (one for each $W$ boson) present in each event. Similar
-techniques are currently in use to address the problem of estimating
-parton distribution functions~\cite{NNPDF}.
+multi-variate techniques to separate signal from background,
+multi-variate regression is not commonly used to measure underlying
+physics quantities of interest.  Unlike classification where the goal
+of the neural network is to produce discrete assignments, for example
+signal and background, NN regression relies on the fact that a neural
+network can serve as a universal approximator~\cite{NN_1}, to instead
+approximate an unknown continuous function.  The goal of our NN is to
+find the best approximation of the two truth values of \cts (one for
+each $W$ boson) present in each event, using measurable
+quantities. Similar techniques are currently in use to address the
+problem of estimating parton distribution functions~\cite{NNPDF}.
 
 It has also become common practice to train these multi-variate
 methods using variables built from basic measurable event quantities
@@ -194,14 +194,19 @@ the truth value of \cts for each $W$ boson with random ordering for
 the $i$-th event, and $\cos \theta^{NN}_{1/2, i}$ is the value of the
 two neural network outputs. A Stochastic gradient descent algorithm is
 used to train the neural network by minimizing the cost function.
- Hyper-parameters are tuned by hand
-and confirmed by a local grid search, with the best performance given
-by a deep network with 20 layers each with 200 hidden nodes.  This
-network yields a 20\% better cost value in a validation data set than
-the best single layer NN tested.
+Hyper-parameters are tuned by hand and confirmed by a local grid
+search, with the best performance given by a deep network with 20
+layers each with 200 hidden nodes.  This network yields a 20\% better
+cost value in a validation data set than the best single layer NN
+tested.
 
-Signal \ssWW events are generated using the {\sc madgraph} event generator~\cite{madgraph} at a proton-proton center-of-mass energy of 13 TeV. 
- The invariant mass of the two outgoing partons were required to be greater than 150 GeV. The $W$ bosons are decayed, assuming they are on-shell and have no spin correlations, with the {\sc decay} routine provided with {\sc madgraph}. 500,000 events were generated for training and another one million for testing and validation
+Signal \ssWW events are generated using the {\sc madgraph} event
+generator~\cite{madgraph} at a proton-proton center-of-mass energy of
+13 TeV.  The invariant mass of the two outgoing partons were required
+to be greater than 150 GeV. The $W$ bosons are decayed, assuming they
+are on-shell and have no spin correlations, with the {\sc decay}
+routine provided with {\sc madgraph}. 500,000 events were generated
+for training and another million for testing and validation.
 
 Polarization fractions can then be obtained experimentally by fitting
 the two-dimensional distribution of the NN output \ctsNN.  In order to
@@ -220,14 +225,14 @@ Since there are two $W$ bosons in each event, six distinct polarization states a
 \includegraphics[width=.32\textwidth,height=.18\textheight]{fig_01c.pdf}\\
 (a)&(b)&(c)\\
 \end{tabular}
-\caption{\label{fig:polarization_comparison} Comparison of the truth level \cts and the 
-NN output \ctsNN distributions for $--$, $++$ and $LL$ events (a),
-$R_{pT}$ templates for the corresponding polarization states are shown
-with log scaling in (b), and comparison of the \ctsNN for the signal
-and dominant $WZjj$ background (c) are shown with arbitrary units
-(A.U.). (a) and (c) are the projections of the 2D distributions onto
-one of the two leptons, which are identical to the projections onto the
-other lepton due to arbitrary sorting.}
+\caption{\label{fig:polarization_comparison} A comparison of the truth
+level \cts and the NN output \ctsNN distributions for $--$, $++$ and
+$LL$ events (a), $R_{pT}$ templates for the corresponding polarization
+states with log scaling (b), and comparison of the \ctsNN for the
+signal and dominant $WZjj$ background (c) are shown with arbitrary
+units (A.U.). (a) and (c) are the projections of the 2D distributions
+onto one of the two leptons, which are identical to the projections
+onto the other lepton due to arbitrary sorting.}
 \end{figure*}
 
 
