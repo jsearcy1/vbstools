@@ -181,12 +181,12 @@ that cannot be directly measured. We then applied this method to an
 interesting physics problem and provided the first generic way of
 measuring the VBS polarization fraction using a multi-variate
 technique. The choice of a deep-learning algorithm in this case was
-motivated by gains seen by (!!!references), in situations where
+motivated by gains seen by references [14] and [15], in situations where
 high-level variables are not known. Other regression techniques
 such as a single layer neural network could be used. A discussion of
 the merits of deep versus single neural networks is not intended to be
 the focus of this paper. Other papers addressing this topic can be
-found in the literature, for example, !!!references
+found in the literature, for example, [14] and [15]
 
 Following are some specific comments and suggestions that should to be
 addressed.
@@ -227,7 +227,6 @@ and validation". Single layer training was done with the same
 data. The architecture of the single layer network is the same as that
 of the deep network with 14 input and 2 output variables.  Indeed the
 20% improvement in cost value is for events at the parton-level.
-!!!Is the above info in the paper now???
 
 3. Fig. 1: In the text, authors refer to Fig. 1(a), 1(b) etc. and the
 plots in figures are not labeled as such. Also, the ordinate labeled
