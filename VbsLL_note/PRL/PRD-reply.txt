@@ -1,0 +1,253 @@
+Dear editor, 
+
+Thank you very much for your feedback on our paper.
+
+We did choose to submit our manuscript to Physical Review
+very intentionally, as we do not want to emphasize the
+technical aspects of deep-learning and their implementation
+but rather focus on the physics application. As you will see
+in our reply to referee A, we feel that improving the sensitivity
+to longitudinal vector boson scattering by a factor of two 
+(corresponding to a factor of four in integrated luminosity)
+is not a marginal matter, but rather opens up the possibility
+of such studies for the first time with the datasets we can expect
+to be available during all of our professional careers.
+
+Best regards,
+The authors.
+
+
+Dear referee A, 
+
+Thank you very much for the comments on our paper. Please find our
+detailed answers to your comments and questions below, starting with
+"===>".
+
+Best regards,
+The authors.
+
+This is a quite solid piece of research without major flaws and a clear
+well written paper.
+
+===> Thank you very much!
+
+I just don't think it contains enough novelty value
+to warrant publishing in Phys. Rev. D. The part that is new to me is the
+use of deep learning networks for regression rather than standard MVA
+techniques.  Unfortunately the results of the application are compared
+to a rather suboptimal variable, so we don't learn if deep-learning
+regression is really superior to standard MVA regression. The final
+conclusions is that with the full high-luminosity LHC dataset and a
+number of optimistic assumptions and simplifications the sensitivity
+improves from marginal to still marginal but a little less so.
+
+===> Here we have to respectfully disagree. The "suboptimal variable"
+     we compare to illustrates the need for further development in this
+     field of study, which our paper provides. We feel that improving the 
+     sensitivity to longitudinal vector boson scattering by a factor of two 
+     (corresponding to a factor of four in integrated luminosity) is not 
+     a marginal matter, but rather opens up the possibility
+     of such studies for the first time with the datasets we can expect
+     to be available during all of our professional careers.
+     The point of the paper is not to establish superiority of deep-learning
+     over common NN, which we consider a fact given with the references cited,
+     but rather establish a path towards vector boson scattering studies at
+     the upgraded LHC which are at the core of the physics motiviation for
+     these upgrades, as documented e.g. in the P5 report.
+
+
+I have an issue with the remarks on the WZjj background and fig. 1. It is
+claimed, based of fig 1.c that the shape of the cos theta_NN distribution
+can be used to discriminate against this background and indeed the WWjj
+shape does look different. Looking at fig 1.a it can be seen that the ++
+set of WWjj has a very similar shape and any cut on this to remove WZjj
+will also introduce a bias against ++.
+
+===> Jake/Junjie
+
+
+
+Dear referee B, 
+
+Thank you very much for the comments on our paper. Please find our
+detailed answers to your comments and questions below, starting with
+"===>".
+
+Best regards,
+The authors.
+
+
+In the revised version of the paper submitted to Phys. Rev. D., the
+authors have made some minor revisions in the text, updated the figures
+as recommended, and added a new figure, Fig. 2.
+
+The authors have not acted upon the suggestion to provide direct
+comparisons of analyses using a single hidden layer network (NN) with
+deep neural networks, arguing that such comparisons are provided in [14]
+and [15].  The authors claim that the gains in the precision of results
+from deep neural networks (DNN) over a single hidden layer network would
+be similar to the reduction in the cost function of ~20%.  Given that
+the computing resources needed for a DNN analysis are significantly
+higher than a single hidden layer NN, considering how much gain does a
+DNN provide over a simpler optimized NN, in the final result is important.
+
+===> Jake/Junjie - are computing resources really an issue here? Seems
+     not to me given we cannot easily get more data...
+
+Nevertheless, since the paper presents the application of deep neural
+networks to an important physics study, I recommend that the paper be
+published after authors have considered the following suggestions and
+made updates.
+
+===> Thank you very much for you appreciation of this important physics study!
+
+Page 1, paragraph 3: The authors indicate that a machine learning
+technique has not been used in experimental high energy physics community
+for regression.  This is not correct, since machine learning techniques
+are now routinely used in experimental HEP to estimate a variety
+of correction factors in detectors, such as energy corrections for
+various objects such as jets and photons, and for pile-up correction.
+Higgs discovery and studies from the CMS experiment, for example, use
+multivariate regression for many such applications.
+
+===> Jake/Junjie: rephrase???
+      We tried to address this comment in the last iteration by changing the statement
+     "to the authors' knowledge multi-variate regression has not been used to
+      directly measure underlying physics quantities of interest"
+      to
+     "multi-variate regression is not commonly used to measure underlying
+      physics quantities of interest"
+
+Page 2, paragraph 2: The authors also state that the neural networks (NN)
+are used as universal approximators, and point out the novelty of the
+current work using the NNs for regression, and that unlike classification,
+the NN regression relies on the fact that a neural network can serve as
+a universal approximator .
+This is not correct since the property of neural networks as “universal
+approximators” is true independent of whether they are used for
+classification or regression.  And both classification and regression
+rely on the property of NN being a universal approximator.
+
+===> Jake/Junjie
+
+It might be useful to cite a comprehensive review on the use of
+multivariate methods in HEP, for example,
+P.C. Bhat, Annu. Rev. Nucl. Part. Sci. 61:281-309 (2011).
+
+===> Jake/Junjie - I am fine with adding this reference.
+
+Figures: 
+* Figure 1 may be improved by using brighter colors instead of cyan, for
+example. 
+
+===> Jake/Junjie: can be done w/ photoshop if needed.
+
+* Figure 2 is a new figure, included in this version submitted to PRD.
+The plots might be visually and intuitively more appealing if the dark
+blue color which represents very small statistics of counts (or possibly
+zero) to be a lighter color.
+
+===> Jake/Junjie: need to redefine color scheme in macro, although I find
+     the current scheme rather normal (but then again I am color blind).
+
+
+==============ORIG COMMENTS TOGETHER============
+
+Dear Dr. Pleier:
+
+The manuscript ``Determination of the $WW$ polarization fractions in $pp
+\rightarrow W^{\pm} W^{\pm} jj$ using a deep machine learning technique''
+(LK14763D) by Searcy,J et al. has been reviewed by two of our
+referees. Comments from the reports are enclosed.
+
+The editors tend to agree with referee A who, in comments to the editors,
+suggests that the present manuscript would be more suitable for a methods
+or machine learning journal than for Physical Review D.
+
+These comments suggest that the present manuscript is not suitable for
+publication in the Physical Review.
+
+
+
+                                Sincerely,
+
+                                Urs M. Heller
+                                Editor
+                                Physical Review D
+
+-------------------------------------------------------------------------
+Second Report of Referee A (First for PRD) -- LK14763D/Searcy
+-------------------------------------------------------------------------
+
+This is a quite solid piece of research without major flaws and a clear
+well written paper. I just don't think it contains enough novelty value
+to warrant publishing in Phys. Rev. D. The part that is new to me is the
+use of deep learning networks for regression rather than standard MVA
+techniques.  Unfortunately the results of the application are compared
+to a rather suboptimal variable, so we don't learn if deep-learning
+regression is really superior to standard MVA regression. The final
+conclusions is that with the full high-luminosity LHC dataset and a
+number of optimistic assumptions and simplifications the sensitivity
+improves from marginal to still marginal but a little less so.
+
+I have an issue with the remarks on the WZjj background and fig. 1. It is
+claimed, based of fig 1.c that the shape of the cos theta_NN distribution
+can be used to discriminate against this background and indeed the WWjj
+shape does look different. Looking at fig 1.a it can be seen that the ++
+set of WWjj has a very similar shape and any cut on this to remove WZjj
+will also introduce a bias against ++.
+
+
+-------------------------------------------------------------------------
+Second Report of Referee B (First for PRD) -- LK14763D/Searcy
+-------------------------------------------------------------------------
+
+In the revised version of the paper submitted to Phys. Rev. D., the
+authors have made some minor revisions in the text, updated the figures
+as recommended, and added a new figure, Fig. 2.
+
+The authors have not acted upon the suggestion to provide direct
+comparisons of analyses using a single hidden layer network (NN) with
+deep neural networks, arguing that such comparisons are provided in [14]
+and [15].  The authors claim that the gains in the precision of results
+from deep neural networks (DNN) over a single hidden layer network would
+be similar to the reduction in the cost function of ~20%.  Given that
+the computing resources needed for a DNN analysis are significantly
+higher than a single hidden layer NN, considering how much gain does a
+DNN provide over a simpler optimized NN, in the final result is important.
+
+Nevertheless, since the paper presents the application of deep neural
+networks to an important physics study, I recommend that the paper be
+published after authors have considered the following suggestions and
+made updates.
+
+Page 1, paragraph 3: The authors indicate that a machine learning
+technique has not been used in experimental high energy physics community
+for regression.  This is not correct, since machine learning techniques
+are now routinely used in experimental HEP to estimate a variety
+of correction factors in detectors, such as energy corrections for
+various objects such as jets and photons, and for pile-up correction.
+Higgs discovery and studies from the CMS experiment, for example, use
+multivariate regression for many such applications.
+
+Page 2, paragraph 2: The authors also state that the neural networks (NN)
+are used as universal approximators, and point out the novelty of the
+current work using the NNs for regression, and that unlike classification,
+the NN regression relies on the fact that a neural network can serve as
+a universal approximator .
+This is not correct since the property of neural networks as “universal
+approximators” is true independent of whether they are used for
+classification or regression.  And both classification and regression
+rely on the property of NN being a universal approximator.
+
+It might be useful to cite a comprehensive review on the use of
+multivariate methods in HEP, for example,
+P.C. Bhat, Annu. Rev. Nucl. Part. Sci. 61:281-309 (2011).
+
+Figures: 
+* Figure 1 may be improved by using brighter colors instead of cyan, for
+example. 
+* Figure 2 is a new figure, included in this version submitted to PRD.
+The plots might be visually and intuitively more appealing if the dark
+blue color which represents very small statistics of counts (or possibly
+zero) to be a lighter color.
