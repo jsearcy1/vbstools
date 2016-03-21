@@ -63,7 +63,7 @@ shape does look different. Looking at fig 1.a it can be seen that the ++
 set of WWjj has a very similar shape and any cut on this to remove WZjj
 will also introduce a bias against ++.
 
-===> Jake/Junjie
+===> Thank you for this comment. We agree that a cut on this varible would not be particularly useful, however, it might add some power to a combined fit or sideband estimation of this background. We changed this sentence to read. "Reasonable separation power is observed, which could be used to improve a combined fit."
 
 
 
@@ -91,8 +91,7 @@ the computing resources needed for a DNN analysis are significantly
 higher than a single hidden layer NN, considering how much gain does a
 DNN provide over a simpler optimized NN, in the final result is important.
 
-===> Jake/Junjie - are computing resources really an issue here? Seems
-     not to me given we cannot easily get more data...
+===> In our expericence the computing resources utilized in training the deep neurl networks were not prohibitive, most training was done locally on a single laptop. Hyperparamter optimization was preformed on a local batch system, the processing is signficantly smaller than standard data processing of physics analysi files used by the experimence. 
 
 Nevertheless, since the paper presents the application of deep neural
 networks to an important physics study, I recommend that the paper be
@@ -118,29 +117,40 @@ multivariate regression for many such applications.
      "multi-variate regression is not commonly used to measure underlying
       physics quantities of interest"
 
+==> From Jake to Marc-Andre, maybe we can mention here it is also used in particle identifcation, but not analysis but we need a jargonless way of saying it?
+
 Page 2, paragraph 2: The authors also state that the neural networks (NN)
 are used as universal approximators, and point out the novelty of the
 current work using the NNs for regression, and that unlike classification,
-the NN regression relies on the fact that a neural network can serve as
+the NN regression relies on the fact that a neural network is a
 a universal approximator .
 This is not correct since the property of neural networks as “universal
 approximators” is true independent of whether they are used for
 classification or regression.  And both classification and regression
 rely on the property of NN being a universal approximator.
 
-===> Jake/Junjie
+===> Our apologies we didn't mean to give the impression that classifiers 
+were not also the result of universal approximation. We have changed the sentence
+
+"...relies on the fact that a neural network can serve as
+a universal approximator ."
+to
+"...relies on the fact that a neural network is a
+a universal approximator ."
 
 It might be useful to cite a comprehensive review on the use of
 multivariate methods in HEP, for example,
 P.C. Bhat, Annu. Rev. Nucl. Part. Sci. 61:281-309 (2011).
 
 ===> Jake/Junjie - I am fine with adding this reference.
+===> Me too maybe include with the deep learning reviews
 
 Figures: 
 * Figure 1 may be improved by using brighter colors instead of cyan, for
 example. 
 
 ===> Jake/Junjie: can be done w/ photoshop if needed.
+===> Not sure what to do with this, we in fact don't use cyan in this plot, and making them lighter I might make it lines hard to see. 
 
 * Figure 2 is a new figure, included in this version submitted to PRD.
 The plots might be visually and intuitively more appealing if the dark
@@ -149,7 +159,7 @@ zero) to be a lighter color.
 
 ===> Jake/Junjie: need to redefine color scheme in macro, although I find
      the current scheme rather normal (but then again I am color blind).
-
+===> I can take a look at this, but I also think its pretty standard.
 
 ==============ORIG COMMENTS TOGETHER============
 
