@@ -1,17 +1,23 @@
-Dear editor, 
+Dear editors, 
 
 Thank you very much for your feedback on our paper.
 
-We did choose to submit our manuscript to Physical Review
-very intentionally, as we do not want to emphasize the
-technical aspects of deep-learning and their implementation
-but rather focus on the physics application. As you will see
-in our reply to referee A, we feel that improving the sensitivity
-to longitudinal vector boson scattering by a factor of two 
-(corresponding to a factor of four in integrated luminosity)
-is not a marginal matter, but rather opens up the possibility
-of such studies for the first time with the datasets we can expect
-to be available during all of our professional careers.
+We did choose to submit our manuscript to Physical Review very
+intentionally, as we know that the whole LHC and future collider
+community is highly interested in the topic of vector boson scattering
+(as evidenced in the P5 report) and can strongly benefit from the new
+method outlined in our article.  We do not want to emphasize the
+technical aspects of deep-learning and their implementation but rather
+focus on the physics application.
+As you will see in our reply to referee A, we feel that improving the
+sensitivity to longitudinal vector boson scattering by a factor of two
+(corresponding to a factor of four in integrated luminosity) is not a
+marginal matter, but rather opens up the possibility of such studies
+for the first time with the datasets we can expect to be available
+during all of our professional careers.
+
+We hope you will continue to consider our article for publication in
+Phys. Rev. D.
 
 Best regards,
 The authors.
@@ -41,19 +47,37 @@ conclusions is that with the full high-luminosity LHC dataset and a
 number of optimistic assumptions and simplifications the sensitivity
 improves from marginal to still marginal but a little less so.
 
-===> Here we have to respectfully disagree. The "suboptimal variable"
-     we compare to illustrates the need for further development in this
-     field of study, which our paper provides. We feel that improving the 
-     sensitivity to longitudinal vector boson scattering by a factor of two 
-     (corresponding to a factor of four in integrated luminosity) is not 
-     a marginal matter, but rather opens up the possibility
-     of such studies for the first time with the datasets we can expect
+===> Here we have to respectfully disagree. The importance of VBS
+     processes was realized about forty years ago and since then there
+     were many related studies in the literature. However, due to the
+     tiny signal and large amount of background expected, there is a
+     continuing interest to develop new methods or new variables that
+     improve the signal to background ratio.
+
+     The "suboptimal variable" R_pT was the latest proposed variable
+     we know that shows good separation power as described in Ref.
+     [20]. Our paper provides a new approach to apply the deep
+     learning network with regression on this difficult problem and we
+     feel that improving the sensitivity to longitudinal vector boson
+     scattering by a factor of two (corresponding to a factor of four
+     in integrated luminosity) wrt. a new variable proposed in 2012 is
+     not a marginal matter, but rather opens up the possibility of
+     such studies for the first time with the datasets we can expect
      to be available during all of our professional careers.
-     The point of the paper is not to establish superiority of deep-learning
-     over common NN, which we consider a fact given with the references cited,
-     but rather establish a path towards vector boson scattering studies at
-     the upgraded LHC which are at the core of the physics motiviation for
-     these upgrades, as documented e.g. in the P5 report.
+
+     The possible existence of anomalous gauge couplings or new
+     physics could significantly increase the fraction of longitudinal
+     scattering events. In these situations, the method provided in
+     our paper should be able to provide hints for new physics with a
+     much smaller dataset.
+ 
+     The point of the paper is not to establish superiority of
+     deep-learning over common NN, which we consider a fact given with
+     the references cited, but rather propose a new method and
+     establish a new path towards vector boson scattering studies at
+     the upgraded LHC which are at the core of the physics motivation
+     for these upgrades, as documented e.g. in the P5 report. We think
+     our paper is thus worthwhile to be published in Phys. Rev. D.
 
 
 I have an issue with the remarks on the WZjj background and fig. 1. It is
@@ -63,8 +87,12 @@ shape does look different. Looking at fig 1.a it can be seen that the ++
 set of WWjj has a very similar shape and any cut on this to remove WZjj
 will also introduce a bias against ++.
 
-===> Thank you for this comment. We agree that a cut on this varible would not be particularly useful, however, it might add some power to a combined fit or sideband estimation of this background. We changed this sentence to read. "Reasonable separation power is observed, which could be used to improve a combined fit."
-
+===> Thank you for this comment. We agree that a cut on this variable
+     would not be particularly useful, however, it might add some
+     power to a combined fit or sideband estimation of this
+     background. We changed this sentence to read: "Reasonable
+     separation power is observed, which could be used to improve a
+     combined fit."
 
 
 Dear referee B, 
@@ -91,14 +119,21 @@ the computing resources needed for a DNN analysis are significantly
 higher than a single hidden layer NN, considering how much gain does a
 DNN provide over a simpler optimized NN, in the final result is important.
 
-===> In our expericence the computing resources utilized in training the deep neurl networks were not prohibitive, most training was done locally on a single laptop. Hyperparamter optimization was preformed on a local batch system, the processing is signficantly smaller than standard data processing of physics analysi files used by the experimence. 
+===> In our expericence the computing resources utilized in training
+     the deep neural networks were not prohibitive: most training was
+     done locally on a single laptop. Hyperparameter optimization was
+     performed on a local batch system, and the processing time was
+     signficantly smaller than that for standard data processing of
+     physics analysis files used by the large LHC experiments.
+
 
 Nevertheless, since the paper presents the application of deep neural
 networks to an important physics study, I recommend that the paper be
 published after authors have considered the following suggestions and
 made updates.
 
-===> Thank you very much for you appreciation of this important physics study!
+===> Thank you very much for your appreciation of this important
+     physics study!
 
 Page 1, paragraph 3: The authors indicate that a machine learning
 technique has not been used in experimental high energy physics community
@@ -109,57 +144,59 @@ various objects such as jets and photons, and for pile-up correction.
 Higgs discovery and studies from the CMS experiment, for example, use
 multivariate regression for many such applications.
 
-===> Jake/Junjie: rephrase???
-      We tried to address this comment in the last iteration by changing the statement
-     "to the authors' knowledge multi-variate regression has not been used to
-      directly measure underlying physics quantities of interest"
-      to
-     "multi-variate regression is not commonly used to measure underlying
-      physics quantities of interest"
-
-==> From Jake to Marc-Andre, maybe we can mention here it is also used in particle identifcation, but not analysis but we need a jargonless way of saying it?
+===> We state: "In this paper we explore a machine learning technique
+     that has not previously been used in the experimental high energy
+     physics community: regression with deep neural networks.".  While
+     we acknowledge that machine learning techniques are common in HEP
+     (as also evidenced by the review article we now reference as per
+     your suggestion), we are not aware of any publication in HEP
+     using regression with deep neural networks. We thus prefer to
+     keep this statement.
 
 Page 2, paragraph 2: The authors also state that the neural networks (NN)
 are used as universal approximators, and point out the novelty of the
 current work using the NNs for regression, and that unlike classification,
-the NN regression relies on the fact that a neural network is a
+the NN regression relies on the fact that a neural network can serve as
 a universal approximator .
 This is not correct since the property of neural networks as “universal
 approximators” is true independent of whether they are used for
 classification or regression.  And both classification and regression
 rely on the property of NN being a universal approximator.
 
-===> Our apologies we didn't mean to give the impression that classifiers 
-were not also the result of universal approximation. We have changed the sentence
+===> Our apologies - we didn't mean to give the impression that
+     classifiers were not also the result of universal
+     approximation. We have changed the sentence
 
-"...relies on the fact that a neural network can serve as
-a universal approximator ."
-to
-"...relies on the fact that a neural network is a
-a universal approximator ."
+     "...relies on the fact that a neural network can serve as a
+     universal approximator."
+     to
+     "...relies on the fact that a neural network is a universal
+     approximator ."
+
 
 It might be useful to cite a comprehensive review on the use of
 multivariate methods in HEP, for example,
 P.C. Bhat, Annu. Rev. Nucl. Part. Sci. 61:281-309 (2011).
 
-===> Jake/Junjie - I am fine with adding this reference.
-===> Me too maybe include with the deep learning reviews
+===> Thank you very much for pointing out this useful review. We have
+     included it now in our paper as reference 24.
 
 Figures: 
 * Figure 1 may be improved by using brighter colors instead of cyan, for
 example. 
 
-===> Jake/Junjie: can be done w/ photoshop if needed.
-===> Not sure what to do with this, we in fact don't use cyan in this plot, and making them lighter I might make it lines hard to see. 
+===> We checked the color scheme used in gray-scales to ensure
+     sufficient contrast between the colors used even when printed b/w
+     and would prefer to keep the colors as they are. 
 
 * Figure 2 is a new figure, included in this version submitted to PRD.
 The plots might be visually and intuitively more appealing if the dark
 blue color which represents very small statistics of counts (or possibly
 zero) to be a lighter color.
 
-===> Jake/Junjie: need to redefine color scheme in macro, although I find
-     the current scheme rather normal (but then again I am color blind).
-===> I can take a look at this, but I also think its pretty standard.
+===> We find the blue->red gradient to be a rather standard use and
+     would prefer to keep the colors as they are.
+
 
 ==============ORIG COMMENTS TOGETHER============
 
