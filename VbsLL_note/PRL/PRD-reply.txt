@@ -126,6 +126,13 @@ DNN provide over a simpler optimized NN, in the final result is important.
      significantly smaller than that for standard data processing of
      physics analysis files used by the large LHC experiments.
 
+     The point of the paper is not to establish superiority of
+     deep-learning over common NN, which we consider a fact given with
+     the references cited, but rather propose a new method and
+     establish a new path towards vector boson scattering studies at
+     the upgraded LHC which are at the core of the physics motivation
+     for these upgrades.
+
 
 Nevertheless, since the paper presents the application of deep neural
 networks to an important physics study, I recommend that the paper be
