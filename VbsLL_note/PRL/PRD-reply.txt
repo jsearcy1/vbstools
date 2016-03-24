@@ -119,11 +119,11 @@ the computing resources needed for a DNN analysis are significantly
 higher than a single hidden layer NN, considering how much gain does a
 DNN provide over a simpler optimized NN, in the final result is important.
 
-===> In our expericence the computing resources utilized in training
+===> In our experience the computing resources utilized in training
      the deep neural networks were not prohibitive: most training was
      done locally on a single laptop. Hyperparameter optimization was
      performed on a local batch system, and the processing time was
-     signficantly smaller than that for standard data processing of
+     significantly smaller than that for standard data processing of
      physics analysis files used by the large LHC experiments.
 
 
@@ -185,9 +185,9 @@ Figures:
 * Figure 1 may be improved by using brighter colors instead of cyan, for
 example. 
 
-===> We checked the color scheme used in gray-scales to ensure
-     sufficient contrast between the colors used even when printed b/w
-     and would prefer to keep the colors as they are. 
+===> Thank you for pointing this out - we changed the corresponding
+     histograms to be red.
+
 
 * Figure 2 is a new figure, included in this version submitted to PRD.
 The plots might be visually and intuitively more appealing if the dark
@@ -196,6 +196,39 @@ zero) to be a lighter color.
 
 ===> We find the blue->red gradient to be a rather standard use and
      would prefer to keep the colors as they are.
+
+
+================================================================
+===============List of changes to the manuscript================
+================================================================
+
+1. Clarified
+
+"Unlike classification where the goal of the neural network is to
+ produce discrete assignments, for example signal and background, NN
+ regression relies on the fact that a neural-network can serve as a
+ universal approximator..."
+to
+"Unlike classification where the goal of the neural network is to
+ produce discrete assignments, for example signal and background, NN
+ regression relies on the fact that a neural-network is a universal
+ approximator..."
+
+
+2. Added new reference 24
+\bibitem{Bhat:2010zz}
+P.~C. Bhat,
+\href{http://dx.doi.org/10.1146/annurev.nucl.012809.104427}{{\em Ann. Rev.
+  Nucl. Part. Sci.} {\bfseries 61} (2011) 281--309}.
+
+3. Clarified
+
+"Reasonable separation power is observed."
+to
+"Reasonable separation power is observed, which could be utilized in a
+ combined fit."
+
+4. Updated color scheme in Figure 1a
 
 
 ==============ORIG COMMENTS TOGETHER============
