@@ -1,0 +1,68 @@
+Dear referee, 
+
+Thank you very much for the comments on our paper. Please find our
+detailed answers to your comments and questions below, starting with
+"===>".
+
+Best regards,
+The authors.
+
+
+This is an interesting application of a powerful machine learning
+technique to an important topic at the LHC: the measurement of
+longitudinal vector boson scattering. Usage of deep learning has
+grown considerably in many disciplines recently with powerful results
+on extracting information.  The application to this measurement is
+still challenging, and with the integrated luminosity expected to be
+delivered by the HL LHC upgrade the longitudinal scattering fraction
+would be measured to 1 standard deviation from zero with realistic
+parton showering and detector smearing, essentially the same as for a
+measurement using a proxy variable RpT known in the literature. However
+the allowed range for the longitudinal fraction would be significantly
+decreased (upper allowed fraction), showing additional statistical power
+available when deep learning is applied to all the measured quantities
+in this underconstrained final state system. So while the application of
+deep learning to this measurement has not made a breakthrough in order
+to definitively establish this scattering at its expected level in the
+Standard Model at the LHC, it has significantly narrowed the measurement
+range possible and hopefully warrants further refinements in future work
+to improve the performance further still.  Thus I agree that it is worth
+publishing in PRD.
+
+===> Thank you very much!
+
+In reading the manuscript, I assume that the training was done only on
+the parton-level information and not retrained after the application
+of parton showers and the detector simulation. One question I had was
+whether retraining on the final observed variables after this smearing
+could possibly improve upon the final results shown (although obviously
+not to the level of the original unsmeared parton variables)?
+
+===> Indeed the training was only performed based on the parton-level
+     information. Retraining after parton shower and detector
+     simulation is a next step planned within the LHC experiment we
+     participate in, as mentioned in the paragraph prior to the
+     conclusions. We hope that this will enable further enhancement of
+     the sensitivity. For this improvement we foresee that that the
+     network structure may have to be adjusted to maximally take
+     advantage of the presence or lack of extra jets in the event.
+
+Just one minor editorial note on p.3, right column: “…these events
+are parton-showered using Pythia and passed through…” sounds somewhat
+jargony.  Perhaps “these events are passed through the application of
+parton showers in Pythia and then through…”
+
+===> Thank you very much for pointing this out. We followed your
+     suggestion with a minor modification. The sentence reads now:
+     “…these events are passed through the application of parton
+     showering in Pythia and then through…”
+
+
+
+================================================================
+===============List of changes to the manuscript================
+================================================================
+
+p.3, right column: changed “…these events are parton-showered using
+Pythia and passed through…” to “…these events are passed through the
+application of parton showering in Pythia and then through…”
