@@ -42,10 +42,9 @@ not to the level of the original unsmeared parton variables)?
      information. Retraining after parton shower and detector
      simulation is a next step planned within the LHC experiment we
      participate in, as mentioned in the paragraph prior to the
-     conclusions. We hope that this will enable further enhancement of
-     the sensitivity. For this improvement we foresee that that the
-     network structure may have to be adjusted to maximally take
-     advantage of the presence or lack of extra jets in the event.
+     conclusions. For this improvement we foresee that the network
+     structure may have to be adjusted to maximally take advantage of
+     the presence or lack of extra jets in the event.
 
 Just one minor editorial note on p.3, right column: “…these events
 are parton-showered using Pythia and passed through…” sounds somewhat
