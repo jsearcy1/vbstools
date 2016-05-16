@@ -39,8 +39,8 @@ B.~W. Lee, C.~Quigg, and H.~B. Thacker,
 
 \bibitem{Higgs_con}
 J.~M. Campbell and R.~K. Ellis,
-  \href{http://dx.doi.org/10.1007/JHEP04(2015)030}{{\em JHEP} {\bfseries 04}
-  (2015) 030},
+  \href{http://dx.doi.org/10.1007/JHEP04(2015)030}{{\em J. High Energy Phys.}
+  {\bfseries 04} (2015) 030},
 \href{http://arxiv.org/abs/1502.02990}{{\ttfamily arXiv:1502.02990 [hep-ph]}}.
 %%CITATION = ARXIV:1502.02990;%%.
 
@@ -109,7 +109,7 @@ R.~K. Ellis, W.~J. Stirling, and B.~R. Webber,
 \bibitem{Han:2009em}
 T.~Han, D.~Krohn, L.-T. Wang, and W.~Zhu,
   \href{http://dx.doi.org/10.1007/JHEP03(2010)082}{{\em J. High Energy Phys.}
-  {\bfseries 1003} (2010) 082},
+  {\bfseries 03} (2010) 082},
 \href{http://arxiv.org/abs/0911.3656}{{\ttfamily arXiv:0911.3656 [hep-ph]}}.
 %%CITATION = ARXIV:0911.3656;%%.
 
@@ -136,6 +136,8 @@ K.~Doroba, J.~Kalinowski, J.~Kuczmarski, S.~Pokorski, J.~Rosiek, {\em et~al.},
 
 \bibitem{new_VBS_warsaw_cut}
 M.~Fabbrichesi, M.~Pinamonti, A.~Tonero, and A.~Urbano,
+  \href{http://dx.doi.org/10.1103/PhysRevD.93.015004}{{\em Phys. Rev.}
+  {\bfseries D93} (2016) 015004},
 \href{http://arxiv.org/abs/1509.06378}{{\ttfamily arXiv:1509.06378 [hep-ph]}}.
 %%CITATION = ARXIV:1509.06378;%%.
 
@@ -146,8 +148,8 @@ G.~Cybenko, \href{http://dx.doi.org/10.1007/BF02551274}{{\em Mathematics of
 
 \bibitem{NNPDF}
 S.~Forte, L.~Garrido, J.~I. Latorre, and A.~Piccione,
-  \href{http://dx.doi.org/10.1088/1126-6708/2002/05/062}{{\em JHEP} {\bfseries
-  05} (2002) 062},
+  \href{http://dx.doi.org/10.1088/1126-6708/2002/05/062}{{\em J. High Energy
+  Phys.} {\bfseries 05} (2002) 062},
 \href{http://arxiv.org/abs/hep-ph/0204232}{{\ttfamily arXiv:hep-ph/0204232
   [hep-ph]}}.
 %%CITATION = HEP-PH/0204232;%%.
@@ -176,9 +178,10 @@ F.~Bastien, P.~Lamblin, R.~Pascanu, J.~Bergstra, I.~J. Goodfellow, A.~Bergeron,
   abs/1211.5590} (2012) , \url{http://arxiv.org/abs/1211.5590}.
 
 \bibitem{madgraph}
-J.~Alwall, R.~Frederix, S.~Frixione, V.~Hirschi, F.~Maltoni, {\em et~al.},
+J.~Alwall, R.~Frederix, S.~Frixione, V.~Hirschi, F.~Maltoni, O.~Mattelaer,
+  H.~S. Shao, T.~Stelzer, P.~Torrielli, and M.~Zaro,
   \href{http://dx.doi.org/10.1007/JHEP07(2014)079}{{\em J. High Energy Phys.}
-  {\bfseries 1407} (2014) 079},
+  {\bfseries 07} (2014) 079},
 \href{http://arxiv.org/abs/1405.0301}{{\ttfamily arXiv:1405.0301 [hep-ph]}}.
 %%CITATION = ARXIV:1405.0301;%%.
 
@@ -196,9 +199,10 @@ T.~Sj{\"o}strand, S.~Mrenna, and P.~Z. Skands,
 %%CITATION = ARXIV:0710.3820;%%.
 
 \bibitem{delphes}
-{\bfseries DELPHES 3} Collaboration, J.~de~Favereau {\em et~al.},
+{\bfseries DELPHES 3} Collaboration, J.~de~Favereau, C.~Delaere, P.~Demin,
+  A.~Giammanco, V.~Lema{\^i}tre, A.~Mertens, and M.~Selvaggi,
   \href{http://dx.doi.org/10.1007/JHEP02(2014)057}{{\em J. High Energy Phys.}
-  {\bfseries 1402} (2014) 057},
+  {\bfseries 02} (2014) 057},
 \href{http://arxiv.org/abs/1307.6346}{{\ttfamily arXiv:1307.6346 [hep-ex]}}.
 %%CITATION = ARXIV:1307.6346;%%.
 
