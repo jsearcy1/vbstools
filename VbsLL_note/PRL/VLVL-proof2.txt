@@ -1,0 +1,64 @@
+Dear editors,
+
+please find our responses and comments 
+on the second proof below.
+
+Best regards,
+The authors.
+
+
+Q: Please check that all references include complete titles.
+-> [22] and [26] are still missing titles - they should be:
+   [22]: "Approximation by Superpositions of a Sigmoidal Function"
+   [26]: "Theano: A CPU and GPU Math Compiler in Python"
+
+1 Second Proof: Please check closely to confirm all of the corrections have been 
+  incorporated properly throughout this article.
+
+-> OK
+
+2 Second Proof: Please check and approve the paper is ready to be published in its 
+  current form.
+
+-> Unfortunately, there are more corrections - see below.
+
+3 Second proof: Please note that as per PRD journal guidelines the punctuations should 
+  be always present inside the quotation marks, for e.g. (,) and (.). Hence your requested 
+  correction could not be done.
+
+-> OK
+
+4 Second proof: Please note that as per PRD journal style guidelines the “%” symbol 
+  should be repeated when the parentheses is removed. Hence we have added the percentage
+  symbol on both sides as 6.7% \pm 1.4%. Please check the updated changes.
+
+-> OK
+
+5 Second proof: Please check the insertion of article title in all references.
+-> Please implement the following corrections:
+l.328: "W+’s" -> "$W^+$’s"
+       "like sign" -> "like-sign"
+l.332: remove "The"
+l.333: "High-Energies" -> "High Energies"	
+l.336: "high-energies" -> "high energies"
+       "Higgs boson" -> "Higgs-boson"
+l.351: "High-Energy" -> "High-energy"
+l.352: "Higgs discovery" -> "Higgs boson discovery"
+l.362: "WpmWpmjj" -> "$W^\pm W^\pm jj$"
+l.376: "collider physics" -> "Collider Physics"
+l.381: "Vector-Vector" -> "Vector-vector"
+l.385: "WW" -> "$WW$"
+l.389: remove "The"
+l.396: "Mathematics of control, signals and systems" -> Approximation by Superpositions of a Sigmoidal Function"
+l.399: "deep inelastic" -> "deep-inelastic"
+l.401: "Multivariate analysis methods in particle physics" -> "Multivariate Analysis Methods in Particle Physics"
+l.423: "A Brief Introduction" -> "A brief introduction"
+l.428: "A modular" -> "a modular"
+l.431: "Anti-k(t)" -> "anti-$k_{\rm t}$"
+
+
+General comments and corrections
+================================
+F1:3 Please change "are shown with arbitrary units (arb. units) (a),(c) are projections" to
+     "are shown with arbitrary units (arb. units). (a), (c) are projections"
+l.319: Please change "were" to "are"
