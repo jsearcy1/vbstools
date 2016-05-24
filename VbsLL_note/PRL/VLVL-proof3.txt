@@ -1,0 +1,31 @@
+Dear editors,
+
+please find our responses and comments 
+on the third proof below.
+
+Best regards,
+The authors.
+
+
+Q: Please check that all references include complete titles.
+-> Yes, this is the case now.
+
+1 Third Proof: Please check and approve the paper is ready to be published in its 
+  current form.
+->There are a few minor modifications left in the bibliography (see below)
+  which we trust you can implement without needing another proof iteration.
+
+2 Third Proof: Please note that as per style for “Annu. Rev. Nucl. Part. Sci.” journal, 
+  the article title should be in sentence case. Hence we have retained the article title
+  as is.
+->We cannot confirm this style issue, as we took the title directly from the published pdf.
+
+
+
+General comments and corrections
+================================
+l.396/397: "Approximation by superpositions of a sigmoidal function" -> "Approximation by Superpositions of a Sigmoidal Function"
+l.401: "Multivariate analysis methods in particle physics" -> "Multivariate Analysis Methods in Particle Physics"
+l.407: "math compiler" -> "Math Compiler"
+l.431: "Anti-$K_t$" -> "anti-$k_{\rm t}$" 
+       (note the lower-case "k" above)
