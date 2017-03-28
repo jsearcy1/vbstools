@@ -15,7 +15,7 @@ import theano.tensor as T
 
 def load_data(dataset):
     # Load the dataset
-    f = gzip.open("../data/WWdata_delphes_ct2.pkl.gz", 'rb')
+    f = gzip.open("data.pkl.gz", 'rb')
     train_set1, valid_set1, test_set1 = cPickle.load(f)
     f.close()
     n_events=-1#50000

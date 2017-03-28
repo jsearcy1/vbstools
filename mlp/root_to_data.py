@@ -43,7 +43,7 @@ if __name__=="__main__":
       valid_set=(array(in_sets[1]),array(tar_sets[1]))
       test_set=(array(in_sets[2]),array(tar_sets[2]))
 
-      out=gzip.open("../data/WWdata_delphes_ct2.pkl.gz","wb")
+      out=gzip.open("data.pkl.gz","wb")
 
       cPickle.dump([train_set,valid_set,test_set],out)
       out.close()

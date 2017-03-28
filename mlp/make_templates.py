@@ -3,7 +3,7 @@ import ROOT
 from train_mlp import *
 import random
 from optparse import OptionParser
-from running_network_ct import feedforward, feedforward_deep
+#from running_network_ct import feedforward, feedforward_deep
 import numpy as np
 
 def LepPtRatio(t):
@@ -43,11 +43,11 @@ def Get_input_lil(t):
     #print [np.reshape(np.array(temp), (14,1))]
     return [np.reshape(np.array(temp), (14,1))]
 
-global rf_ff,h_fl,h_fr,h_fo
-rf_ff=ROOT.TFile("../fitted_factions.root")
-h_fl=rf_ff.Get("fr")#I need to fix this these hists are switched in root file
-h_fr=rf_ff.Get("fl")
-h_fo=rf_ff.Get("fo")
+#global rf_ff,h_fl,h_fr,h_fo
+#rf_ff=ROOT.TFile("../fitted_factions.root")
+#h_fl=rf_ff.Get("fr")#I need to fix this these hists are switched in root file
+#h_fr=rf_ff.Get("fl")
+#h_fo=rf_ff.Get("fo")
 
 #hel_list=[ [int(n) for n in i.split(",")] for i in open("/atlas/data19/jsearcy/vbstools/data/hel_list2.txt")]
 hel_list=[ [int(n) for n in i.split(",")] for i in open("/atlas/data19/jsearcy/vbstools/data/hel_list_all.txt")]
@@ -242,10 +242,10 @@ if __name__=="__main__":
 
           if t.Lep_pt1 ==0 and t.Lep_pt2==0:continue
 
-          if options.useHlist:
-              recal_w_hel(t,evt)
-          else:
-              recal_w(t)
+#          if options.useHlist:
+#              recal_w_hel(t,evt)
+#          else:
+#              recal_w(t)
 
 #          if t.ct1<-0.8 or t.ct2 < -0.8:continue
           h_ctsb.Fill(t.ct1)

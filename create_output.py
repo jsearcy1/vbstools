@@ -6,7 +6,7 @@ from pol_tools import *
 help_str=""" 
     Usage: python create_ouput.py in_file.root out_file.root
     Script which reads the ouput of Convert.C and calculates cosTheta*
-    and event weights for polarizzation
+    and event weights for polarization
 """
 
 class weight:
@@ -19,6 +19,7 @@ class weight:
 
 
     def get_weight(self,ct1,ct2,Mww):
+        ## This is for the reweighting method
 
         ###This part is turned off right now which I think means you can't trust the normalization
 #        Nbins=self.fl_w.GetNbinsX()
@@ -262,8 +263,32 @@ if __name__ == "__main__":
         ct1[0]=c1
         ct2[0]=c2
 
-        OO,TT,TO,LL,RR,LR,OL,OR=w_tool.get_weight(c1,c2,Mww[0])
+#        OO,TT,TO,LL,RR,LR,OL,OR=w_tool.get_weight(c1,c2,Mww[0])
+        ws,pol=Get_Pol(tree)
+        ## This is for the samples run with DECAY where the W polarization is known
 
+        OO=TT=TO=LL=RR=LR=OL=OR=0
+#        print ws,pol
+        if len(ws)==3:
+#            print "WWW"
+            continue
+        pol.sort()
+        if pol==[0,0]:
+            OO=1.
+        elif pol==[-1,0]:
+            OL=1.
+        elif pol==[0,1]:
+            OR=1.
+        elif pol==[-1,1]:
+            LR=1.
+        elif pol==[1,1]:
+            RR=1.
+        elif pol==[-1,-1]:
+            LL=1.
+            
+        TT=LL+RR+LR
+        TO=OL+OR
+   
         OOw[0]=OO
         TTw[0]=TT
         TOw[0]=TO

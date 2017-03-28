@@ -18,7 +18,7 @@ import numpy
 import sys
 import theano
 import theano.tensor as T
-#import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 from load_data import  load_data
 from optparse import OptionParser
 

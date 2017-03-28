@@ -58,6 +58,18 @@ def Get4Vects(t):
     if len(jets)!= 2:return W1,W2
     return W1,W2,jets[0],jets[1],t.p_id[W1l],t.p_id[W2l]
 
+def Get_Pol(t):
+    ##if Ws are known we can beat the polarization directly
+    Ws=[]
+    spin=[]
+    for i,p in enumerate(t.p_id):             
+        if abs(p)==24:
+            Ws.append(p)
+            spin.append(t.p_spin[i])
+        
+    return Ws,spin
+    
+
 def Boost_evt_rest(four_vs):
     B=four_vs[0].Clone()
     for v in four_vs[1:]:
